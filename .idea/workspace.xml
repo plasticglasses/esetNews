@@ -30,7 +30,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3857434-5c84-43ca-87ad-7440645502d4" name="Default Changelist" comment="Added textbox to fragment" />
+    <list default="true" id="b3857434-5c84-43ca-87ad-7440645502d4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/google-services.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,6 +58,11 @@
     </system>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1jozLW8XKdp5HQfIpX4JErSTohs" />
@@ -72,10 +85,6 @@
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\res\layout" />
-      <recent name="C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\res\drawable" />
-    </key>
     <key name="android.template.-702964903">
       <recent name="com.plasticglassses.esetnews" />
     </key>
@@ -84,6 +93,11 @@
       <recent name="C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\res\values" />
       <recent name="C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\res\layout" />
       <recent name="C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\java\com\plasticglassses\esetnews" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lizks\AndroidStudioProjects\esetNews2\app" />
+      <recent name="C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\res\layout" />
+      <recent name="C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\res\drawable" />
     </key>
   </component>
   <component name="RunManager">
@@ -177,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604663449389</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added textbox to fragment">
+      <created>1604664404837</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1604664404838</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -221,10 +242,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2076" y="257" width="1347" height="661" key="AVDManager/-1920.0.1536.832/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604662155725" />
-    <state x="2511" y="46" key="CommitChangelistDialog2" timestamp="1604662654434">
+    <state x="2511" y="46" key="CommitChangelistDialog2" timestamp="1604664401711">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2511" y="46" key="CommitChangelistDialog2/-1920.0.1536.832/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604662654434" />
+    <state x="2511" y="46" key="CommitChangelistDialog2/-1920.0.1536.832/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604664401711" />
     <state x="2660" y="246" key="FileChooserDialogImpl" timestamp="1604664210028">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>

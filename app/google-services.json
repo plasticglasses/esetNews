@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "495159293696",
+    "firebase_url": "https://esetnews-cd879.firebaseio.com",
+    "project_id": "esetnews-cd879",
+    "storage_bucket": "esetnews-cd879.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:495159293696:android:2cac485337630b297325e5",
+        "android_client_info": {
+          "package_name": "com.plasticglassses.esetnews"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "495159293696-shjv0rf20at4e3oqfek3uv7jk8ak4qc0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAc5AwVYDKKWdWkP_MIYB_gZDfdlGVmzxE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "495159293696-shjv0rf20at4e3oqfek3uv7jk8ak4qc0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
