@@ -1,0 +1,2 @@
+com/plasticglassses/esetnews/BuildConfig.java
+ com.plasticglassses.esetnews.BuildConfig
