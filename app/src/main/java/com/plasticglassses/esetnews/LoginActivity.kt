@@ -31,6 +31,7 @@ public class LoginActivity : AppCompatActivity() {
     }
 
 
+
 //    override fun onStart() {
 //        super.onStart()
 //        // Check if user is signed in (non-null) and update UI accordingly.

@@ -1791,7 +1791,6 @@ id dropdown_menu
 id easeIn
 id easeInOut
 id easeOut
-id editTextTextEmailAddress
 id editTextTextPassword
 id editTextTextPassword2
 id editTextTextPassword3
@@ -1799,6 +1798,7 @@ id editTextTextPersonName
 id editTextTextPersonName2
 id editTextTextPersonName3
 id edit_query
+id email
 id end
 id enterAlways
 id enterAlwaysCollapsed
@@ -1954,7 +1954,9 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
+id signUpPassword
 id signin
+id signupEmail
 id sin
 id skipCollapsed
 id slide
