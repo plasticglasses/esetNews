@@ -1758,6 +1758,7 @@ id content
 id contentPanel
 id coordinator
 id cos
+id createButton
 id custom
 id customPanel
 id cut
@@ -1790,6 +1791,13 @@ id dropdown_menu
 id easeIn
 id easeInOut
 id easeOut
+id editTextTextEmailAddress
+id editTextTextPassword
+id editTextTextPassword2
+id editTextTextPassword3
+id editTextTextPersonName
+id editTextTextPersonName2
+id editTextTextPersonName3
 id edit_query
 id end
 id enterAlways
@@ -1843,6 +1851,7 @@ id line3
 id linear
 id listMode
 id list_item
+id loginButton
 id map
 id masked
 id message
@@ -1911,6 +1920,7 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id register
 id reverseSawtooth
 id right
 id right_icon
@@ -1944,6 +1954,7 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
+id signin
 id sin
 id skipCollapsed
 id slide
@@ -1967,6 +1978,7 @@ id startHorizontal
 id startVertical
 id staticLayout
 id staticPostLayout
+id status_texview
 id stop
 id stretch
 id submenuarrow
@@ -1991,6 +2003,14 @@ id textEnd
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
+id textView
+id textView2
+id textView3
+id textView4
+id textView5
+id textView6
+id textView7
+id textView8
 id text_input_end_icon
 id text_input_start_icon
 id textinput_counter
@@ -2089,7 +2109,9 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_login
 layout activity_main
+layout activity_sign_up
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog

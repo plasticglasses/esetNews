@@ -14,6 +14,7 @@
     </item>
     <item
         android:id = "@+id/action_logout"
-        android:title="@string/log_out">
+        android:title="@string/log_out"
+        android:onClick="logout">
     </item>
 </menu>

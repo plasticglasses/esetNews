@@ -1,4 +1,4 @@
-#Fri Nov 06 12:21:30 GMT 2020
+#Tue Nov 10 14:43:06 GMT 2020
 base.0=C\:\\Users\\lizks\\AndroidStudioProjects\\esetNews2\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex

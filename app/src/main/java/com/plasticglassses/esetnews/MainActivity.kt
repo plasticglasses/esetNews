@@ -1,5 +1,6 @@
 package com.plasticglassses.esetnews
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -70,6 +71,11 @@ class MainActivity : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    fun logout(item: MenuItem) {
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
     }
 
 //    fun getHeadline(view: View){

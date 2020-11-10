@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\lizks\\AndroidStudioProjects\\esetNews2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-bg\\values-bg.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\lizks\\.gradle\\caches\\transforms-2\\files-2.1\\354fbb1758dfceca5874d10532b23ab1\\jetified-play-services-basement-17.0.0\\res\\values-bg\\values.xml",
+                    "source": "C:\\Users\\lizks\\.gradle\\caches\\transforms-2\\files-2.1\\1a884463917ddae3380b991df3a31de4\\jetified-play-services-basement-17.1.0\\res\\values-bg\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -55,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\lizks\\.gradle\\caches\\transforms-2\\files-2.1\\8f88f1901f8a9e8871038c0540e0c7b1\\jetified-play-services-base-17.0.0\\res\\values-bg\\values.xml",
+                    "source": "C:\\Users\\lizks\\.gradle\\caches\\transforms-2\\files-2.1\\a0751454aea668c4e01975f075b34152\\jetified-play-services-base-17.1.0\\res\\values-bg\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
