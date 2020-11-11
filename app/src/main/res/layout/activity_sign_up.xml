@@ -59,7 +59,7 @@
         app:layout_constraintVertical_bias="0.508" />
 
     <EditText
-        android:id="@+id/editTextTextPassword2"
+        android:id="@+id/signUpPassword2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
@@ -81,10 +81,10 @@
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.796"
+        app:layout_constraintHorizontal_bias="0.791"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2"
-        app:layout_constraintVertical_bias="0.03" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.543" />
 
     <EditText
         android:id="@+id/signupEmail"
