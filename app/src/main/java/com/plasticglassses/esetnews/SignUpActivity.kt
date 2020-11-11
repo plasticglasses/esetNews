@@ -41,31 +41,22 @@ class SignUpActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    private fun createUser(){
-        if (validPass()){
-
-            val email = findViewById<EditText>(R.id.signupEmail)
-            val password = findViewById<EditText>(R.id.signUpPassword)
-
-            auth.createUserWithEmailAndPassword(email.toString(), password.toString())
-                .addOnCompleteListener(this) { task ->
-                    if (task.isSuccessful) {
-                        // Sign in success, update UI with the signed-in user's information
-                        Log.d(TAG, "createUserWithEmail:success")
-                        val user = auth.currentUser
-                        updateUI(user)
-                    } else {
+    private fun createUser(email: String, password: String) {
+        auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    // Sign in success, update UI with the signed-in user's information
+                    Log.d(TAG, "createUserWithEmail:success")
+                    val user = auth.currentUser
+                    updateUI(user)
+                } else {
                         // If sign in fails, display a message to the user.
-                        Log.w(TAG, "createUserWithEmail:failure", task.exception)
-                        val snackbar = Snackbar.make(findViewById(android.R.id.content), "Authentication Failed.", Snackbar.LENGTH_SHORT).show()
+                    Log.w(TAG, "createUserWithEmail:failure", task.exception)
+                    val snackbar = Snackbar.make(findViewById(android.R.id.content), "Authentication Failed.", Snackbar.LENGTH_SHORT).show()
 
-                        updateUI(null)
-                    }
+                    updateUI(null)
                 }
-        }else{
-            //show issue with passwords
-        }
-
+            }
 
     }
 
@@ -83,7 +74,12 @@ class SignUpActivity : AppCompatActivity() {
     uses fierbase to authenticate new users
      */
     fun clickLoginButton(view: View) {
-        createUser()
+        val email = findViewById<EditText>(R.id.signupEmail)
+        val password = findViewById<EditText>(R.id.signUpPassword)
+
+        if (validPass()) {
+            createUser(email.toString(), password.toString())
+        }
     }
 
 }
