@@ -1791,7 +1791,6 @@ id dropdown_menu
 id easeIn
 id easeInOut
 id easeOut
-id editTextTextPassword2
 id editTextTextPassword3
 id editTextTextPersonName
 id editTextTextPersonName2

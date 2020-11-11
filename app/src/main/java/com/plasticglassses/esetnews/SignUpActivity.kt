@@ -52,7 +52,7 @@ class SignUpActivity : AppCompatActivity() {
                 } else {
                         // If sign in fails, display a message to the user.
                     Log.w(TAG, "createUserWithEmail:failure", task.exception)
-                    val snackbar = Snackbar.make(findViewById(android.R.id.content), "Authentication Failed.", Snackbar.LENGTH_SHORT).show()
+                    val snackbar3 = Snackbar.make(findViewById(android.R.id.content), "Authentication Failed.", Snackbar.LENGTH_SHORT).show()
 
                     updateUI(null)
                 }
@@ -71,6 +71,12 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     /*
+    return true if email is valid
+     */
+    private fun validEmail(email: String): Boolean {
+        return email.contains("@")
+    }
+    /*
     uses fierbase to authenticate new users
      */
     fun clickLoginButton(view: View) {
@@ -78,8 +84,22 @@ class SignUpActivity : AppCompatActivity() {
         val password = findViewById<EditText>(R.id.signUpPassword)
 
         if (validPass()) {
-            createUser(email.toString(), password.toString())
+            if (validEmail(email.text.toString())) {
+                createUser(email.text.toString(), password.text.toString())
+            }else{
+                Snackbar.make(findViewById(android.R.id.content), "Invalid Email, Authentication Failed.", Snackbar.LENGTH_SHORT).show()
+            }
+        }else{
+            Snackbar.make(findViewById(android.R.id.content), "Passwords did not match, Authentication Failed.", Snackbar.LENGTH_SHORT).show()
+            //make text boxes red animate
+            password.highlightColor
         }
     }
+
+
+
+}
+
+private fun String.contains(s: String, c: Char) {
 
 }
