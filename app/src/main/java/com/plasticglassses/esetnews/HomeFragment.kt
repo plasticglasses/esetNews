@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.dfl.newsapi.NewsApiRepository
+
 //import com.dfl.newsapi.NewsApiRepository
 //import com.dfl.newsapi.enums.Category
 //import com.dfl.newsapi.enums.Country
@@ -15,6 +17,8 @@ import androidx.fragment.app.Fragment
 
 
 class HomeFragment : Fragment() {
+
+    val newsApiRepository = NewsApiRepository("8abf9b3bbc4c4e86b186100f1c3f4e6d")
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,6 +32,8 @@ class HomeFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
+
+
 
 
 //    fun getHeadlines(view: View){
