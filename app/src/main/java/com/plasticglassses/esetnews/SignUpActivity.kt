@@ -13,7 +13,7 @@ import com.google.firebase.ktx.Firebase
 
 class SignUpActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
-    private val TAG = "MyActivity"
+    private val TAG = "Sign Up Activity"
 
     /*on create*/
     override fun onCreate(savedInstanceState: Bundle?) {

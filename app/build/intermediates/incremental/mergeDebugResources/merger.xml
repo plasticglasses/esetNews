@@ -6045,7 +6045,7 @@
         "On the layout level, design your app layout to minimize opportunities for interference. "
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
-    </string><string name="test_if_commit_is_taken_seriously">test if commit is taken seriously</string></file><file path="C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    </string><string name="test_if_commit_is_taken_seriously">test if commit is taken seriously</string><string name="Enter_Pwd">Enter Password</string><string name="create">Create</string><string name="usrname">Username</string><string name="enter_email">Enter email</string><string name="create_an_account_with_esetnews_to_create_custom_alerts_and_personalised_news_updates">Create an account with ESETNews to create custom alerts and personalised news updates</string><string name="enter_username">Enter username</string><string name="re_enter_password">Re-enter Password</string></file><file path="C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>

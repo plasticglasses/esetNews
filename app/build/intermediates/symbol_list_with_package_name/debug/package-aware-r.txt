@@ -1791,12 +1791,11 @@ id dropdown_menu
 id easeIn
 id easeInOut
 id easeOut
-id editTextTextPassword3
 id editTextTextPersonName
 id editTextTextPersonName2
-id editTextTextPersonName3
 id edit_query
 id email
+id emailSignInText
 id end
 id enterAlways
 id enterAlwaysCollapsed
@@ -1904,6 +1903,7 @@ id parent
 id parentPanel
 id parentRelative
 id parent_matrix
+id passwordSignInText
 id password_toggle
 id path
 id pathRelative
@@ -2188,6 +2188,7 @@ menu news_toolbar_layout
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
+string Enter_Pwd
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -2241,7 +2242,11 @@ string common_google_play_services_wear_update_text
 string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
+string create
+string create_an_account_with_esetnews_to_create_custom_alerts_and_personalised_news_updates
 string default_web_client_id
+string enter_email
+string enter_username
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
@@ -2304,9 +2309,11 @@ string path_password_eye_mask_visible
 string path_password_strike_through
 string profile
 string project_id
+string re_enter_password
 string search_menu_title
 string status_bar_notification_info_overflow
 string test_if_commit_is_taken_seriously
+string usrname
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow
