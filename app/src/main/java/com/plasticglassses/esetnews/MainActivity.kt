@@ -12,6 +12,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import com.google.firebase.auth.FirebaseAuth
 //import com.koushikdutta.ion.Ion
 import com.plasticglassses.esetnews.adapters.TabAdapter
 import org.json.JSONObject
@@ -74,6 +75,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun logout(item: MenuItem) {
+
+        FirebaseAuth.getInstance().signOut()
+
         val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
     }

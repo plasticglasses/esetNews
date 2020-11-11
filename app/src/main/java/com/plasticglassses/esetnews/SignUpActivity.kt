@@ -1,6 +1,7 @@
 package com.plasticglassses.esetnews
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -8,11 +9,15 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_sign_up.*
+
 
 class SignUpActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
+
     private val TAG = "Sign Up Activity"
 
     /*on create*/
@@ -41,8 +46,8 @@ class SignUpActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    private fun createUser(email: String, password: String) {
-        auth.createUserWithEmailAndPassword(email, password)
+    private fun createUser(emailInput: String, password: String) {
+        auth.createUserWithEmailAndPassword(emailInput, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
@@ -53,8 +58,6 @@ class SignUpActivity : AppCompatActivity() {
                         // If sign in fails, display a message to the user.
                     Log.w(TAG, "createUserWithEmail:failure", task.exception)
                     val snackbar3 = Snackbar.make(findViewById(android.R.id.content), "Authentication Failed.", Snackbar.LENGTH_SHORT).show()
-
-                    updateUI(null)
                 }
             }
 
@@ -68,6 +71,13 @@ class SignUpActivity : AppCompatActivity() {
         val password2 = findViewById<EditText>(R.id.signUpPassword2)
 
         return password1.text.toString() == password2.text.toString()
+    }
+    /*
+   Returns true if passwords are identical and false otherwise
+    */
+    private fun validPassLength(password: String): Boolean {
+        return password.length >= 6
+
     }
 
     /*
@@ -83,14 +93,14 @@ class SignUpActivity : AppCompatActivity() {
         val email = findViewById<EditText>(R.id.signupEmail)
         val password = findViewById<EditText>(R.id.signUpPassword)
 
-        if (validPass()) {
+        if (validPass() && validPassLength(password.text.toString())) {
             if (validEmail(email.text.toString())) {
                 createUser(email.text.toString(), password.text.toString())
             }else{
                 Snackbar.make(findViewById(android.R.id.content), "Invalid Email, Authentication Failed.", Snackbar.LENGTH_SHORT).show()
             }
         }else{
-            Snackbar.make(findViewById(android.R.id.content), "Passwords did not match, Authentication Failed.", Snackbar.LENGTH_SHORT).show()
+            Snackbar.make(findViewById(android.R.id.content), "invalid passwords, both must match and > 6 characters, Authentication Failed.", Snackbar.LENGTH_SHORT).show()
             //make text boxes red animate
             password.highlightColor
         }

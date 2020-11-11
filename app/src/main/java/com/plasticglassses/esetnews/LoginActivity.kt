@@ -37,9 +37,7 @@ public class LoginActivity : AppCompatActivity() {
     }
 
     private fun signIn(email: String, password: String){
-
-        //vlaidation
-
+    //TODO add validation for email and username
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
@@ -52,11 +50,8 @@ public class LoginActivity : AppCompatActivity() {
                     Log.w(TAG, "signInWithEmail:failure", task.exception)
                     Snackbar.make(findViewById(android.R.id.content), "Passwords did not match, Authentication Failed.", Snackbar.LENGTH_SHORT).show()
 
-                    updateUI(null)
-                    // ...
                 }
 
-                // ...
             }
 
     }
