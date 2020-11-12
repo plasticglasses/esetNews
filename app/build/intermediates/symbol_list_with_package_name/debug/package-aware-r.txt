@@ -1824,6 +1824,7 @@ id grouping
 id groups
 id headline
 id headlineImg
+id headline_recycler_view
 id hideable
 id home
 id homeAsUp
@@ -1922,7 +1923,6 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
-id recycler_view
 id register
 id reverseSawtooth
 id right

@@ -7,9 +7,10 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.EditText
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.dfl.newsapi.NewsApiRepository
 import com.dfl.newsapi.enums.Category
@@ -18,11 +19,10 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.auth.FirebaseAuth
+import com.plasticglassses.esetnews.adapters.NewsAdapter
 //import com.koushikdutta.ion.Ion
 import com.plasticglassses.esetnews.adapters.TabAdapter
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.activity_sign_up.*
-import org.json.JSONObject
 
 
 class MainActivity : AppCompatActivity() {
@@ -53,7 +53,21 @@ class MainActivity : AppCompatActivity() {
             }
         }).attach()
 
+        //home fragment recycler view
+
+
+
+        val recyclerHeadlineView = findViewById<View>(R.id.headline_recycler_view) as RecyclerView
+        val headlineArrayList = genNews(recyclerHeadlineView)
+        val headlineLayoutManager = RelativeLayout(this)
+
+        recyclerHeadlineView.headlineLayoutManager = headlineLayoutManager
+        val headlineAdapter = NewsAdapter(headlineArrayList)
+        recyclerHeadlineView.adapter = headlineAdapter
+
+
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         //appbar
@@ -95,9 +109,10 @@ class MainActivity : AppCompatActivity() {
     /*
     on science frgament
      */
-    fun genNews(view: View) {
+    fun genNews(view: View): ArrayList<newsModel> {
+        val list = ArrayList<newsModel>()
 
-       val headlineTextBox = findViewById<TextView>(R.id.scienceHeadlineTextBox)
+        val headlineTextBox = findViewById<TextView>(R.id.scienceHeadlineTextBox)
 
         //get text box on science fragment and add in a new headline
         newsApiRepository.getTopHeadlines(category = Category.GENERAL, country = Country.US, q = "trump", pageSize = 20, page = 1)
@@ -105,11 +120,15 @@ class MainActivity : AppCompatActivity() {
             .toFlowable()
             .flatMapIterable { articles -> articles.articles }
             .subscribe({ article -> Log.d("getTopHead CC article", article.title)
-                headlineTextBox.text = article.title
+            val headline = newsModel()
+                headline.setHeadline(article.title)
+                headline.setHeadlineImg(article.urlToImage)
+                headline.setPublisher(article.author)
+                headline.setTimestamp(article.publishedAt)
+                list.add(headline)
             },
                 { t -> Log.d("getTopHeadlines error", t.message!!) })
 
-
-
+        return list
     }
 }

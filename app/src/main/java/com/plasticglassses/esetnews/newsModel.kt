@@ -1,18 +1,21 @@
 package com.plasticglassses.esetnews
 
-import java.sql.Time
-
 class newsModel{
     private var headline: String = ""
-    private var headlineImg: Int = 0
+    private var headlineImg: String = ""
     private var timestamp: String = ""
+    private var publisher: String = ""
 
     fun getHeadline(): String{
         return headline.toString()
     }
 
-    fun getHeadlineImg(): Int{
+    fun getHeadlineImg(): String{
         return headlineImg
+    }
+
+    fun getPublisher(): String{
+        return publisher.toString()
     }
 
     fun getTimestamp(): String{
@@ -23,7 +26,7 @@ class newsModel{
         this.headline = headline
     }
 
-    fun setHeadlineImg(img: Int){
+    fun setHeadlineImg(img: String){
         this.headlineImg = img
     }
 
@@ -31,4 +34,7 @@ class newsModel{
         this.timestamp = timestamp
     }
 
+    fun setPublisher(publisher: String){
+        this.publisher = publisher
+    }
 }
