@@ -1735,6 +1735,7 @@ id bounce
 id buttonPanel
 id cache_measures
 id cancel_button
+id card_headline
 id center
 id center_horizontal
 id center_vertical
@@ -1812,6 +1813,7 @@ id fixed
 id flip
 id floating
 id forever
+id genNewsButton
 id ghost_view
 id ghost_view_holder
 id gone
@@ -1820,6 +1822,8 @@ id graph_wrap
 id group_divider
 id grouping
 id groups
+id headline
+id headlineImg
 id hideable
 id home
 id homeAsUp
@@ -1918,6 +1922,7 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id recycler_view
 id register
 id reverseSawtooth
 id right
@@ -1930,6 +1935,7 @@ id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
 id scale
+id scienceHeadlineTextBox
 id screen
 id scroll
 id scrollIndicatorDown
@@ -2020,6 +2026,7 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id time
+id timestamp
 id title
 id titleDividerNoCustom
 id title_template
@@ -2112,6 +2119,7 @@ layout abc_tooltip
 layout activity_login
 layout activity_main
 layout activity_sign_up
+layout card_headline
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog

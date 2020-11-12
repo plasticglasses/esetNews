@@ -3,22 +3,37 @@ package com.plasticglassses.esetnews
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import androidx.viewpager2.widget.ViewPager2
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
+import com.dfl.newsapi.NewsApiRepository
+import com.dfl.newsapi.enums.Category
+import com.dfl.newsapi.enums.Country
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.auth.FirebaseAuth
 //import com.koushikdutta.ion.Ion
 import com.plasticglassses.esetnews.adapters.TabAdapter
+import io.reactivex.schedulers.Schedulers
+import kotlinx.android.synthetic.main.activity_sign_up.*
 import org.json.JSONObject
 
 
 class MainActivity : AppCompatActivity() {
+
+    val newsApiRepository = NewsApiRepository("8abf9b3bbc4c4e86b186100f1c3f4e6d")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -80,6 +95,63 @@ class MainActivity : AppCompatActivity() {
 
         val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
+    }
+
+    /*
+    on science frgament
+     */
+    fun genNews(view: View) {
+
+       val headlineTextBox = findViewById<TextView>(R.id.scienceHeadlineTextBox)
+
+        // Instantiate the RequestQueue.
+        val queue = Volley.newRequestQueue(this)
+        val url = "http://newsapi.org/v2/everything?q=bitcoin&from=2020-10-12&sortBy=publishedAt&apiKey=8abf9b3bbc4c4e86b186100f1c3f4e6d"
+
+        // Request a string response from the provided URL.
+        val stringRequest = StringRequest(Request.Method.GET, url,
+            Response.Listener<String> { response ->
+                // Display the first 500 characters of the response string.
+                textView.text = "Response is: ${response.substring(0, 500)}"
+            },
+            Response.ErrorListener { textView.text = "That didn't work!" })
+
+// Add the request to the RequestQueue.
+        queue.add(stringRequest)
+
+        val url2 = "http://newsapi.org/v2/everything?q=bitcoin&from=2020-10-15&sortBy=publishedAt&apiKey=8abf9b3bbc4c4e86b186100f1c3f4e6d"
+
+        val stringRequest2 = StringRequest(Request.Method.GET, url2,
+            Response.Listener<String> { response ->
+                // Display the first 500 characters of the response string.
+                textView.text = "Response is: ${response.substring(0, 500)}"
+            },
+            Response.ErrorListener { textView.text = "That didn't work!" })
+
+// Add the request to the RequestQueue.
+        queue.add(stringRequest2)
+
+        val jsonObjectRequest = JsonObjectRequest(
+            Request.Method.GET, url, null,
+            Response.Listener { response ->
+                textView.text = "Response: %s".format(response.toString())
+            },
+            Response.ErrorListener { error ->
+                // TODO: Handle error
+            }
+        )
+
+
+        //get text box on science fragment and add in a new headline
+        newsApiRepository.getTopHeadlines(category = Category.GENERAL, country = Country.US, q = "trump", pageSize = 20, page = 1)
+            .subscribeOn(Schedulers.io())
+            .toFlowable()
+            .flatMapIterable { articles -> articles.articles }
+            .subscribe({ article -> Log.d("getTopHead CC article", article.title) },
+                { t -> Log.d("getTopHeadlines error", t.message!!) })
+
+        headlineTextBox.text = "boom ya"
+
     }
 
 //    fun getHeadline(view: View){

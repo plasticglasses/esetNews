@@ -46,6 +46,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth-ktx' //firebase authentication
     implementation 'io.reactivex.rxjava2:rxjava:2.2.8' //news api
     implementation 'com.github.dfloureiro:news-api-kotlin:v2.1' //news api
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.android.volley:volley:1.1.1' //volley networks
+
     // Add the dependencies for any other desired Firebase products
     // https://firebase.google.com/docs/android/setup#available-libraries
 

@@ -2,6 +2,7 @@ package com.plasticglassses.esetnews
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import android.widget.EditText
@@ -61,11 +62,11 @@ public class LoginActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun clickLoginButton(view: View) {
+    fun clickLoginButton(view: View) {23
         val email = findViewById<EditText>(R.id.emailSignInText)
         val password = findViewById<EditText>(R.id.passwordSignInText)
 
-        if (validPass()) {
+        if (validPass(password.text.toString())) {
             if (validEmail(email.text.toString())) {
                 signIn(email.text.toString(), password.text.toString())
             }else{
@@ -81,15 +82,15 @@ public class LoginActivity : AppCompatActivity() {
     /*
     validate email
      */
-    private fun validEmail(toString: String): Boolean {
-        return true
+    private fun validEmail(email: String): Boolean {
+        return !TextUtils.isEmpty(email)
     }
 
     /*
     validate password
      */
-    private fun validPass(): Boolean {
-        return true
+    private fun validPass(password: String): Boolean {
+        return !TextUtils.isEmpty(password)
     }
 
     fun clickRegisterLink(view: View) {
