@@ -104,42 +104,42 @@ class MainActivity : AppCompatActivity() {
 
        val headlineTextBox = findViewById<TextView>(R.id.scienceHeadlineTextBox)
 
-        // Instantiate the RequestQueue.
-        val queue = Volley.newRequestQueue(this)
+//        // Instantiate the RequestQueue.
+//        val queue = Volley.newRequestQueue(this)
         val url = "http://newsapi.org/v2/everything?q=bitcoin&from=2020-10-12&sortBy=publishedAt&apiKey=8abf9b3bbc4c4e86b186100f1c3f4e6d"
-
-        // Request a string response from the provided URL.
-        val stringRequest = StringRequest(Request.Method.GET, url,
-            Response.Listener<String> { response ->
-                // Display the first 500 characters of the response string.
-                textView.text = "Response is: ${response.substring(0, 500)}"
-            },
-            Response.ErrorListener { textView.text = "That didn't work!" })
-
-// Add the request to the RequestQueue.
-        queue.add(stringRequest)
-
-        val url2 = "http://newsapi.org/v2/everything?q=bitcoin&from=2020-10-15&sortBy=publishedAt&apiKey=8abf9b3bbc4c4e86b186100f1c3f4e6d"
-
-        val stringRequest2 = StringRequest(Request.Method.GET, url2,
-            Response.Listener<String> { response ->
-                // Display the first 500 characters of the response string.
-                textView.text = "Response is: ${response.substring(0, 500)}"
-            },
-            Response.ErrorListener { textView.text = "That didn't work!" })
-
-// Add the request to the RequestQueue.
-        queue.add(stringRequest2)
-
-        val jsonObjectRequest = JsonObjectRequest(
-            Request.Method.GET, url, null,
-            Response.Listener { response ->
-                textView.text = "Response: %s".format(response.toString())
-            },
-            Response.ErrorListener { error ->
-                // TODO: Handle error
-            }
-        )
+//
+//        // Request a string response from the provided URL.
+//        val stringRequest = StringRequest(Request.Method.GET, url,
+//            Response.Listener<String> { response ->
+//                // Display the first 500 characters of the response string.
+//                textView.text = "Response is: ${response.substring(0, 500)}"
+//            },
+//            Response.ErrorListener { textView.text = "That didn't work!" })
+//
+//// Add the request to the RequestQueue.
+//        queue.add(stringRequest)
+//
+//        val url2 = "http://newsapi.org/v2/everything?q=bitcoin&from=2020-10-15&sortBy=publishedAt&apiKey=8abf9b3bbc4c4e86b186100f1c3f4e6d"
+//
+//        val stringRequest2 = StringRequest(Request.Method.GET, url2,
+//            Response.Listener<String> { response ->
+//                // Display the first 500 characters of the response string.
+//                textView.text = "Response is: ${response.substring(0, 500)}"
+//            },
+//            Response.ErrorListener { textView.text = "That didn't work!" })
+//
+//// Add the request to the RequestQueue.
+//        queue.add(stringRequest2)
+//
+//        val jsonObjectRequest = JsonObjectRequest(
+//            Request.Method.GET, url, null,
+//            Response.Listener { response ->
+//                textView.text = "Response: %s".format(response.toString())
+//            },
+//            Response.ErrorListener { error ->
+//                // TODO: Handle error
+//            }
+//        )
 
 
         //get text box on science fragment and add in a new headline
@@ -147,10 +147,12 @@ class MainActivity : AppCompatActivity() {
             .subscribeOn(Schedulers.io())
             .toFlowable()
             .flatMapIterable { articles -> articles.articles }
-            .subscribe({ article -> Log.d("getTopHead CC article", article.title) },
+            .subscribe({ article -> Log.d("getTopHead CC article", article.title)
+                headlineTextBox.text = article.title
+            },
                 { t -> Log.d("getTopHeadlines error", t.message!!) })
 
-        headlineTextBox.text = "boom ya"
+
 
     }
 
@@ -160,8 +162,8 @@ class MainActivity : AppCompatActivity() {
 //            .asString()
 //            .setCallback{ex, result -> processHeadlines(result)}
 //    }
-//
-//
+
+
 //    fun processHeadlines(headlineData: String) {
 //        val myJson = JSONObject(headlineData)
 //        val myHeadline = myJson.getString("status")

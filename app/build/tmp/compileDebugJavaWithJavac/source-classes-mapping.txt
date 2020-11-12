@@ -1,2 +1,4 @@
 com/plasticglassses/esetnews/BuildConfig.java
  com.plasticglassses.esetnews.BuildConfig
+com/plasticglassses/esetnews/adapters/NewsAdapter.java
+ com.plasticglassses.esetnews.adapters.NewsAdapter
