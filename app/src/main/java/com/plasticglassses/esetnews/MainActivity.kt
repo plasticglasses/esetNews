@@ -11,11 +11,6 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import androidx.viewpager2.widget.ViewPager2
-import com.android.volley.Request
-import com.android.volley.Response
-import com.android.volley.toolbox.JsonObjectRequest
-import com.android.volley.toolbox.StringRequest
-import com.android.volley.toolbox.Volley
 import com.dfl.newsapi.NewsApiRepository
 import com.dfl.newsapi.enums.Category
 import com.dfl.newsapi.enums.Country
@@ -104,44 +99,6 @@ class MainActivity : AppCompatActivity() {
 
        val headlineTextBox = findViewById<TextView>(R.id.scienceHeadlineTextBox)
 
-//        // Instantiate the RequestQueue.
-//        val queue = Volley.newRequestQueue(this)
-        val url = "http://newsapi.org/v2/everything?q=bitcoin&from=2020-10-12&sortBy=publishedAt&apiKey=8abf9b3bbc4c4e86b186100f1c3f4e6d"
-//
-//        // Request a string response from the provided URL.
-//        val stringRequest = StringRequest(Request.Method.GET, url,
-//            Response.Listener<String> { response ->
-//                // Display the first 500 characters of the response string.
-//                textView.text = "Response is: ${response.substring(0, 500)}"
-//            },
-//            Response.ErrorListener { textView.text = "That didn't work!" })
-//
-//// Add the request to the RequestQueue.
-//        queue.add(stringRequest)
-//
-//        val url2 = "http://newsapi.org/v2/everything?q=bitcoin&from=2020-10-15&sortBy=publishedAt&apiKey=8abf9b3bbc4c4e86b186100f1c3f4e6d"
-//
-//        val stringRequest2 = StringRequest(Request.Method.GET, url2,
-//            Response.Listener<String> { response ->
-//                // Display the first 500 characters of the response string.
-//                textView.text = "Response is: ${response.substring(0, 500)}"
-//            },
-//            Response.ErrorListener { textView.text = "That didn't work!" })
-//
-//// Add the request to the RequestQueue.
-//        queue.add(stringRequest2)
-//
-//        val jsonObjectRequest = JsonObjectRequest(
-//            Request.Method.GET, url, null,
-//            Response.Listener { response ->
-//                textView.text = "Response: %s".format(response.toString())
-//            },
-//            Response.ErrorListener { error ->
-//                // TODO: Handle error
-//            }
-//        )
-
-
         //get text box on science fragment and add in a new headline
         newsApiRepository.getTopHeadlines(category = Category.GENERAL, country = Country.US, q = "trump", pageSize = 20, page = 1)
             .subscribeOn(Schedulers.io())
@@ -155,20 +112,4 @@ class MainActivity : AppCompatActivity() {
 
 
     }
-
-//    fun getHeadline(view: View){
-//        Ion.with(this)
-//            .load("GET", "https://newsapi.org/v2/top-headlines?country=us&apiKey=8abf9b3bbc4c4e86b186100f1c3f4e6d")
-//            .asString()
-//            .setCallback{ex, result -> processHeadlines(result)}
-//    }
-
-
-//    fun processHeadlines(headlineData: String) {
-//        val myJson = JSONObject(headlineData)
-//        val myHeadline = myJson.getString("status")
-//
-//        val myTxtVew = findViewById<TextView>(R.id.txtHeadline)
-//        myTxtVew.text = myHeadline
-//    }
 }
