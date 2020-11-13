@@ -110,4 +110,34 @@
     <string name="enter_username">Enter username</string>
     <string name="create">Create</string>
 
+    <string-array name="tabProfileTitles">
+        <item>Alerts</item>
+        <item>Comments</item>
+    </string-array>
+
+    <string name="title_activity_profile">Profile</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="title_activity_alerts_fragment">AlertsFragment</string>
+
+    <string name="hello_world">Hello Square World!</string>
+    <string name="title_activity_comments_fragment">CommentsFragment</string>
+    <string name="comments">Your Comments</string>
+    <string name="alerts">Alerts</string>
+    <string name="current_alerts">Current Alerts</string>
+    <string name="suggested_alerts">Suggested Alerts</string>
+    <string name="artifical_intelligence">Artifical Intelligence</string>
+
+    <string name="banner_notifications">Banner Notifications</string>
+    <string name="badge_notifications">Badge Notifications</string>
+    <string name="sound_notifications">Sound Notifications</string>
+    <string name="title_activity_local">Map</string>
+    <string name="i_find_it_funny_how_sugar_and_alcohol_is_more_essential_than_books">I find it funny how sugar and alcohol is more \'essential\' than books</string>
+    <string name="commented_on">commented on</string>
+    <string name="said">said</string>
 </resources>

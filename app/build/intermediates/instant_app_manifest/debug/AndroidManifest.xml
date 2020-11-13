@@ -32,6 +32,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.plasticglassses.esetnews.ProfileActivity" />
         <activity android:name="com.plasticglassses.esetnews.SignUpActivity" />
         <activity android:name="com.plasticglassses.esetnews.LoginActivity" >
             <intent-filter>
@@ -40,8 +41,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.plasticglassses.esetnews.MainActivity" >
-        </activity>
+        <activity android:name="com.plasticglassses.esetnews.MainActivity" />
 
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"

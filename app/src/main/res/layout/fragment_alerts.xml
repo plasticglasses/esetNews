@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AlertsFragment">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+        android:text="@string/alerts" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:text="@string/current_alerts" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/AI"
+                android:text="AI"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                app:chipBackgroundColor="@color/colorAccent"
+                app:closeIconVisible="true"
+                />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/VR"
+                android:text="VR"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                app:chipBackgroundColor="@color/colorAccent"
+                app:closeIconVisible="true"/>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/NASA"
+                android:text="NASA"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                app:chipBackgroundColor="@color/colorAccent"
+                app:closeIconVisible="true"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/Unity"
+                android:text="Unity"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                app:chipBackgroundColor="@color/colorAccent"
+                app:closeIconVisible="true"/>
+        </com.google.android.material.chip.ChipGroup>
+
+    <TextView
+         android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:text="@string/suggested_alerts" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/HCI"
+                android:text="HCI"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                app:chipBackgroundColor="@color/colorAccent"
+                android:checkable="true" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/CERN"
+                android:text="CERN"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                app:chipBackgroundColor="@color/colorAccent"
+                android:checkable="true"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/ClimateChange"
+                android:text="Climate Change"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                app:chipBackgroundColor="@color/colorAccent"
+                android:checkable="true"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/Plastic"
+                android:text="Plastic"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                app:chipBackgroundColor="@color/colorAccent"
+                android:checkable="true"/>
+        </com.google.android.material.chip.ChipGroup>
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/notifications_banner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/banner_notifications" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/notifications_badge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/badge_notifications" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/notifications_sound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sound_notifications" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.core.widget.NestedScrollView>

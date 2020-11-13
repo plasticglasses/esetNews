@@ -78,6 +78,8 @@ class MainActivity : AppCompatActivity() {
             R.id.profile -> {
                 val snackbar = Snackbar.make(myView, getString(R.string.profile), Snackbar.LENGTH_SHORT)
                 snackbar.show()
+                val intent = Intent(this, ProfileActivity::class.java)
+                startActivity(intent)
                 return true
             }
             R.id.action_link -> {
