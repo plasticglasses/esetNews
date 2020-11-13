@@ -30,13 +30,10 @@ class NewsAdapter(private val headlineArrayList: MutableList<newsModel>): Recycl
     }
 
 
-    inner
-
-    class ViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView),
+    inner class ViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView),
         View.OnClickListener{
 
-        var imgView=itemView.findViewById<View>(R.id.icon)as ImageView
-        var txtMsg=itemView.findViewById<View>(R.id.firstline)as TextView
+        var txtMsg=itemView.findViewById<View>(R.id.headline)as TextView
 
         init{
             itemView.setOnClickListener(this)
