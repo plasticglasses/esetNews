@@ -9,6 +9,7 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
@@ -35,6 +36,7 @@ class SignUpActivity : AppCompatActivity() {
         super.onStart();
 
         // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseAuth.getInstance().signOut()
         val currentUser = auth.currentUser
         if (currentUser != null) {
             updateUI(currentUser)
@@ -54,6 +56,7 @@ class SignUpActivity : AppCompatActivity() {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG, "createUserWithEmail:success")
                     val user = auth.currentUser
+                    createFirestoreDocument(user)
                     updateUI(user)
                 } else {
                         // If sign in fails, display a message to the user.
@@ -61,8 +64,35 @@ class SignUpActivity : AppCompatActivity() {
                     val snackbar3 = Snackbar.make(findViewById(android.R.id.content), "Authentication Failed.", Snackbar.LENGTH_SHORT).show()
                 }
             }
-
     }
+
+    private fun createFirestoreDocument(thisUser: FirebaseUser?) {
+        val username = findViewById<EditText>(R.id.usernameText)
+        val alertsList = arrayListOf<String>()
+        val commentsList: ArrayList<String> = arrayListOf<String>()
+        //ad new record to firebase
+        //firestore
+        val db = Firebase.firestore
+
+        // Create a new user
+        val user = hashMapOf(
+            "authUserID" to thisUser!!.uid,
+            "username" to username.text.toString(),
+            "alerts" to alertsList,
+            "comments" to commentsList
+        )
+
+        //Add a new document with a generated ID
+        db.collection("users")
+            .add(user)
+            .addOnSuccessListener { documentReference ->
+                Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+            }
+            .addOnFailureListener { e ->
+                Log.w(TAG, "Error adding document", e)
+            }
+    }
+
 
     /*
     Returns true if passwords are identical and false otherwise
@@ -93,12 +123,11 @@ class SignUpActivity : AppCompatActivity() {
     fun clickLoginButton(view: View) {
         val email = findViewById<EditText>(R.id.signupEmail)
         val password = findViewById<EditText>(R.id.signUpPassword)
-        val username = findViewById<EditText>(R.id.usernameText)
-        val alertsList = arrayListOf<String>()
-        val commentsList = arrayListOf<String>()
 
+        //validation
         if (validPass() && validPassLength(password.text.toString())) {
             if (validEmail(email.text.toString())) {
+                //complete firebase operations
                 createUser(email.text.toString(), password.text.toString())
             }else{
                 Snackbar.make(findViewById(android.R.id.content), "Invalid Email, Authentication Failed.", Snackbar.LENGTH_SHORT).show()
@@ -109,32 +138,8 @@ class SignUpActivity : AppCompatActivity() {
             password.highlightColor
         }
 
-        //ad new record to firebase
-        //firestore
-        val db = Firebase.firestore
-
-        // Create a new user with a first and last name
-        val user = hashMapOf(
-            "username" to username.text.toString(),
-            "email" to email.text.toString(),
-            "alerts" to alertsList,
-            "comments" to commentsList
-        )
-
- //Add a new document with a generated ID
-        db.collection("users")
-            .add(user)
-            .addOnSuccessListener { documentReference ->
-                Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
-            }
-            .addOnFailureListener { e ->
-                Log.w(TAG, "Error adding document", e)
-            }
-
-    }
+   }
 
 }
 
-private fun String.contains(s: String, c: Char) {
 
-}
