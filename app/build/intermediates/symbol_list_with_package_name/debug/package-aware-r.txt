@@ -2064,6 +2064,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id usernameText
 id view_offset_helper
 id visible
 id wide

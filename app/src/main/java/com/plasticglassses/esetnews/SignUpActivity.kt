@@ -11,6 +11,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_sign_up.*
 
@@ -92,6 +93,9 @@ class SignUpActivity : AppCompatActivity() {
     fun clickLoginButton(view: View) {
         val email = findViewById<EditText>(R.id.signupEmail)
         val password = findViewById<EditText>(R.id.signUpPassword)
+        val username = findViewById<EditText>(R.id.usernameText)
+        val alertsList = arrayListOf<String>()
+        val commentsList = arrayListOf<String>()
 
         if (validPass() && validPassLength(password.text.toString())) {
             if (validEmail(email.text.toString())) {
@@ -104,9 +108,30 @@ class SignUpActivity : AppCompatActivity() {
             //make text boxes red animate
             password.highlightColor
         }
+
+        //ad new record to firebase
+        //firestore
+        val db = Firebase.firestore
+
+        // Create a new user with a first and last name
+        val user = hashMapOf(
+            "username" to username.text.toString(),
+            "email" to email.text.toString(),
+            "alerts" to alertsList,
+            "comments" to commentsList
+        )
+
+ //Add a new document with a generated ID
+        db.collection("users")
+            .add(user)
+            .addOnSuccessListener { documentReference ->
+                Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+            }
+            .addOnFailureListener { e ->
+                Log.w(TAG, "Error adding document", e)
+            }
+
     }
-
-
 
 }
 
