@@ -1,18 +1,11 @@
 package com.plasticglassses.esetnews
 
-class newsModel(headline: String, urlToImage: String, author: String, publishedAt: String
-) {
+class newsModel() {
+
     private var headline: String = ""
     private var headlineImg: String = ""
     private var timestamp: String = ""
     private var publisher: String = ""
-
-    fun newsModel(headline: String, headlineImg: String, publisher: String, timestamp: String){
-        setHeadline(headline)
-        setHeadlineImg(headlineImg)
-        setPublisher(publisher)
-        setTimestamp(timestamp)
-    }
 
     fun getHeadline(): String{
         return headline.toString()

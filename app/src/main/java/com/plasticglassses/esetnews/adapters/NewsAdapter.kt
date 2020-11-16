@@ -25,6 +25,9 @@ class NewsAdapter(private val headlineArrayList: MutableList<newsModel>): Recycl
         holder.txtMsg.text=info.getHeadline()
     }
 
+
+
+
     override fun getItemCount():Int{
         return headlineArrayList.size
     }

@@ -9,6 +9,8 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.dfl.newsapi.NewsApiRepository
 import com.dfl.newsapi.enums.Category
@@ -17,6 +19,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.auth.FirebaseAuth
+import com.plasticglassses.esetnews.adapters.NewsAdapter
 //import com.koushikdutta.ion.Ion
 import com.plasticglassses.esetnews.adapters.TabAdapter
 import io.reactivex.schedulers.Schedulers
@@ -52,18 +55,36 @@ class MainActivity : AppCompatActivity() {
         }).attach()
 
 
-
+        setContentView(R.layout.fragment_home)
         //home fragment recycler view
+        val headlineArrayList = populateList()
 
-       // val recyclerHeadlineView = findViewById<View>(R.id.headline_recycler_view) as RecyclerView
-//        val headlineArrayList = genNews(recyclerHeadlineView)
-//        val headlineLayoutManager = LinearLayoutManager(this)
-//
-//        recyclerHeadlineView.layoutManager = headlineLayoutManager
-//        val headlineAdapter = NewsAdapter(headlineArrayList)
-//        recyclerHeadlineView.adapter = headlineAdapter
+        val recyclerHeadlineView = findViewById<View>(R.id.headline_recycler_view) as RecyclerView
+        //val headlineArrayList = genNews(recyclerHeadlineView)
+        val headlineLayoutManager = LinearLayoutManager(this)
+        recyclerHeadlineView.layoutManager = headlineLayoutManager
+        val headlineAdapter = NewsAdapter(headlineArrayList)
+        recyclerHeadlineView.adapter = headlineAdapter
 
 
+    }
+
+    private fun populateList(): MutableList<newsModel> {
+        val list = ArrayList<newsModel>()
+        val myHeadlineImgList = arrayOf("Liz", "name", "example")
+        val myHeadlineList = arrayOf("Liz", "name1", "example2")
+        val myPublishersList = arrayOf("ET", "ETt", "ETs")
+        val myTimestampList = arrayOf("12:30", "12:30:59", "12:31")
+
+        for (i in 0..2){
+            val thisModel = newsModel()
+            thisModel.setHeadline(myHeadlineList[i].toString())
+            thisModel.setHeadlineImg(myHeadlineImgList[i].toString())
+            thisModel.setTimestamp(myTimestampList[i].toString())
+            thisModel.setPublisher(myPublishersList[i].toString())
+            list.add(thisModel)
+        }
+    return list
     }
 
 
@@ -109,30 +130,30 @@ class MainActivity : AppCompatActivity() {
     /*
     on science frgament
      */
-    fun genNews(view: View): MutableList<newsModel> {
-        val list: MutableList<newsModel> = ArrayList()
-
-        val headlineTextBox = findViewById<TextView>(R.id.scienceHeadlineTextBox)
-
-        //get text box on science fragment and add in a new headline
-        newsApiRepository.getTopHeadlines(category = Category.GENERAL, country = Country.US, q = "trump", pageSize = 20, page = 1)
-            .subscribeOn(Schedulers.io())
-            .toFlowable()
-            .flatMapIterable { articles -> articles.articles }
-            .subscribe({ article -> Log.d("getTopHead CC article", article.title + " " + article.urlToImage + " " + article.author + " " + article.publishedAt)
-
-                val newHeadline = newsModel(article.title, article.urlToImage, article.author, article.publishedAt)
-                list.add(newHeadline)
-
-                headlineTextBox.text = article.title +  article.urlToImage + article.author + article.publishedAt
-
-            },
-                { t -> Log.d("getTopHeadlines error", t.message!!) })
-        val newHeadline = newsModel("test", "test","test", "test")
-        list.add(newHeadline)
-        Log.d("list", list.toString());
-        Log.d("listing eadline", "headline" + list[0].getHeadline());
-
-        return list
-    }
+//    fun genNews(view: View): MutableList<newsModel> {
+//        val list: MutableList<newsModel> = ArrayList()
+//
+//        val headlineTextBox = findViewById<TextView>(R.id.scienceHeadlineTextBox)
+//
+//        //get text box on science fragment and add in a new headline
+//        newsApiRepository.getTopHeadlines(category = Category.GENERAL, country = Country.US, q = "trump", pageSize = 20, page = 1)
+//            .subscribeOn(Schedulers.io())
+//            .toFlowable()
+//            .flatMapIterable { articles -> articles.articles }
+//            .subscribe({ article -> Log.d("getTopHead CC article", article.title + " " + article.urlToImage + " " + article.author + " " + article.publishedAt)
+//
+//                val newHeadline = newsModel()
+//                list.add(newHeadline)
+//
+//                headlineTextBox.text = article.title +  article.urlToImage + article.author + article.publishedAt
+//
+//            },
+//                { t -> Log.d("getTopHeadlines error", t.message!!) })
+//        val newHeadline = newsModel("test", "test","test", "test")
+//        list.add(newHeadline)
+//        Log.d("list", list.toString());
+//        Log.d("listing eadline", "headline" + list[0].getHeadline());
+//
+//        return list
+//    }
 }

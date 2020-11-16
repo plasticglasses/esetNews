@@ -32,17 +32,18 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.plasticglassses.esetnews.ProfileActivity" />
-        <activity android:name="com.plasticglassses.esetnews.SignUpActivity" >
+        <activity android:name="com.plasticglassses.esetnews.ProfileActivity" >
+        </activity>
+        <activity android:name="com.plasticglassses.esetnews.SignUpActivity" />
+        <activity android:name="com.plasticglassses.esetnews.LoginActivity" >
+        </activity>
+        <activity android:name="com.plasticglassses.esetnews.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.plasticglassses.esetnews.LoginActivity" >
-        </activity>
-        <activity android:name="com.plasticglassses.esetnews.MainActivity" />
 
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"
