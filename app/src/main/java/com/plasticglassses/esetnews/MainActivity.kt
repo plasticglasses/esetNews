@@ -51,6 +51,8 @@ class MainActivity : AppCompatActivity() {
             }
         }).attach()
 
+
+
         //home fragment recycler view
 
        // val recyclerHeadlineView = findViewById<View>(R.id.headline_recycler_view) as RecyclerView
