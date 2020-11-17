@@ -28,33 +28,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/alertChipGroup">
 
-            <com.google.android.material.chip.Chip
-                android:id="@+id/AI"
-                android:text="AI"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                style="@style/ChipStyle"
-
-                />
-            <com.google.android.material.chip.Chip
-                android:id="@+id/VR"
-                android:text="VR"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                style="@style/ChipStyle"/>
-            <com.google.android.material.chip.Chip
-                android:id="@+id/NASA"
-                android:text="NASA"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                style="@style/ChipStyle"/>
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/Unity"
-                android:text="Unity"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                style="@style/ChipStyle"/>
         </com.google.android.material.chip.ChipGroup>
 
     <TextView
@@ -94,6 +67,26 @@
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 style = "@style/SuggestedChipStyle"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/VR"
+                android:text="VR"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                style="@style/SuggestedChipStyle"/>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/NASA"
+                android:text="NASA"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                style="@style/SuggestedChipStyle"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/Unity"
+                android:text="Unity"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                style="@style/SuggestedChipStyle"/>
         </com.google.android.material.chip.ChipGroup>
 
         <TextView

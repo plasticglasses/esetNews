@@ -52,6 +52,7 @@ class AlertsFragment : Fragment() {
         inflater: LayoutInflater,
         alertChipGroup: ChipGroup?
     ) {
+
         var thisUid = ""
         //get users alerts from firebase
         //get user id of current user logged in
@@ -61,23 +62,23 @@ class AlertsFragment : Fragment() {
             Log.d(TAG, ("success we got the rabbi"+ thisUid))
 
             // User is signed in
-        } else {
-            Log.d(TAG, "no rabbi")
-            // No user is signed in
         }
 
-                //get the list of alerts fhat users wants from firebase
-                //get userid of the firestore document
+        //go to firebase and get users information
                 val db = Firebase.firestore
                 db.collection("users")
                     .get()
                     .addOnSuccessListener { result ->
+                        //for each user in firestore
                         for (document in result) {
+                            //get userid of the firestore document
                             val value = document.getString("authUserID")
+                            //check that its correct user
                             if (value == thisUid) {
-                                Log.d(TAG, "Success, we have found the doucment relating to this user" + value)
+                                //get the list of alerts that users wants from firebase
                                 val username = document.getString("username")
                                 var usersAlerts = document["alerts"] as List<String>?
+                                //populate alerts fragment with chips of alerts
                                 if (usersAlerts != null) {
                                     for (alert in usersAlerts){
                                         addAlert(rootView, inflater, alertChipGroup, alert.toString())
