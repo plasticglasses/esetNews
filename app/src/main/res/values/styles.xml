@@ -19,6 +19,7 @@
     <style name="ChipStyle">
         <item name="chipBackgroundColor">@color/colorAccent</item>
         <item name="closeIconVisible">true</item>
+<!--        <item name="android:onClick">removeChip</item>-->
     </style>
 
     <style name="SuggestedChipStyle">

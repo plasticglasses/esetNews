@@ -67,7 +67,12 @@ class ProfileActivity : AppCompatActivity() {
     private fun getAlerts() {
 
         val db = Firebase.firestore
-
+        db.collection("users")
+            .get()
+            .addOnSuccessListener { result ->
+                for (document in result) {
+                    Log.d(TAG, "${document.id} => ${document.data}")
+                }
 //        val user = FirebaseAuth.getInstance().currentUser
 
 //        Log.d(TAG, user.toString())
@@ -94,12 +99,12 @@ class ProfileActivity : AppCompatActivity() {
 //                Log.w(TAG, "Error getting documents.", exception)
 //            }
 
-        db.collection("users")
-            .get()
-            .addOnSuccessListener { result ->
-                for (document in result) {
-                    Log.d(TAG, "${document.id} => ${document.data}")
-                }
+//        db.collection("users")
+//            .get()
+//            .addOnSuccessListener { result ->
+//                for (document in result) {
+//                    Log.d(TAG, "${document.id} => ${document.data}")
+//                }
 
 //            }
 //            .addOnFailureListener { exception ->
@@ -107,7 +112,17 @@ class ProfileActivity : AppCompatActivity() {
 //            }
             }
     }
-
+//    fun removeChip(view: View) {
+//        val currentAlertGroup = view.findViewById<ChipGroup>(R.id.alertChipGroup)
+//        val suggestedAlertGroup = view.findViewById<ChipGroup>(R.id.suggestedAlertsChipGroup)
+//
+//        val chip = layoutInflater.inflate(R.layout.suggested_chip_layout, suggestedAlertGroup, false) as Chip
+//
+//        chip.text = "find way to keep text"
+//
+//        Snackbar.make(view, "Alert removed", Snackbar.LENGTH_SHORT).show()
+//        suggestedAlertGroup!!.addView(chip)
+//    }
 }
 
 

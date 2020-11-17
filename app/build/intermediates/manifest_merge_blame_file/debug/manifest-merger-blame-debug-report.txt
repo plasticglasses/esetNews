@@ -53,25 +53,25 @@
 33        android:theme="@style/AppTheme" >
 33-->C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:13:9-40
 34        <activity android:name="com.plasticglassses.esetnews.ProfileActivity" >
-34-->C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:14:9-19:24
+34-->C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:14:9-15:24
 34-->C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:14:19-50
-35            <intent-filter>
-35-->C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:14:51-18:25
-36                <action android:name="android.intent.action.MAIN" />
-36-->C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:15:13-65
-36-->C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:15:21-62
-37
-38                <category android:name="android.intent.category.LAUNCHER" />
-38-->C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:17:13-73
-38-->C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:17:23-70
-39            </intent-filter>
-40        </activity>
-41        <activity android:name="com.plasticglassses.esetnews.SignUpActivity" />
-41-->C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:20:9-52
-41-->C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:20:19-49
-42        <activity android:name="com.plasticglassses.esetnews.LoginActivity" >
-42-->C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:21:9-22:20
-42-->C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:21:19-48
+35        </activity>
+36        <activity android:name="com.plasticglassses.esetnews.SignUpActivity" />
+36-->C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:16:9-52
+36-->C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:16:19-49
+37        <activity android:name="com.plasticglassses.esetnews.LoginActivity" >
+37-->C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:17:9-22:20
+37-->C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:17:19-48
+38            <intent-filter>
+38-->C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:17:49-21:25
+39                <action android:name="android.intent.action.MAIN" />
+39-->C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:18:13-65
+39-->C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:18:21-62
+40
+41                <category android:name="android.intent.category.LAUNCHER" />
+41-->C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:20:13-73
+41-->C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:20:23-70
+42            </intent-filter>
 43        </activity>
 44        <activity android:name="com.plasticglassses.esetnews.MainActivity" />
 44-->C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:23:9-59

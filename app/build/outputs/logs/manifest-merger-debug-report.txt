@@ -183,27 +183,27 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\li
 	android:theme
 		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:13:9-40
 activity#com.plasticglassses.esetnews.ProfileActivity
-ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:14:9-19:24
+ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:14:9-15:24
 	android:name
 		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:14:19-50
-intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:14:51-18:25
-action#android.intent.action.MAIN
-ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:15:13-65
-	android:name
-		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:15:21-62
-category#android.intent.category.LAUNCHER
-ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:17:13-73
-	android:name
-		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:17:23-70
 activity#com.plasticglassses.esetnews.SignUpActivity
-ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:20:9-52
+ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:16:9-52
 	android:name
-		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:20:19-49
+		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:16:19-49
 activity#com.plasticglassses.esetnews.LoginActivity
-ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:21:9-22:20
+ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:17:9-22:20
 	android:name
-		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:21:19-48
+		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:17:19-48
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:17:49-21:25
+action#android.intent.action.MAIN
+ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:18:13-65
+	android:name
+		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:18:21-62
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:20:13-73
+	android:name
+		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:20:23-70
 activity#com.plasticglassses.esetnews.MainActivity
 ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:23:9-59
 	android:name

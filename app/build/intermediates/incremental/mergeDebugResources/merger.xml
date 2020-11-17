@@ -6059,6 +6059,7 @@
     </style><style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/><style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/><style name="ChipStyle">
         <item name="chipBackgroundColor">@color/colorAccent</item>
         <item name="closeIconVisible">true</item>
+
     </style><style name="SuggestedChipStyle">
         <item name="chipBackgroundColor">@color/colorAccent</item>
         <item name="android:checkable">true</item>
