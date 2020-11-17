@@ -54,7 +54,9 @@ class MainActivity : AppCompatActivity() {
             }
         }).attach()
 
-        generateNewNews()
+        generateGeneralNews()
+        generateScienceNews()
+        generateTechNews()
 
         setContentView(R.layout.fragment_home)
         var headlineArrayList = ArrayList<newsModel>()
@@ -78,16 +80,52 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun generateNewNews(): ArrayList<newsModel> {
+    private fun generateGeneralNews(): ArrayList<newsModel> {
         val headlineArrayList = ArrayList<newsModel>()
         //get general news for homepage
-        newsApiRepository.getTopHeadlines(category = Category.GENERAL, country = Country.US, q = "trump", pageSize = 20, page = 1)
+        newsApiRepository.getTopHeadlines(category = Category.GENERAL, country = Country.GB, q = "", pageSize = 20, page = 1)
             .subscribeOn(Schedulers.io())
             .toFlowable()
             .flatMapIterable { articles -> articles.articles }
             .subscribe({ article -> Log.d("getTopHead CC article", article.title + " " + article.urlToImage + " " + article.author + " " + article.publishedAt)
 
-                //add to top_headline json
+                //if here since last updated time add to top_headline json
+
+            },
+                { t -> Log.d("getTopHeadlines error", t.message!!) })
+
+        return headlineArrayList
+
+    }
+
+    private fun generateScienceNews(): ArrayList<newsModel> {
+        val headlineArrayList = ArrayList<newsModel>()
+        //get general news for homepage
+        newsApiRepository.getTopHeadlines(category = Category.SCIENCE, country = Country.GB, q = "", pageSize = 20, page = 1)
+            .subscribeOn(Schedulers.io())
+            .toFlowable()
+            .flatMapIterable { articles -> articles.articles }
+            .subscribe({ article -> Log.d("getTopHead Science article", article.title + " " + article.urlToImage + " " + article.author + " " + article.publishedAt)
+
+                //if here since last updated time add to top_headline json
+
+            },
+                { t -> Log.d("getTopHeadlines error", t.message!!) })
+
+        return headlineArrayList
+
+    }
+
+    private fun generateTechNews(): ArrayList<newsModel> {
+        val headlineArrayList = ArrayList<newsModel>()
+        //get general news for homepage
+        newsApiRepository.getTopHeadlines(category = Category.TECHNOLOGY, country = Country.GB, q = "", pageSize = 20, page = 1)
+            .subscribeOn(Schedulers.io())
+            .toFlowable()
+            .flatMapIterable { articles -> articles.articles }
+            .subscribe({ article -> Log.d("getTopHead Technology article", article.title + " " + article.urlToImage + " " + article.author + " " + article.publishedAt)
+
+                //if here since last updated time add to top_headline json
 
             },
                 { t -> Log.d("getTopHeadlines error", t.message!!) })
@@ -97,7 +135,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun populateList(): MutableList<newsModel> {
+    private fun populateList(): ArrayList<newsModel> {
         val list = ArrayList<newsModel>()
         val myHeadlineList = arrayOf("Liz", "name1", "example2")
         val myHeadlineImgList = arrayOf("Liz", "name", "example")
