@@ -20,4 +20,9 @@
         <item name="chipBackgroundColor">@color/colorAccent</item>
         <item name="closeIconVisible">true</item>
     </style>
+
+    <style name="SuggestedChipStyle">
+        <item name="chipBackgroundColor">@color/colorAccent</item>
+        <item name="android:checkable">true</item>
+    </style>
 </resources>

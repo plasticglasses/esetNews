@@ -73,31 +73,27 @@
                 android:text="HCI"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                app:chipBackgroundColor="@color/colorAccent"
-                android:checkable="true" />
+                style = "@style/SuggestedChipStyle" />
             <com.google.android.material.chip.Chip
                 android:id="@+id/CERN"
                 android:text="CERN"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                app:chipBackgroundColor="@color/colorAccent"
-                android:checkable="true"/>
+                style = "@style/SuggestedChipStyle"/>
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/ClimateChange"
                 android:text="Climate Change"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                app:chipBackgroundColor="@color/colorAccent"
-                android:checkable="true"/>
+                style = "@style/SuggestedChipStyle"/>
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/Plastic"
                 android:text="Plastic"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                app:chipBackgroundColor="@color/colorAccent"
-                android:checkable="true"/>
+                style = "@style/SuggestedChipStyle"/>
         </com.google.android.material.chip.ChipGroup>
 
         <TextView
