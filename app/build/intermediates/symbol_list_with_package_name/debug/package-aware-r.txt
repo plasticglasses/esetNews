@@ -1721,8 +1721,10 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id addAlert
 id adjust_height
 id adjust_width
+id alertChipGroup
 id alertTitle
 id aligned
 id all
@@ -1902,6 +1904,7 @@ id mtrl_picker_title_text
 id multiply
 id navigation_header_container
 id never
+id newAlertText
 id news_pager
 id news_tab_layout
 id news_toolbar
@@ -2006,6 +2009,7 @@ id stop
 id stretch
 id submenuarrow
 id submit_area
+id suggestedAlertsChipGroup
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
@@ -2138,6 +2142,7 @@ layout activity_main
 layout activity_profile
 layout activity_sign_up
 layout card_headline
+layout chip_layout
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -2595,6 +2600,7 @@ style Base_Widget_MaterialComponents_TextView
 style CardView
 style CardView_Dark
 style CardView_Light
+style ChipStyle
 style EmptyTheme
 style MaterialAlertDialog_MaterialComponents
 style MaterialAlertDialog_MaterialComponents_Body_Text

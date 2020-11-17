@@ -25,38 +25,36 @@
 
         <com.google.android.material.chip.ChipGroup
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:id="@+id/alertChipGroup">
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/AI"
                 android:text="AI"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                app:chipBackgroundColor="@color/colorAccent"
-                app:closeIconVisible="true"
+                style="@style/ChipStyle"
+
                 />
             <com.google.android.material.chip.Chip
                 android:id="@+id/VR"
                 android:text="VR"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                app:chipBackgroundColor="@color/colorAccent"
-                app:closeIconVisible="true"/>
+                style="@style/ChipStyle"/>
             <com.google.android.material.chip.Chip
                 android:id="@+id/NASA"
                 android:text="NASA"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                app:chipBackgroundColor="@color/colorAccent"
-                app:closeIconVisible="true"/>
+                style="@style/ChipStyle"/>
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/Unity"
                 android:text="Unity"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                app:chipBackgroundColor="@color/colorAccent"
-                app:closeIconVisible="true"/>
+                style="@style/ChipStyle"/>
         </com.google.android.material.chip.ChipGroup>
 
     <TextView
@@ -67,7 +65,8 @@
 
         <com.google.android.material.chip.ChipGroup
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:id="@+id/suggestedAlertsChipGroup">
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/HCI"
@@ -106,6 +105,27 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/text_margin"
             android:text="Add Alert" />
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter new Alert" />
+
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/newAlertText"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/addAlert"
+            android:text="Add"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
 
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/notifications_banner"
