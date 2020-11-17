@@ -1824,7 +1824,6 @@ id fixed
 id flip
 id floating
 id forever
-id genNewsButton
 id ghost_view
 id ghost_view_holder
 id gone
@@ -1836,6 +1835,8 @@ id groups
 id headline
 id headlineImg
 id headline_recycler_view
+id headline_recycler_view_science
+id headline_recycler_view_tech
 id hideable
 id home
 id homeAsUp
@@ -1951,7 +1952,6 @@ id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
 id scale
-id scienceHeadlineTextBox
 id screen
 id scroll
 id scrollIndicatorDown

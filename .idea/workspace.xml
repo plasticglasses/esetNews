@@ -36,20 +36,52 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex_archive_input_jar_hashes/debug/out" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex_archive_input_jar_hashes/debug/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plasticglassses/esetnews/HomeFragment.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plasticglassses/esetnews/HomeFragment.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plasticglassses/esetnews/LocalFragment.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plasticglassses/esetnews/LocalFragment.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plasticglassses/esetnews/LoginActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plasticglassses/esetnews/LoginActivity.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plasticglassses/esetnews/MainActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plasticglassses/esetnews/MainActivity.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plasticglassses/esetnews/ScienceFragment.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plasticglassses/esetnews/ScienceFragment.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plasticglassses/esetnews/TechFragment.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/plasticglassses/esetnews/TechFragment.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_fragment_home.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_fragment_home.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_fragment_science.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_fragment_science.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/runtime_symbol_list/debug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/runtime_symbol_list/debug/R.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/build-history.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/build-history.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-to-output.tab" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-to-output.tab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-to-output.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-to-output.tab.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.len" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/package-parts.tab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/package-parts.tab.keystream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/package-parts.tab.keystream.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/package-parts.tab.len" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/package-parts.tab.values.at" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/package-parts.tab_i" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/package-parts.tab_i.len" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.len" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/subtypes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/subtypes.tab" afterDir="false" />
@@ -66,12 +98,25 @@
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/id-to-file.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/id-to-file.tab.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/id-to-file.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/id-to-file.tab_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/lookups.tab" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/lookups.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/lookups.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/lookups.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/lookups.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/lookups.tab.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/lookups.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/lookups.tab.len" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/lookups.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/lookups.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/lookups.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/lookups.tab_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/last-build.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/plasticglassses/esetnews/HomeFragment.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/plasticglassses/esetnews/HomeFragment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/plasticglassses/esetnews/LocalFragment.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/plasticglassses/esetnews/LocalFragment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/plasticglassses/esetnews/LoginActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/plasticglassses/esetnews/LoginActivity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/plasticglassses/esetnews/MainActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/plasticglassses/esetnews/MainActivity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/plasticglassses/esetnews/ScienceFragment.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/plasticglassses/esetnews/ScienceFragment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/plasticglassses/esetnews/TechFragment.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/plasticglassses/esetnews/TechFragment.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plasticglassses/esetnews/HomeFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plasticglassses/esetnews/HomeFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plasticglassses/esetnews/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plasticglassses/esetnews/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plasticglassses/esetnews/ScienceFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plasticglassses/esetnews/ScienceFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plasticglassses/esetnews/TechFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plasticglassses/esetnews/TechFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_science.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_science.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_tech.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_tech.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -440,7 +485,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605620616585</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="got recycler view working on home view">
+      <created>1605622561882</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1605622561883</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -460,7 +512,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="designed login.xml, sign up and added navigation functions" />
     <MESSAGE value="got email and password contents from xml to kt" />
     <MESSAGE value="added create user method to sign in form" />
     <MESSAGE value="added validation to password" />
@@ -485,7 +536,8 @@
     <MESSAGE value="got recycler view populating with cards populated with data" />
     <MESSAGE value="added headlie_json file tha holds all headline info" />
     <MESSAGE value="made news queries" />
-    <option name="LAST_COMMIT_MESSAGE" value="made news queries" />
+    <MESSAGE value="got recycler view working on home view" />
+    <option name="LAST_COMMIT_MESSAGE" value="got recycler view working on home view" />
   </component>
   <component name="WindowStateProjectService">
     <state x="586" y="198" key="#Inspections" timestamp="1605181762562">
@@ -537,17 +589,17 @@
     </state>
     <state x="758" y="266" key="AndroidProcessChooserDialog/-1920.0.1536.832/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605526810765" />
     <state x="2678" y="266" key="AndroidProcessChooserDialog/-1920.0.1536.832/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1605265443319" />
-    <state x="946" y="170" key="CommitChangelistDialog2" timestamp="1605620612010">
+    <state x="946" y="170" key="CommitChangelistDialog2" timestamp="1605622557427">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="946" y="170" key="CommitChangelistDialog2/-1920.0.1536.832/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605620612010" />
+    <state x="946" y="170" key="CommitChangelistDialog2/-1920.0.1536.832/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605622557427" />
     <state x="2511" y="46" key="CommitChangelistDialog2/-1920.0.1536.832/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604665363105" />
     <state x="702" y="170" key="CommitChangelistDialog2/-1920.0.1536.832/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605543111207" />
     <state x="4431" y="46" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040/3840.0.1920.1040@3840.0.1920.1040" timestamp="1605029637036" />
-    <state x="740" y="246" key="FileChooserDialogImpl" timestamp="1605267702487">
+    <state x="740" y="246" key="FileChooserDialogImpl" timestamp="1605622699353">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="246" key="FileChooserDialogImpl/-1920.0.1536.832/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605219393973" />
+    <state x="740" y="246" key="FileChooserDialogImpl/-1920.0.1536.832/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605622699353" />
     <state x="2660" y="246" key="FileChooserDialogImpl/-1920.0.1536.832/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604664210028" />
     <state x="740" y="246" key="FileChooserDialogImpl/-1920.0.1536.832/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605267702487" />
     <state x="2660" y="246" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040/3840.0.1920.1040@1920.0.1920.1040" timestamp="1604490961509" />
@@ -555,34 +607,34 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2775" y="366" key="Github.ShareDialog/-1920.0.1536.832/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604663111446" />
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1605622370781">
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1605622504850">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom/-1920.0.1536.832/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605622370781" />
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom/-1920.0.1536.832/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605622504850" />
     <state width="1877" height="281" key="GridCell.Tab.0.bottom/-1920.0.1536.832/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605546076854" />
     <state width="1877" height="281" key="GridCell.Tab.0.bottom/-1920.0.1536.832/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1605266882330" />
     <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040/3840.0.1920.1040@1920.0.1920.1040" timestamp="1604490786824" />
     <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040/3840.0.1920.1040@3840.0.1920.1040" timestamp="1605050290750" />
-    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1605622370780">
+    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1605622504850">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.center/-1920.0.1536.832/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605622370780" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center/-1920.0.1536.832/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605622504850" />
     <state width="1877" height="281" key="GridCell.Tab.0.center/-1920.0.1536.832/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605546076854" />
     <state width="1877" height="281" key="GridCell.Tab.0.center/-1920.0.1536.832/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1605266882329" />
     <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040/3840.0.1920.1040@1920.0.1920.1040" timestamp="1604490786824" />
     <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040/3840.0.1920.1040@3840.0.1920.1040" timestamp="1605050290748" />
-    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1605622370779">
+    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1605622504850">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.left/-1920.0.1536.832/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605622370779" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left/-1920.0.1536.832/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605622504850" />
     <state width="1877" height="281" key="GridCell.Tab.0.left/-1920.0.1536.832/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605546076854" />
     <state width="1877" height="281" key="GridCell.Tab.0.left/-1920.0.1536.832/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1605266882329" />
     <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040/3840.0.1920.1040@1920.0.1920.1040" timestamp="1604490786822" />
     <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040/3840.0.1920.1040@3840.0.1920.1040" timestamp="1605050290744" />
-    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1605622370781">
+    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1605622504850">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.right/-1920.0.1536.832/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605622370781" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right/-1920.0.1536.832/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605622504850" />
     <state width="1877" height="281" key="GridCell.Tab.0.right/-1920.0.1536.832/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605546076854" />
     <state width="1877" height="281" key="GridCell.Tab.0.right/-1920.0.1536.832/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1605266882330" />
     <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040/3840.0.1920.1040@1920.0.1920.1040" timestamp="1604490786824" />
@@ -592,10 +644,10 @@
     </state>
     <state x="2379" y="313" key="SettingsEditor/-1920.0.1536.832/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604663983494" />
     <state x="4299" y="313" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040/3840.0.1920.1040@3840.0.1920.1040" timestamp="1605025195259" />
-    <state x="568" y="201" key="Vcs.Push.Dialog.v2" timestamp="1605619990963">
+    <state x="568" y="201" key="Vcs.Push.Dialog.v2" timestamp="1605622565172">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="568" y="201" key="Vcs.Push.Dialog.v2/-1920.0.1536.832/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605619990963" />
+    <state x="568" y="201" key="Vcs.Push.Dialog.v2/-1920.0.1536.832/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605622565172" />
     <state x="2488" y="201" key="Vcs.Push.Dialog.v2/-1920.0.1536.832/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604665392522" />
     <state x="568" y="201" key="Vcs.Push.Dialog.v2/-1920.0.1536.832/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605543118208" />
     <state x="4408" y="201" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040/3840.0.1920.1040@3840.0.1920.1040" timestamp="1605019607509" />

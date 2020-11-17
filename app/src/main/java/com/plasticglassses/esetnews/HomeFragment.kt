@@ -31,8 +31,6 @@ class HomeFragment : Fragment() {
         var rootView = inflater.inflate(R.layout.fragment_home, container, false)
 
         generateGeneralNews()
-        generateScienceNews()
-        generateTechNews()
 
         //setContentView(R.layout.fragment_home)
         var headlineArrayList = ArrayList<newsModel>()
@@ -74,41 +72,7 @@ class HomeFragment : Fragment() {
 
     }
 
-    private fun generateScienceNews(): ArrayList<newsModel> {
-        val headlineArrayList = ArrayList<newsModel>()
-        //get general news for homepage
-        newsApiRepository.getTopHeadlines(category = Category.SCIENCE, country = Country.GB, q = "", pageSize = 20, page = 1)
-            .subscribeOn(Schedulers.io())
-            .toFlowable()
-            .flatMapIterable { articles -> articles.articles }
-            .subscribe({ article -> Log.d("getTopHead Science article", article.title + " " + article.urlToImage + " " + article.author + " " + article.publishedAt)
 
-                //if here since last updated time add to top_headline json
-
-            },
-                { t -> Log.d("getTopHeadlines error", t.message!!) })
-
-        return headlineArrayList
-
-    }
-
-    private fun generateTechNews(): ArrayList<newsModel> {
-        val headlineArrayList = ArrayList<newsModel>()
-        //get general news for homepage
-        newsApiRepository.getTopHeadlines(category = Category.TECHNOLOGY, country = Country.GB, q = "", pageSize = 20, page = 1)
-            .subscribeOn(Schedulers.io())
-            .toFlowable()
-            .flatMapIterable { articles -> articles.articles }
-            .subscribe({ article -> Log.d("getTopHead Technology article", article.title + " " + article.urlToImage + " " + article.author + " " + article.publishedAt)
-
-                //if here since last updated time add to top_headline json
-
-            },
-                { t -> Log.d("getTopHeadlines error", t.message!!) })
-
-        return headlineArrayList
-
-    }
 
 
     private fun populateList(): ArrayList<newsModel> {

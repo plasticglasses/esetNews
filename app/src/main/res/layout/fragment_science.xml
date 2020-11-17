@@ -3,29 +3,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ScienceFragment">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        tools:context=".ScienceFragment">
 
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Click me to gen new api"
-            android:onClick="genNews"
-            android:id="@+id/genNewsButton"
-            />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/text_margin"
-            android:text="@string/large_text"
-            android:id="@+id/scienceHeadlineTextBox"/>
-
-
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/headline_recycler_view_science"
+                android:layout_width="412dp"
+                android:layout_height="729dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
 
 </androidx.core.widget.NestedScrollView>
