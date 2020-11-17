@@ -27,9 +27,6 @@ class AlertsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        auth = Firebase.auth
-        getUsersAlerts(auth)
-
         var rootView = inflater.inflate(R.layout.fragment_alerts, container, false)
         val alertChipGroup = rootView?.findViewById<ChipGroup>(R.id.alertChipGroup)
 
@@ -37,13 +34,24 @@ class AlertsFragment : Fragment() {
         addAlertButton.setOnClickListener {
             val newAlertText = rootView?.findViewById<EditText>(R.id.newAlertText)
             //add a chip to the alerts fragment
-            addAlert(rootView, inflater, alertChipGroup, newAlertText)
+            if (newAlertText != null) {
+                addAlert(rootView, inflater, alertChipGroup, newAlertText.text.toString())
+                newAlertText.text.clear()
+            }
+
         }
+        auth = Firebase.auth
+        getUsersAlerts(auth, rootView, inflater, alertChipGroup)
 
         return rootView
     }
 
-    private fun getUsersAlerts(auth: FirebaseAuth) {
+    private fun getUsersAlerts(
+        auth: FirebaseAuth,
+        rootView: View,
+        inflater: LayoutInflater,
+        alertChipGroup: ChipGroup?
+    ) {
         var thisUid = ""
         //get users alerts from firebase
         //get user id of current user logged in
@@ -69,7 +77,13 @@ class AlertsFragment : Fragment() {
                             if (value == thisUid) {
                                 Log.d(TAG, "Success, we have found the doucment relating to this user" + value)
                                 val username = document.getString("username")
-                                Log.d(TAG, ("${document.id} => ${document.data} " + username))
+                                var usersAlerts = document["alerts"] as List<String>?
+                                if (usersAlerts != null) {
+                                    for (alert in usersAlerts){
+                                        addAlert(rootView, inflater, alertChipGroup, alert.toString())
+                                    }
+                                }
+                                Log.d(TAG, ("${document.id} => ${document.data} " + usersAlerts))
                             }
                         }
 
@@ -83,16 +97,15 @@ class AlertsFragment : Fragment() {
         rootView: View?,
         inflater: LayoutInflater,
         alertChipGroup: ChipGroup?,
-        newAlertText: EditText?
+        newAlertText: String
     ) {
         val chip = layoutInflater.inflate(R.layout.chip_layout, alertChipGroup, false) as Chip
         if (newAlertText != null) {
-            chip.text = newAlertText.text
+            chip.text = newAlertText
 
             val snackbar = Snackbar.make(rootView!!, "Alert Added", Snackbar.LENGTH_SHORT)
             snackbar.show()
             alertChipGroup!!.addView(chip)
-            newAlertText.text.clear()
 
         }
     }
