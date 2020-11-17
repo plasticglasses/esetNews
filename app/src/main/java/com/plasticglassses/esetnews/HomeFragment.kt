@@ -13,6 +13,7 @@ import com.dfl.newsapi.enums.Category
 import com.dfl.newsapi.enums.Country
 import com.plasticglassses.esetnews.adapters.NewsAdapter
 import io.reactivex.schedulers.Schedulers
+import java.io.File
 
 //import com.dfl.newsapi.NewsApiRepository
 //import com.dfl.newsapi.enums.Category
@@ -30,7 +31,13 @@ class HomeFragment : Fragment() {
 
         var rootView = inflater.inflate(R.layout.fragment_home, container, false)
 
-        generateGeneralNews()
+        //generateGeneralNews()
+//instead of using json ue firestore and create a collection, try this out first using alerts
+//        val fileName = "top-headlines.json"
+//        val path = main.filesDir.absolutePath
+//        var lines = File("C:\\Users\\lizks\\AndroidStudioProjects\\esetNews2\\app\\src\\main\\java\\com\\plasticglassses\\esetnews\\top-headlines.json").readLines()
+////        lines.forEach{line -> Log.d("top-headlines json file", line)}
+
 
         //setContentView(R.layout.fragment_home)
         var headlineArrayList = ArrayList<newsModel>()
