@@ -112,17 +112,7 @@ class ProfileActivity : AppCompatActivity() {
 //            }
             }
     }
-//    fun removeChip(view: View) {
-//        val currentAlertGroup = view.findViewById<ChipGroup>(R.id.alertChipGroup)
-//        val suggestedAlertGroup = view.findViewById<ChipGroup>(R.id.suggestedAlertsChipGroup)
-//
-//        val chip = layoutInflater.inflate(R.layout.suggested_chip_layout, suggestedAlertGroup, false) as Chip
-//
-//        chip.text = "find way to keep text"
-//
-//        Snackbar.make(view, "Alert removed", Snackbar.LENGTH_SHORT).show()
-//        suggestedAlertGroup!!.addView(chip)
-//    }
+
 }
 
 

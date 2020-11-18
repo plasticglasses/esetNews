@@ -28,6 +28,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/alertChipGroup">
 
+
         </com.google.android.material.chip.ChipGroup>
 
     <TextView

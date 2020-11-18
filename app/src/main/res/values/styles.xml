@@ -25,5 +25,6 @@
     <style name="SuggestedChipStyle">
         <item name="chipBackgroundColor">@color/colorAccent</item>
         <item name="android:checkable">true</item>
+<!--        <item name="android:onClick">removeChip</item>-->
     </style>
 </resources>
