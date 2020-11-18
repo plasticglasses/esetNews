@@ -34,6 +34,23 @@ class AlertsFragment : Fragment() {
         var rootView = inflater.inflate(R.layout.fragment_alerts, container, false)
         val alertChipGroup = rootView?.findViewById<ChipGroup>(R.id.alertChipGroup)
 
+        val uID = getUserID(auth)
+        var docID = getFirestoreID(uID, db)
+
+        Log.d(TAG, ("uner the hanging tree " + uID))
+        Log.d(TAG, ("underer the hanging tree " + docID))
+
+        docID = "O4a9R4g9v9nooza5CELd"
+        var usersAlerts = getUsersAlerts(docID)
+        Log.d(TAG, ("underer the hanging tree " + usersAlerts))
+        if (usersAlerts != null) {
+            Log.d(TAG, ("success we got the rabbi " + usersAlerts))
+            for (alert in usersAlerts) {
+                addAlert(rootView, inflater, alertChipGroup, alert.toString())
+            }
+        }
+
+
         val addAlertButton = rootView.findViewById<Button>(R.id.addAlert)
         addAlertButton.setOnClickListener {
             val newAlertText = rootView?.findViewById<EditText>(R.id.newAlertText)
@@ -42,28 +59,12 @@ class AlertsFragment : Fragment() {
                 addAlert(rootView, inflater, alertChipGroup, newAlertText.text.toString())
                 //addAlertToFirebase(newAlertText.text.toString())
                 newAlertText.text.clear()
+                usersAlerts!!.add(newAlertText.text.toString())
+                addAlertToFirebase(usersAlerts!!, db, docID)
+
             }
 
         }
-
-
-        val uID = getUserID(auth)
-        val docID = getFirestoreID(uID, db)
-
-        val alertsList = arrayListOf<String>("Unity")
-        addAlertToFirebase(alertsList, db)
-
-        Log.d(TAG, ("uner the hanging tree " + uID))
-        Log.d(TAG, ("uner the hanging tree " + docID))
-
-//        var usersAlerts = getUsersAlerts(docID)
-//        //var alerts = getUsersAlerts(auth, rootView, inflater, alertChipGroup, uID, docID)
-//        if (usersAlerts != null) {
-//            Log.d(TAG, ("success we got the rabbi " + usersAlerts))
-//            for (alert in usersAlerts) {
-//                addAlert(rootView, inflater, alertChipGroup, alert.toString())
-//            }
-//        }
 
         return rootView
     }
@@ -84,10 +85,10 @@ class AlertsFragment : Fragment() {
                     //check that its correct user
                     if (docID == uID) {
                         fID = document.id
-                        Log.d(TAG, ("found user firestore data" + fID))
                     }
                 }
             }
+        Log.d(TAG, ("found user firestore data" + fID))
         return fID
     }
 
@@ -110,8 +111,7 @@ class AlertsFragment : Fragment() {
     /*
     Add alert to firebase
      */
-    private fun addAlertToFirebase(alertsList: ArrayList<String>, db: FirebaseFirestore) {
-        var docID = "O4a9R4g9v9nooza5CELd"
+    private fun addAlertToFirebase(alertsList: ArrayList<String>, db: FirebaseFirestore, docID: String?) {
         // Update one field, creating the document if it does not already exist.
         val data = hashMapOf("alerts" to alertsList)
 
@@ -124,21 +124,20 @@ class AlertsFragment : Fragment() {
      */
     private fun getUsersAlerts(
         docID: String?
-    ): List<String>? {
-        var usersAlerts = listOf<String>()
+    ): ArrayList<String>? {
+        var usersAlerts = arrayListOf<String>()
         val db = Firebase.firestore
         db.collection("users").document(docID!!)
             .get()
             .addOnSuccessListener { result ->
                 //val username = result.getString("username")
-                usersAlerts = (result["alerts"] as List<String>?)!!
+                usersAlerts = (result["alerts"] as ArrayList<String>)
                 //populate alerts fragment with chips of alerts
                 Log.d(TAG, ("${result.id} => ${result.data} " +usersAlerts))
             }
         return usersAlerts
     }
-
-
+    
     private fun addAlert(
         rootView: View?,
         inflater: LayoutInflater,
