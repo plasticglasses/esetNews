@@ -35,21 +35,17 @@ class AlertsFragment : Fragment() {
         val alertChipGroup = rootView?.findViewById<ChipGroup>(R.id.alertChipGroup)
 
         val uID = getUserID(auth)
-        var docID = getFirestoreID(uID, db)
-
-        Log.d(TAG, ("uner the hanging tree " + uID))
-        Log.d(TAG, ("underer the hanging tree " + docID))
-
-        docID = "O4a9R4g9v9nooza5CELd"
-        var usersAlerts = getUsersAlerts(docID)
-        Log.d(TAG, ("underer the hanging tree " + usersAlerts))
-        if (usersAlerts != null) {
-            Log.d(TAG, ("success we got the rabbi " + usersAlerts))
-            for (alert in usersAlerts) {
-                addAlert(rootView, inflater, alertChipGroup, alert.toString())
+        var docID =""
+        getFirestoreID(uID, db) { result ->
+            Log.d(TAG, ("underer the hanging treeimg " + result))
+            var usersAlerts = getUsersAlerts(result)
+            if (usersAlerts != null) {
+                Log.d(TAG, ("success we got the rabbi " + usersAlerts))
+                for (alert in usersAlerts) {
+                    addAlert(rootView, inflater, alertChipGroup, alert.toString())
+                }
             }
-        }
-
+            }
 
         val addAlertButton = rootView.findViewById<Button>(R.id.addAlert)
         addAlertButton.setOnClickListener {
@@ -59,8 +55,8 @@ class AlertsFragment : Fragment() {
                 addAlert(rootView, inflater, alertChipGroup, newAlertText.text.toString())
                 //addAlertToFirebase(newAlertText.text.toString())
                 newAlertText.text.clear()
-                usersAlerts!!.add(newAlertText.text.toString())
-                addAlertToFirebase(usersAlerts!!, db, docID)
+//                usersAlerts!!.add(newAlertText.text.toString())
+                //addAlertToFirebase(usersAlerts!!, db, docID)
 
             }
 
@@ -72,7 +68,7 @@ class AlertsFragment : Fragment() {
     /*
     Get the id of the document which has the same authUserID sa the surrent loged in user
      */
-    private fun getFirestoreID(uID: String, db: FirebaseFirestore): String {
+    private fun getFirestoreID(uID: String, db: FirebaseFirestore, callback:(String) -> Unit): String {
         var fID = ""
 
         db.collection("users")
@@ -85,11 +81,16 @@ class AlertsFragment : Fragment() {
                     //check that its correct user
                     if (docID == uID) {
                         fID = document.id
+                        callback.invoke(fID)
                     }
                 }
             }
-        Log.d(TAG, ("found user firestore data" + fID))
+
         return fID
+    }
+
+    fun foo(){
+
     }
 
     /*
