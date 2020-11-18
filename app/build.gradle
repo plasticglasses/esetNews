@@ -49,6 +49,10 @@ dependencies {
     implementation 'com.github.dfloureiro:news-api-kotlin:v2.1' //news api
     implementation 'androidx.cardview:cardview:1.0.0'
 
+    //use images from url
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
     // Import the BoM for the Firebase platform
     implementation platform('com.google.firebase:firebase-bom:26.1.0')
 

@@ -1,18 +1,18 @@
 package com.plasticglassses.esetnews.adapters
 
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.graphics.drawable.Drawable
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
+import com.plasticglassses.esetnews.HomeFragment
+import com.plasticglassses.esetnews.R
 import com.plasticglassses.esetnews.newsModel
-import java.io.InputStream
-import java.net.URL
+import java.security.AccessController.getContext
 
 
 class NewsAdapter(private val headlineArrayList: MutableList<newsModel>): RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
@@ -27,20 +27,20 @@ class NewsAdapter(private val headlineArrayList: MutableList<newsModel>): Recycl
     override fun onBindViewHolder(holder:ViewHolder,position:Int){
         val info=headlineArrayList[position]
 
+
+
+
         holder.txtMsg.text=info.getHeadline()
         holder.headlineTimestamp.text = info.getTimestamp()
         holder.author.text = info.getPublisher()
-
-        Glide.with(this).load(URL_TO_IMAGE).into(imageView);
-        val bmp: Bitmap
-
-        val imageUrl = info.getHeadlineImg()
-        val `in` = URL(imageUrl).openStream()
-
-        bmp = BitmapFactory.decodeStream(`in`)
-
-        val img_results_experience = view.findViewById(R.id.img_results_experience)
-        img_id.setImageBitmap(bmp)
+        //holder.headlineImg.setImageDrawable(info.getHeadlineImg())
+        if (info.getHeadlineImg() !== null) {
+            Glide.with(holder.headlineImg.getContext())
+                .load(info.getHeadlineImg())
+                .into(holder.headlineImg)
+        } else {
+            holder.headlineImg.setImageResource(R.drawable.ic_launcher_background)
+        }
     }
 
 
@@ -70,15 +70,8 @@ class NewsAdapter(private val headlineArrayList: MutableList<newsModel>): Recycl
 
     }
 
-    fun LoadImageFromWebOperations(url: String?): Drawable? {
-        return try {
-            val `is`: InputStream = URL(url).getContent() as InputStream
-            Drawable.createFromStream(`is`, "src name")
-        } catch (e: Exception) {
-            null
-        }
-    }
 }
+
 
 
 
