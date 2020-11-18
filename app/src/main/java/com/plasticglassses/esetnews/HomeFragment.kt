@@ -33,7 +33,7 @@ class HomeFragment : Fragment() {
         val db = Firebase.firestore
         var rootView = inflater.inflate(R.layout.fragment_home, container, false)
 
-        generateGeneralNews(db)
+        //generateGeneralNews(db)
 //instead of using json ue firestore and create a collection, try this out first using alerts
 //        val fileName = "top-headlines.json"
 //        val path = main.filesDir.absolutePath
@@ -45,20 +45,25 @@ class HomeFragment : Fragment() {
         var headlineArrayList = ArrayList<newsModel>()
         //get news
 
-        headlineArrayList = populateList(db)
+//        headlineArrayList = populateList(db)
+
+        populateList(db){headlineArrayList ->
+            Log.d("mylist", headlineArrayList.toString())
+            val recyclerHeadlineView = rootView.findViewById<View>(R.id.headline_recycler_view) as RecyclerView
+            //val headlineArrayList = genNews(recyclerHeadlineView)
+            val headlineLayoutManager = LinearLayoutManager(activity)
+            recyclerHeadlineView.layoutManager = headlineLayoutManager
+            val headlineAdapter = NewsAdapter(headlineArrayList)
+            recyclerHeadlineView.adapter = headlineAdapter
+        }
         //get text box on science fragment and add in a new headline
 
-        Log.d("mylist", headlineArrayList.toString())
+
 
         //home fragment recycler view
         //val headlineArrayList = populateList(myHeadlinelist, myImglist, myAuthorlist, myTimestamplist)
 
-        val recyclerHeadlineView = rootView.findViewById<View>(R.id.headline_recycler_view) as RecyclerView
-        //val headlineArrayList = genNews(recyclerHeadlineView)
-        val headlineLayoutManager = LinearLayoutManager(activity)
-        recyclerHeadlineView.layoutManager = headlineLayoutManager
-        val headlineAdapter = NewsAdapter(headlineArrayList)
-        recyclerHeadlineView.adapter = headlineAdapter
+
 
         return rootView
     }
@@ -86,12 +91,13 @@ class HomeFragment : Fragment() {
                             //if this article is more recent that the last batch then update
 
 
-                            if (article.publishedAt > "2020-11-18T16:31:00Z"){
+                            if (article.publishedAt > "2020-11-18T19:16:00Z"){
                                 val headline = hashMapOf(
                                 "headline" to article.title,
                                 "image" to article.urlToImage,
                                 "author" to article.author,
-                                "timestamp" to article.publishedAt
+                                "timestamp" to article.publishedAt,
+                                "comments" to arrayListOf<String>()
                                 )
 
                                 db.collection("general_headlines").document()
@@ -115,38 +121,54 @@ class HomeFragment : Fragment() {
 
     }
 
-    private fun populateList(db: FirebaseFirestore): ArrayList<newsModel> {
+    private fun populateList(db: FirebaseFirestore, callback: (ArrayList<newsModel>) -> Unit) {
         val list = ArrayList<newsModel>()
+        val myHeadlineList = arrayListOf<String>("Liz")
+        val myHeadlineImgList = arrayListOf<String>("name")
+        val myPublishersList = arrayListOf<String>("ET")
+        val myTimestampList = arrayListOf<String>("12:30")
+        db.collection("general_headlines").get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    if (document != null) {
+                        var headline = document.get("headline")
+                        Log.d("POPULATE LIST", "DocumentSnapshot data: " + headline)
 
-        val docRef = db.collection("cities").document("SF")
-        docRef.get()
-            .addOnSuccessListener { document ->
-                if (document != null) {
-                    Log.d(TAG, "DocumentSnapshot data: ${document.data}")
-                } else {
-                    Log.d(TAG, "No such document")
+                        val thisModel = newsModel()
+                        thisModel.setHeadline(headline.toString())
+                        thisModel.setHeadlineImg(document.get("image").toString())
+                        thisModel.setTimestamp(document.get("timestamp").toString())
+                        thisModel.setPublisher(document.get("author").toString())
+                        list.add(thisModel)
+
+
+                    } else {
+                        Log.d("POPULATE LIST", "No such document")
+                    }
+                    callback.invoke(list)
+
                 }
             }
             .addOnFailureListener { exception ->
-                Log.d(TAG, "get failed with ", exception)
+                Log.d("POPULATE LIST", "get failed with ", exception)
             }
 
 
-        val myHeadlineList = arrayOf("Liz", "name1", "example2", "Liz", "name1", "example2")
-        val myHeadlineImgList = arrayOf("Liz", "name", "example", "Liz", "name1", "example2")
-        val myPublishersList = arrayOf("ET", "ETt", "ETs", "Liz", "name1", "example2")
-        val myTimestampList = arrayOf("12:30", "12:30:59", "12:31", "Liz", "name1", "example2")
+//        val myHeadlineList = arrayOf("Liz", "name1", "example2", "Liz", "name1", "example2")
+//        val myHeadlineImgList = arrayOf("Liz", "name", "example", "Liz", "name1", "example2")
+//        val myPublishersList = arrayOf("ET", "ETt", "ETs", "Liz", "name1", "example2")
+//        val myTimestampList = arrayOf("12:30", "12:30:59", "12:31", "Liz", "name1", "example2")
 
-        var size = myHeadlineList.size
-        for (i in 0 until size){
-            val thisModel = newsModel()
-            thisModel.setHeadline(myHeadlineList[i].toString())
-            thisModel.setHeadlineImg(myHeadlineImgList[i].toString())
-            thisModel.setTimestamp(myTimestampList[i].toString())
-            thisModel.setPublisher(myPublishersList[i].toString())
-            list.add(thisModel)
-        }
-        return list
+//        var size = myHeadlineList.size
+//        for (i in 0 until size){
+//            val thisModel = newsModel()
+//            thisModel.setHeadline(myHeadlineList[i].toString())
+//            thisModel.setHeadlineImg(myHeadlineImgList[i].toString())
+//            thisModel.setTimestamp(myTimestampList[i].toString())
+//            thisModel.setPublisher(myPublishersList[i].toString())
+//            list.add(thisModel)
+//        }
+//        return list
     }
 
 
