@@ -42,47 +42,47 @@
             android:id="@+id/suggestedAlertsChipGroup">
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/HCI"
+                android:id="@+id/HCIChip"
                 android:text="HCI"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 style = "@style/SuggestedChipStyle" />
             <com.google.android.material.chip.Chip
-                android:id="@+id/CERN"
+                android:id="@+id/CERNChip"
                 android:text="CERN"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 style = "@style/SuggestedChipStyle"/>
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/ClimateChange"
+                android:id="@+id/ClimateChangeChip"
                 android:text="Climate Change"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 style = "@style/SuggestedChipStyle"/>
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/Plastic"
+                android:id="@+id/PlasticChip"
                 android:text="Plastic"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 style = "@style/SuggestedChipStyle"/>
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/VR"
+                android:id="@+id/VRChip"
                 android:text="VR"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 style="@style/SuggestedChipStyle"/>
             <com.google.android.material.chip.Chip
-                android:id="@+id/NASA"
+                android:id="@+id/NASAChip"
                 android:text="NASA"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 style="@style/SuggestedChipStyle"/>
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/Unity"
+                android:id="@+id/UnityChip"
                 android:text="Unity"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"

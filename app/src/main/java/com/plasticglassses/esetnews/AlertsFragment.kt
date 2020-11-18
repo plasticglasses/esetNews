@@ -42,7 +42,7 @@ class AlertsFragment : Fragment() {
                 if (result != null) {
                     Log.d(TAG, ("success alert array found " + result))
                     for (alert in result) {
-                        addAlert(rootView, inflater, alertChipGroup, alert)
+                        addAlertToXML(rootView, inflater, alertChipGroup, alert)
                     }
                 }
             }
@@ -53,27 +53,76 @@ class AlertsFragment : Fragment() {
             val newAlertText = rootView?.findViewById<EditText>(R.id.newAlertText)
             //add a chip to the alerts fragment
             if (newAlertText != null) {
-                addAlert(rootView, inflater, alertChipGroup, newAlertText.text.toString())
-                //addAlertToFirebase(newAlertText.text.toString())
+                //add alert to current alerts
+                addAlertToXML(rootView, inflater, alertChipGroup, newAlertText.text.toString())
 
-
-                //add new alert to firebase
-                getFirestoreID(uID, db) { fID ->
-                    Log.d(TAG, ("fID returned " + fID))
-                    getUsersAlerts(fID) { alertArray ->
-                        if (alertArray != null) {
-                            Log.d(TAG, ("success alert array found " + alertArray))
-                            alertArray!!.add(newAlertText.text.toString())
-                            addAlertToFirebase(alertArray!!, db, docID)
-                            newAlertText.text.clear()
-                        }
-                    }
-                }
+                addSingleAlertToFirebase(uID, db, newAlertText.text.toString())
+                newAlertText.text.clear()
             }
 
         }
 
+        //for alert in suggested alert chip group
+            //add onclick method to add alert
+        val suggestedAlertChipGroup = rootView?.findViewById<ChipGroup>(R.id.suggestedAlertsChipGroup)
+        val HCIChip = rootView.findViewById<Chip>(R.id.HCIChip)
+        HCIChip.setOnClickListener{
+            addAlertToXML(rootView, inflater, alertChipGroup, "HCI")
+            addSingleAlertToFirebase(uID, db, "HCI")
+            suggestedAlertChipGroup!!.removeView(HCIChip)
+        }
+        val CERNChip = rootView.findViewById<Chip>(R.id.CERNChip)
+        CERNChip.setOnClickListener{
+            addAlertToXML(rootView, inflater, alertChipGroup, "CERN")
+            addSingleAlertToFirebase(uID, db, "CERN")
+            suggestedAlertChipGroup!!.removeView(CERNChip)
+        }
+        val CCChip = rootView.findViewById<Chip>(R.id.ClimateChangeChip)
+        CCChip.setOnClickListener{
+            addAlertToXML(rootView, inflater, alertChipGroup, "Climate Change")
+            addSingleAlertToFirebase(uID, db, "Climate Change")
+            suggestedAlertChipGroup!!.removeView(CCChip)
+        }
+        val PlasticChip = rootView.findViewById<Chip>(R.id.PlasticChip)
+        PlasticChip.setOnClickListener{
+            addAlertToXML(rootView, inflater, alertChipGroup, "Plastic")
+            addSingleAlertToFirebase(uID, db, "Plastic")
+            suggestedAlertChipGroup!!.removeView(PlasticChip)
+        }
+        val VRChip = rootView.findViewById<Chip>(R.id.VRChip)
+        VRChip.setOnClickListener{
+            addAlertToXML(rootView, inflater, alertChipGroup, "VR")
+            addSingleAlertToFirebase(uID, db, "VR")
+            suggestedAlertChipGroup!!.removeView(VRChip)
+        }
+        val nasaChip = rootView.findViewById<Chip>(R.id.NASAChip)
+        nasaChip.setOnClickListener{
+            addAlertToXML(rootView, inflater, alertChipGroup, "NASA")
+            addSingleAlertToFirebase(uID, db, "NASA")
+            suggestedAlertChipGroup!!.removeView(nasaChip)
+        }
+        val unityChip = rootView.findViewById<Chip>(R.id.UnityChip)
+        unityChip.setOnClickListener{
+            addAlertToXML(rootView, inflater, alertChipGroup, "Unity")
+            addSingleAlertToFirebase(uID, db, "Unity")
+            suggestedAlertChipGroup!!.removeView(unityChip)
+        }
+
         return rootView
+    }
+
+    private fun addSingleAlertToFirebase(uID: String, db: FirebaseFirestore, newAlertText: String) {
+        //add new alert to firebase
+        getFirestoreID(uID, db) { fID ->
+            Log.d(TAG, ("fID returned " + fID))
+            getUsersAlerts(fID) { alertArray ->
+                if (alertArray != null) {
+                    Log.d(TAG, ("success alert array found " + alertArray))
+                    alertArray!!.add(newAlertText)
+                    addAlertToDocument(alertArray!!, db, fID)
+                }
+            }
+        }
     }
 
     /*
@@ -119,11 +168,11 @@ class AlertsFragment : Fragment() {
     /*
     Add alert to firebase
      */
-    private fun addAlertToFirebase(alertsList: ArrayList<String>, db: FirebaseFirestore, docID: String?) {
+    private fun addAlertToDocument(alertsList: ArrayList<String>, db: FirebaseFirestore, fID: String?) {
         // Update one field, creating the document if it does not already exist.
         val data = hashMapOf("alerts" to alertsList)
 
-        db.collection("users").document("O4a9R4g9v9nooza5CELd")
+        db.collection("users").document(fID!!)
             .set(data, SetOptions.merge())
     }
 
@@ -147,7 +196,7 @@ class AlertsFragment : Fragment() {
         return usersAlerts
     }
     
-    private fun addAlert(
+    private fun addAlertToXML(
         rootView: View?,
         inflater: LayoutInflater,
         alertChipGroup: ChipGroup?,
