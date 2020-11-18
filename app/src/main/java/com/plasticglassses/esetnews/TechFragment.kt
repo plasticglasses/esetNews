@@ -25,7 +25,7 @@ class TechFragment : Fragment() {
         var rootView = inflater.inflate(R.layout.fragment_tech, container, false)
 
 
-        generateTechNews()
+        //generateTechNews()
 
 
         //setContentView(R.layout.fragment_home)

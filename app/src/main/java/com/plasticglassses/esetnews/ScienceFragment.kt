@@ -25,7 +25,7 @@ class ScienceFragment : Fragment() {
         var rootView = inflater.inflate(R.layout.fragment_science, container, false)
 
 
-        generateScienceNews()
+        //generateScienceNews()
 
 
         //setContentView(R.layout.fragment_home)
