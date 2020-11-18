@@ -11,8 +11,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dfl.newsapi.NewsApiRepository
 import com.dfl.newsapi.enums.Category
 import com.dfl.newsapi.enums.Country
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.plasticglassses.esetnews.adapters.NewsAdapter
 import io.reactivex.schedulers.Schedulers
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 class ScienceFragment : Fragment() {
     val newsApiRepository = NewsApiRepository("8abf9b3bbc4c4e86b186100f1c3f4e6d")
@@ -21,37 +27,27 @@ class ScienceFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
+        val db = Firebase.firestore
         var rootView = inflater.inflate(R.layout.fragment_science, container, false)
 
+        generateScienceNews(db)
 
-        //generateScienceNews()
-
-
-        //setContentView(R.layout.fragment_home)
-        var headlineArrayList = ArrayList<newsModel>()
-        //get news
-
-        headlineArrayList = populateList()
-        //get text box on science fragment and add in a new headline
-
-        Log.d("mylist", headlineArrayList.toString())
-
-        //home fragment recycler view
-        //val headlineArrayList = populateList(myHeadlinelist, myImglist, myAuthorlist, myTimestamplist)
-
-        val recyclerHeadlineView = rootView.findViewById<View>(R.id.headline_recycler_view_science) as RecyclerView
-        //val headlineArrayList = genNews(recyclerHeadlineView)
-        val headlineLayoutManager = LinearLayoutManager(activity)
-        recyclerHeadlineView.layoutManager = headlineLayoutManager
-        val headlineAdapter = NewsAdapter(headlineArrayList)
-        recyclerHeadlineView.adapter = headlineAdapter
-
+        //get documents from firestore and populate modles
+        populateList(db) { headlineArrayList ->
+            Log.d("mylist", headlineArrayList.toString())
+            val recyclerHeadlineView =
+                rootView.findViewById<View>(R.id.headline_recycler_view) as RecyclerView
+            //val headlineArrayList = genNews(recyclerHeadlineView)
+            val headlineLayoutManager = LinearLayoutManager(activity)
+            recyclerHeadlineView.layoutManager = headlineLayoutManager
+            val headlineAdapter = NewsAdapter(headlineArrayList)
+            recyclerHeadlineView.adapter = headlineAdapter
+        }
         return rootView
 
     }
 
-    private fun generateScienceNews(): ArrayList<newsModel> {
+    private fun generateScienceNews(db: FirebaseFirestore): ArrayList<newsModel> {
         val headlineArrayList = ArrayList<newsModel>()
         //get general news for homepage
         newsApiRepository.getTopHeadlines(category = Category.SCIENCE, country = Country.GB, q = "", pageSize = 20, page = 1)
@@ -62,29 +58,88 @@ class ScienceFragment : Fragment() {
 
                 //if here since last updated time add to top_headline json
 
+                //read last updated time
+                val docRef = db.collection("last_updated").document("general_last_updated")
+                docRef.get()
+                    .addOnSuccessListener { document ->
+                        if (document != null) {
+//                            upload new articles only
+                            val today = Calendar.getInstance()
+                            today.add(Calendar.HOUR, -1);
+                            val sendDateUAT =
+                                SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").format(today.time)
+                            Log.d("TIME: Refresh articles from", sendDateUAT)
+                            //get only most recent articles
+                            if (article.publishedAt > sendDateUAT) {
+                                val headline = hashMapOf(
+                                    "headline" to article.title,
+                                    "image" to article.urlToImage,
+                                    "author" to article.author,
+                                    "timestamp" to article.publishedAt,
+                                    "comments" to arrayListOf<String>()
+                                )
+
+                                //add new documents to firebase
+                                db.collection("science_headlines").document()
+                                    .set(headline)
+                                    .addOnSuccessListener {
+                                        Log.d(
+                                            "Science Fragment",
+                                            "DocumentSnapshot successfully written!"
+                                        )
+                                    }
+                                    .addOnFailureListener { e ->
+                                        Log.w(
+                                            "Science Fragment",
+                                            "Error writing document",
+                                            e
+                                        )
+                                    }
+//                              //if here since last updated time add to top_headline json
+                            }//else document is too old so don't add
+                        } else {
+                            Log.d("GENERAL_LAST_UPDATED", "No such document")
+                        }
+                    }
+                    .addOnFailureListener { exception ->
+                        Log.d("TAG", "get failed with ", exception)
+                    }
+
             },
-                { t -> Log.d("getTopHeadlines error", t.message!!) })
+                { t -> Log.d("getScienceHeadlines error", t.message!!) })
 
         return headlineArrayList
 
     }
 
-    private fun populateList(): ArrayList<newsModel> {
+    private fun populateList(db: FirebaseFirestore, callback: (ArrayList<newsModel>) -> Unit) {
         val list = ArrayList<newsModel>()
-        val myHeadlineList = arrayOf("Liz324", "name1234324", "example234")
-        val myHeadlineImgList = arrayOf("Liz", "name234", "example234")
-        val myPublishersList = arrayOf("ET", "ETt", "ETs")
-        val myTimestampList = arrayOf("12:30", "12:30:59", "12:31")
+        db.collection("science_headlines").get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    if (document != null) {
 
-        for (i in 0..2){
-            val thisModel = newsModel()
-            thisModel.setHeadline(myHeadlineList[i].toString())
-            thisModel.setHeadlineImg(myHeadlineImgList[i].toString())
-            thisModel.setTimestamp(myTimestampList[i].toString())
-            thisModel.setPublisher(myPublishersList[i].toString())
-            list.add(thisModel)
-        }
-        return list
+                        //make model with data from firestore
+                        val thisModel = newsModel()
+                        thisModel.setHeadline(document.get("headline").toString())
+                        thisModel.setHeadlineImg(document.get("image").toString())
+                        thisModel.setTimestamp(document.get("timestamp").toString())
+                        thisModel.setPublisher(document.get("author").toString())
+
+                        //add to list so that recycler view can take data
+                        list.add(thisModel)
+
+
+                    } else {
+                        Log.d("POPULATE LIST", "No such document")
+                    }
+                    callback.invoke(list)
+
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.d("POPULATE LIST", "get failed with ", exception)
+            }
     }
 
 }
