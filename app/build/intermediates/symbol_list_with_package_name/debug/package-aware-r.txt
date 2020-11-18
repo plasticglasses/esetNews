@@ -1732,6 +1732,7 @@ id animateToEnd
 id animateToStart
 id asConfigured
 id async
+id author
 id auto
 id autoComplete
 id autoCompleteToEnd

@@ -1,5 +1,8 @@
 package com.plasticglassses.esetnews.adapters
 
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,8 +10,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
-import com.plasticglassses.esetnews.R
 import com.plasticglassses.esetnews.newsModel
+import java.io.InputStream
+import java.net.URL
+
 
 class NewsAdapter(private val headlineArrayList: MutableList<newsModel>): RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
 
@@ -23,6 +28,11 @@ class NewsAdapter(private val headlineArrayList: MutableList<newsModel>): Recycl
         val info=headlineArrayList[position]
 
         holder.txtMsg.text=info.getHeadline()
+        holder.headlineTimestamp.text = info.getTimestamp()
+        holder.author.text = info.getPublisher()
+        //Glide.with(this).load(URL_TO_IMAGE).into(imageView);
+
+
     }
 
 
@@ -34,7 +44,11 @@ class NewsAdapter(private val headlineArrayList: MutableList<newsModel>): Recycl
     inner class ViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView),
         View.OnClickListener{
 
+        val headlineTimestamp = itemView.findViewById<View>(R.id.timestamp) as TextView
         var txtMsg=itemView.findViewById<View>(R.id.headline)as TextView
+        val author = itemView.findViewById<View>(R.id.author) as TextView
+        val headlineImg = itemView.findViewById<View>(R.id.headlineImg) as ImageView
+
 
         init{
             itemView.setOnClickListener(this)
@@ -48,6 +62,7 @@ class NewsAdapter(private val headlineArrayList: MutableList<newsModel>): Recycl
 
     }
 
-
 }
+
+
 
