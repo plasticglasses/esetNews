@@ -17,6 +17,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import kotlin.collections.ArrayList as ArrayList1
 
 class AlertsFragment : Fragment() {
 
@@ -34,7 +35,7 @@ class AlertsFragment : Fragment() {
         var rootView = inflater.inflate(R.layout.fragment_alerts, container, false)
         val alertChipGroup = rootView?.findViewById<ChipGroup>(R.id.alertChipGroup)
 
-        val uID = getUserID(auth)
+        val uID = getUserID()
 
         getFirestoreID(uID, db) { fID ->
             Log.d(TAG, ("fID returned " + fID))
@@ -42,7 +43,7 @@ class AlertsFragment : Fragment() {
                 if (alertArray != null) {
                     Log.d(TAG, ("success alert array found " + alertArray))
                     for (alert in alertArray) {
-                        addNewAlertToXML(rootView, inflater, alertChipGroup, alert, fID)
+                        addNewAlertToXML(rootView, alertChipGroup, alert, fID)
                     }
                 }
             }
@@ -116,15 +117,13 @@ class AlertsFragment : Fragment() {
                                          ) {
         //add new alert to firebase
         getFirestoreID(uID, db) { fID ->
-            Log.d(TAG, ("fID returned " + fID))
+            Log.d(TAG, ("fID returned $fID"))
             getUsersAlerts(fID) { alertArray ->
-                if (alertArray != null) {
-                    Log.d(TAG, ("success alert array found " + alertArray))
-                    alertArray!!.add(newAlertText)
-                    updateAlertDocument(alertArray!!, db, fID)
-                }
+                Log.d(TAG, ("success alert array found $alertArray"))
+                alertArray.add(newAlertText)
+                updateAlertDocument(alertArray, db, fID)
             }
-            addNewAlertToXML(rootView, inflater, alertChipGroup, newAlertText, fID)
+            addNewAlertToXML(rootView, alertChipGroup, newAlertText, fID)
         }
     }
 
@@ -159,7 +158,7 @@ class AlertsFragment : Fragment() {
     /*
     get the current logged in user id
      */
-    private fun getUserID(auth: FirebaseAuth): String {
+    private fun getUserID(): String {
         var thisUid = ""
 
         val user = FirebaseAuth.getInstance().currentUser
@@ -176,7 +175,7 @@ class AlertsFragment : Fragment() {
     Add alert to firebase
      */
     private fun updateAlertDocument(
-        alertsList: ArrayList<String>,
+        alertsList: ArrayList1<String>,
         db: FirebaseFirestore,
         fID: String?
     ) {
@@ -191,15 +190,15 @@ class AlertsFragment : Fragment() {
     get the current users alert array from firetore
      */
     private fun getUsersAlerts(
-        docID: String?, callback: (ArrayList<String>) -> Unit
-    ): ArrayList<String>? {
+        docID: String?, callback: (ArrayList1<String>) -> Unit
+    ): ArrayList1<String>? {
         var usersAlerts = arrayListOf<String>()
         val db = Firebase.firestore
         db.collection("users").document(docID!!)
             .get()
             .addOnSuccessListener { result ->
                 //val username = result.getString("username")
-                usersAlerts = (result["alerts"] as ArrayList<String>)
+                usersAlerts = (result["alerts"] as ArrayList1<String>)
                 //populate alerts fragment with chips of alerts
                 Log.d(TAG, ("${result.id} => ${result.data} " + usersAlerts))
                 callback.invoke(usersAlerts)
@@ -212,19 +211,15 @@ class AlertsFragment : Fragment() {
      */
     private fun addSuggestedAlertToXML(
         rootView: View?,
-        inflater: LayoutInflater,
         alertChipGroup: ChipGroup?,
         newAlertText: String
     ) {
         val chip = layoutInflater.inflate(R.layout.chip_layout, alertChipGroup, false) as Chip
-        if (newAlertText != null) {
-            chip.text = newAlertText
+        chip.text = newAlertText
 
-            val snackbar = Snackbar.make(rootView!!, "Alert Added", Snackbar.LENGTH_SHORT)
-            snackbar.show()
-            alertChipGroup!!.addView(chip)
+        Snackbar.make(rootView!!, "Alert Added", Snackbar.LENGTH_SHORT).show()
+        alertChipGroup!!.addView(chip)
 
-        }
     }
 
     /*
@@ -232,39 +227,36 @@ class AlertsFragment : Fragment() {
      */
     private fun addNewAlertToXML(
         rootView: View?,
-        inflater: LayoutInflater,
         alertChipGroup: ChipGroup?,
         newAlertText: String,
         fID: String
     ) {
         val chip = layoutInflater.inflate(R.layout.chip_layout, alertChipGroup, false) as Chip
-        if (newAlertText != null) {
-            chip.text = newAlertText
+        chip.text = newAlertText
 
-            val snackbar = Snackbar.make(rootView!!, "Alert Added", Snackbar.LENGTH_SHORT)
-            snackbar.show()
-            alertChipGroup!!.addView(chip)
+        val snackbar = Snackbar.make(rootView!!, "Alert Added", Snackbar.LENGTH_SHORT)
+        snackbar.show()
+        alertChipGroup!!.addView(chip)
 
-            chip.setOnCloseIconClickListener {
-                //remove from xml
-                removeAlertChipXML(alertChipGroup, chip)
+        chip.setOnCloseIconClickListener {
+            //remove from xml
+            removeAlertChipXML(alertChipGroup, chip)
 
-                //remove from firebase
-                removeAlertFromFirebase(newAlertText, fID)
-                Log.d(TAG, ("Alert Removed"))
-            }
-
+            //remove from firebase
+            removeAlertFromFirebase(newAlertText, fID)
+            Log.d(TAG, ("Alert Removed"))
         }
+
     }
 
     private fun removeAlertFromFirebase(alertToRemove: String, fID: String) {
         var usersAlerts = arrayListOf<String>()
         val db = Firebase.firestore
-        db.collection("users").document(fID!!)
+        db.collection("users").document(fID)
             .get()
             .addOnSuccessListener { result ->
                 //val username = result.getString("username")
-                usersAlerts = (result["alerts"] as ArrayList<String>)
+                usersAlerts = (result["alerts"] as ArrayList1<String>)
                 usersAlerts.remove(alertToRemove)
 
                 updateAlertDocument(usersAlerts, db, fID)
@@ -274,6 +266,6 @@ class AlertsFragment : Fragment() {
 
 
     private fun removeAlertChipXML(alertChipGroup: ChipGroup, chip: Chip) {
-        alertChipGroup!!.removeView(chip)
+        alertChipGroup.removeView(chip)
     }
 }

@@ -79,9 +79,6 @@ class HomeFragment : Fragment() {
 
     }
 
-
-
-
     private fun populateList(): ArrayList<newsModel> {
         val list = ArrayList<newsModel>()
         val myHeadlineList = arrayOf("Liz", "name1", "example2")

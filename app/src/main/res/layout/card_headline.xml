@@ -42,7 +42,7 @@
                     android:gravity="end|center_vertical" />
 
                 <TextView
-                    android:id="@+id/firstline"
+                    android:id="@+id/timestamp"
                     android:layout_width="106dp"
                     android:layout_height="wrap_content"
                     android:gravity="end|center_vertical" />
