@@ -40,7 +40,7 @@ class AlertsFragment : Fragment() {
             Log.d(TAG, ("fID returned " + result))
             getUsersAlerts(result) { result ->
                 if (result != null) {
-                    Log.d(TAG, ("success we got the rabbi " + result))
+                    Log.d(TAG, ("success alert array found " + result))
                     for (alert in result) {
                         addAlert(rootView, inflater, alertChipGroup, alert)
                     }
@@ -55,10 +55,20 @@ class AlertsFragment : Fragment() {
             if (newAlertText != null) {
                 addAlert(rootView, inflater, alertChipGroup, newAlertText.text.toString())
                 //addAlertToFirebase(newAlertText.text.toString())
-                newAlertText.text.clear()
-//                usersAlerts!!.add(newAlertText.text.toString())
-                //addAlertToFirebase(usersAlerts!!, db, docID)
 
+
+                //add new alert to firebase
+                getFirestoreID(uID, db) { fID ->
+                    Log.d(TAG, ("fID returned " + fID))
+                    getUsersAlerts(fID) { alertArray ->
+                        if (alertArray != null) {
+                            Log.d(TAG, ("success alert array found " + alertArray))
+                            alertArray!!.add(newAlertText.text.toString())
+                            addAlertToFirebase(alertArray!!, db, docID)
+                            newAlertText.text.clear()
+                        }
+                    }
+                }
             }
 
         }
