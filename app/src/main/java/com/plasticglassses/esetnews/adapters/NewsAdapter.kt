@@ -30,9 +30,17 @@ class NewsAdapter(private val headlineArrayList: MutableList<newsModel>): Recycl
         holder.txtMsg.text=info.getHeadline()
         holder.headlineTimestamp.text = info.getTimestamp()
         holder.author.text = info.getPublisher()
-        //Glide.with(this).load(URL_TO_IMAGE).into(imageView);
 
+        Glide.with(this).load(URL_TO_IMAGE).into(imageView);
+        val bmp: Bitmap
 
+        val imageUrl = info.getHeadlineImg()
+        val `in` = URL(imageUrl).openStream()
+
+        bmp = BitmapFactory.decodeStream(`in`)
+
+        val img_results_experience = view.findViewById(R.id.img_results_experience)
+        img_id.setImageBitmap(bmp)
     }
 
 
@@ -62,6 +70,14 @@ class NewsAdapter(private val headlineArrayList: MutableList<newsModel>): Recycl
 
     }
 
+    fun LoadImageFromWebOperations(url: String?): Drawable? {
+        return try {
+            val `is`: InputStream = URL(url).getContent() as InputStream
+            Drawable.createFromStream(`is`, "src name")
+        } catch (e: Exception) {
+            null
+        }
+    }
 }
 
 
