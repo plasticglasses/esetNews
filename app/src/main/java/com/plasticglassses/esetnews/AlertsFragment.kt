@@ -35,17 +35,18 @@ class AlertsFragment : Fragment() {
         val alertChipGroup = rootView?.findViewById<ChipGroup>(R.id.alertChipGroup)
 
         val uID = getUserID(auth)
-        var docID =""
+        var docID = ""
         getFirestoreID(uID, db) { result ->
-            Log.d(TAG, ("underer the hanging treeimg " + result))
-            var usersAlerts = getUsersAlerts(result)
-            if (usersAlerts != null) {
-                Log.d(TAG, ("success we got the rabbi " + usersAlerts))
-                for (alert in usersAlerts) {
-                    addAlert(rootView, inflater, alertChipGroup, alert.toString())
+            Log.d(TAG, ("fID returned " + result))
+            getUsersAlerts(result) { result ->
+                if (result != null) {
+                    Log.d(TAG, ("success we got the rabbi " + result))
+                    for (alert in result) {
+                        addAlert(rootView, inflater, alertChipGroup, alert)
+                    }
                 }
             }
-            }
+        }
 
         val addAlertButton = rootView.findViewById<Button>(R.id.addAlert)
         addAlertButton.setOnClickListener {
@@ -89,10 +90,6 @@ class AlertsFragment : Fragment() {
         return fID
     }
 
-    fun foo(){
-
-    }
-
     /*
     get the current logged in user id
      */
@@ -124,7 +121,7 @@ class AlertsFragment : Fragment() {
     get the current users alert array from firetore
      */
     private fun getUsersAlerts(
-        docID: String?
+        docID: String?, callback:(ArrayList<String>) -> Unit
     ): ArrayList<String>? {
         var usersAlerts = arrayListOf<String>()
         val db = Firebase.firestore
@@ -135,6 +132,7 @@ class AlertsFragment : Fragment() {
                 usersAlerts = (result["alerts"] as ArrayList<String>)
                 //populate alerts fragment with chips of alerts
                 Log.d(TAG, ("${result.id} => ${result.data} " +usersAlerts))
+                callback.invoke(usersAlerts)
             }
         return usersAlerts
     }
