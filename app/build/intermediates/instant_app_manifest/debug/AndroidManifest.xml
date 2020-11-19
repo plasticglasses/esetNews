@@ -30,6 +30,10 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
         <activity android:name="com.plasticglassses.esetnews.ProfileActivity" >
         </activity>
         <activity android:name="com.plasticglassses.esetnews.SignUpActivity" />

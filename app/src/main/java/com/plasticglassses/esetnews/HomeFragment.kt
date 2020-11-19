@@ -68,11 +68,7 @@ class HomeFragment : Fragment() {
             .flatMapIterable { articles -> articles.articles }
             .subscribe({ article ->
 
-                //print out new articles
-                Log.d(
-                    "getTopHead General article",
-                    article.title + " " + article.urlToImage + " " + article.author + " " + article.publishedAt
-                )
+
 
                 //read last updated time
                 val docRef = db.collection("last_updated").document("general_last_updated")
@@ -86,14 +82,25 @@ class HomeFragment : Fragment() {
                                 val formattedDate =
                                     SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").format(javaDate)
 
+                                if (article.publishedAt > formattedDate){
+                                    Log.d(
+                                        "SUCCCCCCCCCCCCCCCEEEEEEEEEEEEEEEEEEESSSSSSSSSSSSSSSSSSSSSSSS",
+                                        "whoop de doop")
+
                                 //only add new articles to firebase
-                                if (article.publishedAt > formattedDate) {
+                                //if (article.publishedAt > formattedDate) {
+                                    //print out new articles
+                                    Log.d(
+                                        "getTopHead General article",
+                                        article.title + " " + article.urlToImage + " " + article.author + " " + article.publishedAt
+                                    )
                                     val headline = hashMapOf(
                                         "headline" to article.title,
                                         "image" to article.urlToImage,
                                         "author" to article.author,
                                         "timestamp" to article.publishedAt,
-                                        "comments" to arrayListOf<String>()
+                                        "article" to article.url,
+                                        "comments" to arrayListOf<String>(arrayListOf<String>("user").toString(), arrayListOf<String>("comment").toString(), arrayListOf<String>("timestamp").toString())
                                     )
 
                                     //add new documents to firebase
@@ -112,6 +119,10 @@ class HomeFragment : Fragment() {
                                                 e
                                             )
                                         }
+                                }else{
+                                    Log.d(
+                                        "FAAAAAAAAAAAAAAAAAAAAAAAIIIIIIIIIIIIIIIIIIIIIIILLLLLLLLLLL",
+                                        "loober" + article.publishedAt + formattedDate)
                                 }//else document is too old so don't add
                             }
                         } else {
@@ -187,7 +198,7 @@ class HomeFragment : Fragment() {
     callback the fiestore counter of date last checked
      */
     fun getLastUpdated(db: FirebaseFirestore, callback: (Timestamp) -> Unit) {
-        //get the general-headline documents
+        //get the general-headline docuemnts
         val docRef = db.collection("last_updated").document("general_last_updated")
         docRef.get()
             .addOnSuccessListener { document ->
