@@ -35,7 +35,6 @@ class HomeFragment : Fragment() {
         val db = Firebase.firestore
         var rootView = inflater.inflate(R.layout.fragment_home, container, false)
 
-
         //get all new news from newsAPI
         generateGeneralNews(db)
 
@@ -44,7 +43,6 @@ class HomeFragment : Fragment() {
             Log.d("mylist", headlineArrayList.toString())
             val recyclerHeadlineView =
                 rootView.findViewById<View>(R.id.headline_recycler_view) as RecyclerView
-            //val headlineArrayList = genNews(recyclerHeadlineView)
             val headlineLayoutManager = LinearLayoutManager(activity)
             recyclerHeadlineView.layoutManager = headlineLayoutManager
             val headlineAdapter = NewsAdapter(headlineArrayList)
@@ -56,11 +54,8 @@ class HomeFragment : Fragment() {
         return rootView
     }
 
-    private fun generateGeneralNews(db: FirebaseFirestore): ArrayList<newsModel> {
-        val headlineArrayList = ArrayList<newsModel>()
+    private fun generateGeneralNews(db: FirebaseFirestore) {
         //get general news for homepage
-
-
         newsApiRepository.getTopHeadlines(
             category = Category.GENERAL,
             country = Country.GB,
@@ -85,14 +80,14 @@ class HomeFragment : Fragment() {
                     .addOnSuccessListener { document ->
                         if (document != null) {
 //                            upload new articles only
+                            //get last updated date from firebase, format it into ISO format and compare to the pblished at time
                             getLastUpdated(db) { result ->
                                 var javaDate = result.toDate() as Date
-                                val formattedDate = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").format(javaDate)
+                                val formattedDate =
+                                    SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").format(javaDate)
 
-                                    Log.d("ADELE", article.publishedAt + formattedDate)
-
+                                //only add new articles to firebase
                                 if (article.publishedAt > formattedDate) {
-                                    Log.d("ADELE", "article.publishedAt > result.toString()")
                                     val headline = hashMapOf(
                                         "headline" to article.title,
                                         "image" to article.urlToImage,
@@ -112,12 +107,11 @@ class HomeFragment : Fragment() {
                                         }
                                         .addOnFailureListener { e ->
                                             Log.w(
-                                                "hom frAG",
+                                                "home Fragment",
                                                 "Error writing document",
                                                 e
                                             )
                                         }
-//                              //if here since last updated time add to top_headline json
                                 }//else document is too old so don't add
                             }
                         } else {
@@ -127,14 +121,13 @@ class HomeFragment : Fragment() {
                     .addOnFailureListener { exception ->
                         Log.d("TAG", "get failed with ", exception)
                     }
-
             },
                 { t -> Log.d("getTopHeadlines error", t.message!!) })
-
-        return headlineArrayList
-
     }
 
+    /*
+    take firebase docuemnts and add them to list for processing by recycler view
+     */
     private fun populateList(db: FirebaseFirestore, callback: (ArrayList<newsModel>) -> Unit) {
         val list = ArrayList<newsModel>()
         db.collection("general_headlines").get()
@@ -151,8 +144,6 @@ class HomeFragment : Fragment() {
 
                         //add to list so that recycler view can take data
                         list.add(thisModel)
-
-
                     } else {
                         Log.d("POPULATE LIST", "No such document")
                     }
@@ -165,6 +156,9 @@ class HomeFragment : Fragment() {
             }
     }
 
+    /*
+    update firebase last updated counter
+     */
     fun updateLastUpdated(db: FirebaseFirestore) {
         val docRef = db.collection("last_updated").document("general_last_updated")
         docRef.get()
@@ -173,8 +167,10 @@ class HomeFragment : Fragment() {
                     val today = Calendar.getInstance()
                     Log.d("TIME: update last updated to: ", today.time.toString())
 
+                    //set data from firestore
                     val data = hashMapOf("last_updated" to today.time)
 
+                    //upload
                     db.collection("last_updated").document("general_last_updated")
                         .set(data, SetOptions.merge())
 
@@ -187,17 +183,18 @@ class HomeFragment : Fragment() {
             }
     }
 
+    /*
+    callback the fiestore counter of date last checked
+     */
     fun getLastUpdated(db: FirebaseFirestore, callback: (Timestamp) -> Unit) {
+        //get the general-headline documents
         val docRef = db.collection("last_updated").document("general_last_updated")
         docRef.get()
             .addOnSuccessListener { document ->
                 if (document != null) {
-                    //val cal = Calendar.getInstance()
-                    var lastUpdated = (document["last_updated"] as Timestamp)
 
-//                    val today = Calendar.getInstance()
-//                    val sendDateUAT =
-//                        SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").format(lastUpdated)
+                    //add it to timestamp field in firestore
+                    var lastUpdated = (document["last_updated"] as Timestamp)
 
                     callback.invoke(lastUpdated)
                     Log.d("GET LAST UPDATED: ", lastUpdated.toString())
@@ -205,14 +202,9 @@ class HomeFragment : Fragment() {
                 } else {
                     Log.d("GET LAST UPDATED", "No such document")
                 }
-
-
             }
             .addOnFailureListener { exception ->
                 Log.d("GET LAST UPDATED", "get failed with ", exception)
             }
-
     }
-
-
 }
