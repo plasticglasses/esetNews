@@ -96,6 +96,10 @@
         "source": "C:\\Users\\lizks\\AndroidStudioProjects\\esetNews2\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "C:\\Users\\lizks\\AndroidStudioProjects\\esetNews2\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_headline_context.xml.flat",
+        "source": "C:\\Users\\lizks\\AndroidStudioProjects\\esetNews2\\app\\src\\main\\res\\layout\\fragment_headline_context.xml"
+    },
+    {
         "merged": "C:\\Users\\lizks\\AndroidStudioProjects\\esetNews2\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
         "source": "C:\\Users\\lizks\\AndroidStudioProjects\\esetNews2\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },

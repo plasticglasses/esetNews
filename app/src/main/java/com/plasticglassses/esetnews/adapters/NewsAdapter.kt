@@ -1,18 +1,18 @@
 package com.plasticglassses.esetnews.adapters
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
-import com.plasticglassses.esetnews.HomeFragment
+import com.plasticglassses.esetnews.HeadlineContextFragment
 import com.plasticglassses.esetnews.R
 import com.plasticglassses.esetnews.newsModel
-import java.security.AccessController.getContext
 
 
 class NewsAdapter(private val headlineArrayList: MutableList<newsModel>): RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
@@ -27,9 +27,6 @@ class NewsAdapter(private val headlineArrayList: MutableList<newsModel>): Recycl
     override fun onBindViewHolder(holder:ViewHolder,position:Int){
         val info=headlineArrayList[position]
 
-
-
-
         holder.txtMsg.text=info.getHeadline()
         holder.headlineTimestamp.text = info.getTimestamp()
         holder.author.text = info.getPublisher()
@@ -41,6 +38,7 @@ class NewsAdapter(private val headlineArrayList: MutableList<newsModel>): Recycl
         } else {
             holder.headlineImg.setImageResource(R.drawable.ic_launcher_background)
         }
+
     }
 
 
@@ -67,10 +65,9 @@ class NewsAdapter(private val headlineArrayList: MutableList<newsModel>): Recycl
             val snackbar= Snackbar.make(v,"$msg are the best!",Snackbar.LENGTH_LONG)
             snackbar.show()
 
-            //take you to full article
-//            val intent = Intent(this, SignUpActivity::class.java)
-//            startActivity(intent)
-
+            val activity=v!!.context as AppCompatActivity
+            val contentFragment = HeadlineContextFragment()
+            activity.supportFragmentManager.beginTransaction().replace(R.id.main, contentFragment).addToBackStack(null).commit()
         }
 
     }

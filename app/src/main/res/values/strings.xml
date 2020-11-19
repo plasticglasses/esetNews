@@ -52,4 +52,10 @@
     <string name="i_find_it_funny_how_sugar_and_alcohol_is_more_essential_than_books">I find it funny how sugar and alcohol is more \'essential\' than books</string>
     <string name="commented_on">commented on</string>
     <string name="said">said</string>
+    <string name="headline_here">headline here</string>
+    <string name="timestamp_here">timestamp here</string>
+    <string name="info_here">Info here</string>
+    <string name="commentscontent">Comments</string>
+    <string name="enter_your_comment_here">Enter your comment here</string>
+    <string name="headline_image">Headline Image</string>
 </resources>

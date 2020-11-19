@@ -1110,6 +1110,7 @@ color mtrl_textinput_focused_box_stroke_color
 color mtrl_textinput_hovered_box_stroke_color
 color notification_action_color_filter
 color notification_icon_bg_color
+color notification_material_background_media_default_color
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -1471,6 +1472,10 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+dimen subtitle_corner_radius
+dimen subtitle_outline_width
+dimen subtitle_shadow_offset
+dimen subtitle_shadow_radius
 dimen test_mtrl_calendar_day_cornerSize
 dimen text_margin
 dimen tooltip_corner_radius
@@ -1698,6 +1703,7 @@ id accessibility_custom_action_6
 id accessibility_custom_action_7
 id accessibility_custom_action_8
 id accessibility_custom_action_9
+id action0
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -1746,6 +1752,7 @@ id bottom
 id bounce
 id buttonPanel
 id cache_measures
+id cancel_action
 id cancel_button
 id card_headline
 id center
@@ -1768,7 +1775,12 @@ id collapseActionView
 id confirm_button
 id container
 id content
+id contentHeadineImage
 id contentPanel
+id contetAddComment
+id contextHeadline
+id contextInfo
+id contextTimestamp
 id coordinator
 id cos
 id createButton
@@ -1809,6 +1821,7 @@ id edit_query
 id email
 id emailSignInText
 id end
+id end_padder
 id enterAlways
 id enterAlwaysCollapsed
 id exitUntilCollapsed
@@ -1868,8 +1881,10 @@ id linear
 id listMode
 id list_item
 id loginButton
+id main
 id map
 id masked
+id media_actions
 id message
 id middle
 id mini
@@ -2004,6 +2019,7 @@ id startHorizontal
 id startVertical
 id staticLayout
 id staticPostLayout
+id status_bar_latest_event_content
 id status_texview
 id stop
 id stretch
@@ -2035,6 +2051,7 @@ id textView2
 id textView3
 id textView4
 id textView5
+id textView6
 id textView7
 id textView8
 id text_input_end_icon
@@ -2162,6 +2179,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_alerts
 layout fragment_comments
+layout fragment_headline_context
 layout fragment_home
 layout fragment_local
 layout fragment_science
@@ -2196,8 +2214,17 @@ layout mtrl_picker_text_input_date
 layout mtrl_picker_text_input_date_range
 layout notification_action
 layout notification_action_tombstone
+layout notification_media_action
+layout notification_media_cancel_action
+layout notification_template_big_media
+layout notification_template_big_media_custom
+layout notification_template_big_media_narrow
+layout notification_template_big_media_narrow_custom
 layout notification_template_custom_big
 layout notification_template_icon_group
+layout notification_template_lines_media
+layout notification_template_media
+layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout select_dialog_item_material
@@ -2265,6 +2292,7 @@ string chip_text
 string clear_text_end_icon_content_description
 string commented_on
 string comments
+string commentscontent
 string common_google_play_services_enable_button
 string common_google_play_services_enable_text
 string common_google_play_services_enable_title
@@ -2289,6 +2317,7 @@ string current_alerts
 string default_web_client_id
 string enter_email
 string enter_username
+string enter_your_comment_here
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
@@ -2301,11 +2330,14 @@ string google_app_id
 string google_crash_reporting_api_key
 string google_maps_key
 string google_storage_bucket
+string headline_here
+string headline_image
 string hello_blank_fragment
 string hello_world
 string hide_bottom_view_on_scroll_behavior
 string i_find_it_funny_how_sugar_and_alcohol_is_more_essential_than_books
 string icon_content_description
+string info_here
 string item_view_role_description
 string linked
 string log_out
@@ -2365,6 +2397,7 @@ string suggested_alerts
 string tab_text_1
 string tab_text_2
 string test_if_commit_is_taken_seriously
+string timestamp_here
 string title_activity_alerts_fragment
 string title_activity_comments_fragment
 string title_activity_local
@@ -2727,9 +2760,14 @@ style TextAppearance_AppCompat_Widget_Switch
 style TextAppearance_AppCompat_Widget_TextView_SpinnerItem
 style TextAppearance_Compat_Notification
 style TextAppearance_Compat_Notification_Info
+style TextAppearance_Compat_Notification_Info_Media
 style TextAppearance_Compat_Notification_Line2
+style TextAppearance_Compat_Notification_Line2_Media
+style TextAppearance_Compat_Notification_Media
 style TextAppearance_Compat_Notification_Time
+style TextAppearance_Compat_Notification_Time_Media
 style TextAppearance_Compat_Notification_Title
+style TextAppearance_Compat_Notification_Title_Media
 style TextAppearance_Design_CollapsingToolbar_Expanded
 style TextAppearance_Design_Counter
 style TextAppearance_Design_Counter_Overflow
