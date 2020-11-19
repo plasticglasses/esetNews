@@ -15,7 +15,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 
 class LocalFragment : Fragment() {
-
+    private lateinit var mMap: GoogleMap
     private val callback = OnMapReadyCallback { googleMap ->
         /**
          * Manipulates the map once available.
@@ -26,9 +26,26 @@ class LocalFragment : Fragment() {
          * install it inside the SupportMapFragment. This method will only be triggered once the
          * user has installed Google Play services and returned to the app.
          */
-        val sydney = LatLng(-34.0, 151.0)
-        googleMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        mMap = googleMap
+
+        // Add a marker in Sydney and move the camera
+        val swanseamarker1 = LatLng(51.620378, -3.941528)
+        mMap.addMarker(MarkerOptions().position(swanseamarker1).title("Rat spot reported on 23/10/2020 at 7pm by Liz"))
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(swanseamarker1))
+
+        val swanseamarker2 = LatLng(51.616083, -3.946367)
+        mMap.addMarker(MarkerOptions().position(swanseamarker2).title("Rat spot reported on 10/09/2020 at 5pm by Liz"))
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(swanseamarker2))
+
+        val swanseamarker3 = LatLng(51.620486, -3.941152)
+        mMap.addMarker(MarkerOptions().position(swanseamarker3).title("Swansea Castle, a spot of interest from 1107AD by Liz"))
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(swanseamarker3))
+
+        val sm4 = LatLng(51.6205, -3.9413)
+        mMap.addMarker(MarkerOptions().position(sm4).title("Rat Sport reported on 09/10/2020"))
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(sm4))
+
+        mMap.setMinZoomPreference(15.0f)
     }
 
     override fun onCreateView(

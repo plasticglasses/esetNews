@@ -66,6 +66,11 @@ class NewsAdapter(private val headlineArrayList: MutableList<newsModel>): Recycl
             val msg=txtMsg.text
             val snackbar= Snackbar.make(v,"$msg are the best!",Snackbar.LENGTH_LONG)
             snackbar.show()
+
+            //take you to full article
+//            val intent = Intent(this, SignUpActivity::class.java)
+//            startActivity(intent)
+
         }
 
     }
