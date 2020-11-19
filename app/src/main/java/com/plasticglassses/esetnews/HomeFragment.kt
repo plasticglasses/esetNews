@@ -11,7 +11,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dfl.newsapi.NewsApiRepository
 import com.dfl.newsapi.enums.Category
 import com.dfl.newsapi.enums.Country
+import com.google.firebase.Timestamp
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.plasticglassses.esetnews.adapters.NewsAdapter
@@ -33,6 +35,7 @@ class HomeFragment : Fragment() {
         val db = Firebase.firestore
         var rootView = inflater.inflate(R.layout.fragment_home, container, false)
 
+
         //get all new news from newsAPI
         generateGeneralNews(db)
 
@@ -47,6 +50,8 @@ class HomeFragment : Fragment() {
             val headlineAdapter = NewsAdapter(headlineArrayList)
             recyclerHeadlineView.adapter = headlineAdapter
         }
+
+        updateLastUpdated(db)
 
         return rootView
     }
@@ -80,39 +85,41 @@ class HomeFragment : Fragment() {
                     .addOnSuccessListener { document ->
                         if (document != null) {
 //                            upload new articles only
-                            val today = Calendar.getInstance()
-                            today.add(Calendar.HOUR, -1);
-                            val sendDateUAT =
-                                SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").format(today.time)
-                            Log.d("TIME: Refresh articles from", sendDateUAT)
-                            //get only most recent articles
-                            if (article.publishedAt > sendDateUAT) {
-                                val headline = hashMapOf(
-                                    "headline" to article.title,
-                                    "image" to article.urlToImage,
-                                    "author" to article.author,
-                                    "timestamp" to article.publishedAt,
-                                    "comments" to arrayListOf<String>()
-                                )
+                            getLastUpdated(db) { result ->
+                                var javaDate = result.toDate() as Date
+                                val formattedDate = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").format(javaDate)
 
-                                //add new documents to firebase
-                                db.collection("general_headlines").document()
-                                    .set(headline)
-                                    .addOnSuccessListener {
-                                        Log.d(
-                                            "home Fragment",
-                                            "DocumentSnapshot successfully written!"
-                                        )
-                                    }
-                                    .addOnFailureListener { e ->
-                                        Log.w(
-                                            "hom frAG",
-                                            "Error writing document",
-                                            e
-                                        )
-                                    }
+                                    Log.d("ADELE", article.publishedAt + formattedDate)
+
+                                if (article.publishedAt > formattedDate) {
+                                    Log.d("ADELE", "article.publishedAt > result.toString()")
+                                    val headline = hashMapOf(
+                                        "headline" to article.title,
+                                        "image" to article.urlToImage,
+                                        "author" to article.author,
+                                        "timestamp" to article.publishedAt,
+                                        "comments" to arrayListOf<String>()
+                                    )
+
+                                    //add new documents to firebase
+                                    db.collection("general_headlines").document()
+                                        .set(headline)
+                                        .addOnSuccessListener {
+                                            Log.d(
+                                                "home Fragment",
+                                                "DocumentSnapshot successfully written!"
+                                            )
+                                        }
+                                        .addOnFailureListener { e ->
+                                            Log.w(
+                                                "hom frAG",
+                                                "Error writing document",
+                                                e
+                                            )
+                                        }
 //                              //if here since last updated time add to top_headline json
-                            }//else document is too old so don't add
+                                }//else document is too old so don't add
+                            }
                         } else {
                             Log.d("GENERAL_LAST_UPDATED", "No such document")
                         }
@@ -157,4 +164,55 @@ class HomeFragment : Fragment() {
                 Log.d("POPULATE LIST", "get failed with ", exception)
             }
     }
+
+    fun updateLastUpdated(db: FirebaseFirestore) {
+        val docRef = db.collection("last_updated").document("general_last_updated")
+        docRef.get()
+            .addOnSuccessListener { document ->
+                if (document != null) {
+                    val today = Calendar.getInstance()
+                    Log.d("TIME: update last updated to: ", today.time.toString())
+
+                    val data = hashMapOf("last_updated" to today.time)
+
+                    db.collection("last_updated").document("general_last_updated")
+                        .set(data, SetOptions.merge())
+
+                } else {
+                    Log.d("Updating general headlines last updated", "No such document")
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.d("Updating general headlines last updated", "get failed with ", exception)
+            }
+    }
+
+    fun getLastUpdated(db: FirebaseFirestore, callback: (Timestamp) -> Unit) {
+        val docRef = db.collection("last_updated").document("general_last_updated")
+        docRef.get()
+            .addOnSuccessListener { document ->
+                if (document != null) {
+                    //val cal = Calendar.getInstance()
+                    var lastUpdated = (document["last_updated"] as Timestamp)
+
+//                    val today = Calendar.getInstance()
+//                    val sendDateUAT =
+//                        SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").format(lastUpdated)
+
+                    callback.invoke(lastUpdated)
+                    Log.d("GET LAST UPDATED: ", lastUpdated.toString())
+
+                } else {
+                    Log.d("GET LAST UPDATED", "No such document")
+                }
+
+
+            }
+            .addOnFailureListener { exception ->
+                Log.d("GET LAST UPDATED", "get failed with ", exception)
+            }
+
+    }
+
+
 }
