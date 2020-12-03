@@ -49,8 +49,6 @@ class HomeFragment : Fragment() {
             recyclerHeadlineView.adapter = headlineAdapter
         }
 
-        updateLastUpdated(db)
-
         return rootView
     }
 
@@ -83,9 +81,9 @@ class HomeFragment : Fragment() {
                                     SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").format(javaDate)
 
                                 if (article.publishedAt > formattedDate){
-                                    Log.d(
-                                        "SUCCCCCCCCCCCCCCCEEEEEEEEEEEEEEEEEEESSSSSSSSSSSSSSSSSSSSSSSS",
-                                        "whoop de doop")
+//                                    Log.d(
+//                                        "SUCCCCCCCCCCCCCCCEEEEEEEEEEEEEEEEEEESSSSSSSSSSSSSSSSSSSSSSSS",
+//                                        "whoop de doop")
 
                                 //only add new articles to firebase
                                 //if (article.publishedAt > formattedDate) {
@@ -120,11 +118,12 @@ class HomeFragment : Fragment() {
                                             )
                                         }
                                 }else{
-                                    Log.d(
-                                        "FAAAAAAAAAAAAAAAAAAAAAAAIIIIIIIIIIIIIIIIIIIIIIILLLLLLLLLLL",
-                                        "loober" + article.publishedAt + formattedDate)
+//                                    Log.d(
+//                                        "FAAAAAAAAAAAAAAAAAAAAAAAIIIIIIIIIIIIIIIIIIIIIIILLLLLLLLLLL",
+//                                        "loober" + article.publishedAt + formattedDate)
                                 }//else document is too old so don't add
                             }
+                            updateLastUpdated(db){}
                         } else {
                             Log.d("GENERAL_LAST_UPDATED", "No such document")
                         }
@@ -170,7 +169,7 @@ class HomeFragment : Fragment() {
     /*
     update firebase last updated counter
      */
-    fun updateLastUpdated(db: FirebaseFirestore) {
+    fun updateLastUpdated(db: FirebaseFirestore, callback: (Timestamp) -> Unit) {
         val docRef = db.collection("last_updated").document("general_last_updated")
         docRef.get()
             .addOnSuccessListener { document ->

@@ -28,8 +28,11 @@ class NewsAdapter(private val headlineArrayList: MutableList<newsModel>): Recycl
         val info=headlineArrayList[position]
 
         holder.txtMsg.text=info.getHeadline()
-        holder.headlineTimestamp.text = info.getTimestamp()
-        holder.author.text = info.getPublisher()
+
+        val dateString = info.getTimestamp().take(10)
+        val timeString = info.getTimestamp().drop(11).take(8)
+        holder.headlineTimestamp.text = dateString + " " + timeString
+        //holder.author.text = info.getPublisher()
         //holder.headlineImg.setImageDrawable(info.getHeadlineImg())
         if (info.getHeadlineImg() !== null) {
             Glide.with(holder.headlineImg.getContext())
@@ -65,9 +68,9 @@ class NewsAdapter(private val headlineArrayList: MutableList<newsModel>): Recycl
             val snackbar= Snackbar.make(v,"$msg are the best!",Snackbar.LENGTH_LONG)
             snackbar.show()
 
-            val activity=v!!.context as AppCompatActivity
-            val contentFragment = HeadlineContextFragment()
-            activity.supportFragmentManager.beginTransaction().replace(R.id.main, contentFragment).addToBackStack(null).commit()
+//            val activity=v!!.context as AppCompatActivity
+//            val contentFragment = HeadlineContextFragment()
+//            activity.supportFragmentManager.beginTransaction().replace(R.id.main, contentFragment).addToBackStack(null).commit()
         }
 
     }

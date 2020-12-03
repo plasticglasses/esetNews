@@ -13,11 +13,13 @@ import com.dfl.newsapi.enums.Category
 import com.dfl.newsapi.enums.Country
 import com.google.firebase.Timestamp
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.plasticglassses.esetnews.adapters.NewsAdapter
 import io.reactivex.schedulers.Schedulers
+import kotlinx.android.synthetic.main.card_headline.*
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -44,7 +46,6 @@ class TechFragment : Fragment() {
             recyclerHeadlineView.adapter = headlineAdapter
         }
 
-        updateLastUpdated(db)
         return rootView
     }
 
@@ -69,9 +70,9 @@ class TechFragment : Fragment() {
                                     SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").format(javaDate)
 
                                 if (article.publishedAt > formattedDate){
-                                    Log.d(
-                                        "SUCCCCCCCCCCCCCCCEEEEEEEEEEEEEEEEEEESSSSSSSSSSSSSSSSSSSSSSSS",
-                                        "whoop de doop")
+//                                    Log.d(
+//                                        "SUCCCCCCCCCCCCCCCEEEEEEEEEEEEEEEEEEESSSSSSSSSSSSSSSSSSSSSSSS",
+//                                        "whoop de doop")
 
                                     //only add new articles to firebase
                                     //if (article.publishedAt > formattedDate) {
@@ -106,11 +107,14 @@ class TechFragment : Fragment() {
                                             )
                                         }
                                 }else{
-                                    Log.d(
-                                        "FAAAAAAAAAAAAAAAAAAAAAAAIIIIIIIIIIIIIIIIIIIIIIILLLLLLLLLLL",
-                                        "loober" + article.publishedAt + formattedDate)
+//                                    Log.d(
+//                                        "FAAAAAAAAAAAAAAAAAAAAAAAIIIIIIIIIIIIIIIIIIIIIIILLLLLLLLLLL",
+//                                        "loober" + article.publishedAt + formattedDate)
                                 }//else document is too old so don't add
                             }
+
+                            updateLastUpdated(db)
+
                         } else {
                             Log.d("TECH_LAST_UPDATED", "No such document")
                         }
@@ -127,8 +131,8 @@ class TechFragment : Fragment() {
      */
     private fun populateList(db: FirebaseFirestore, callback: (ArrayList<newsModel>) -> Unit) {
         val list = ArrayList<newsModel>()
-        db.collection("tech_headlines").get()
-            .addOnSuccessListener { documents ->
+        var headlineRef = db.collection("tech_headlines")
+            headlineRef.get().addOnSuccessListener { documents ->
                 for (document in documents) {
                     if (document != null) {
 

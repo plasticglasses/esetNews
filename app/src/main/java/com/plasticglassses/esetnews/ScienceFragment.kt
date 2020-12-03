@@ -44,8 +44,6 @@ class ScienceFragment : Fragment() {
             recyclerHeadlineView.adapter = headlineAdapter
         }
 
-        updateLastUpdated(db)
-
         return rootView
 
     }
@@ -73,9 +71,9 @@ class ScienceFragment : Fragment() {
                                     SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").format(javaDate)
 
                                 if (article.publishedAt > formattedDate){
-                                    Log.d(
-                                        "SUCCCCCCCCCCCCCCCEEEEEEEEEEEEEEEEEEESSSSSSSSSSSSSSSSSSSSSSSS",
-                                        "whoop de doop")
+//                                    Log.d(
+//                                        "SUCCCCCCCCCCCCCCCEEEEEEEEEEEEEEEEEEESSSSSSSSSSSSSSSSSSSSSSSS",
+//                                        "whoop de doop")
 
                                     //only add new articles to firebase
                                     //if (article.publishedAt > formattedDate) {
@@ -115,6 +113,7 @@ class ScienceFragment : Fragment() {
                                         "loober" + article.publishedAt + formattedDate)
                                 }//else document is too old so don't add
                             }
+                            updateLastUpdated(db)
                         } else {
                             Log.d("Science_LAST_UPDATED", "No such document")
                         }
