@@ -131,7 +131,7 @@ class TechFragment : Fragment() {
      */
     private fun populateList(db: FirebaseFirestore, callback: (ArrayList<newsModel>) -> Unit) {
         val list = ArrayList<newsModel>()
-        var headlineRef = db.collection("tech_headlines")
+        var headlineRef = db.collection("tech_headlines").orderBy("timestamp", Query.Direction.DESCENDING)
             headlineRef.get().addOnSuccessListener { documents ->
                 for (document in documents) {
                     if (document != null) {
