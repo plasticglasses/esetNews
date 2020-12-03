@@ -2,21 +2,12 @@ package com.plasticglassses.esetnews
 
 import android.os.Bundle
 import android.util.Log
-import android.view.View
-import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
-import com.google.android.material.chip.Chip
-import com.google.android.material.chip.ChipGroup
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.plasticglassses.esetnews.adapters.ProfileTabAdaper
@@ -31,7 +22,7 @@ class ProfileActivity : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.toolbar))
 
         //back button
-        supportActionBar?.setDisplayHomeAsUpEnabled(false)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         //profile tabs
         val tabLayout = findViewById<TabLayout>(R.id.profile_tab_layout)
@@ -57,6 +48,13 @@ class ProfileActivity : AppCompatActivity() {
         getAlerts()
 
 
+    }
+
+    //return up the navigation tree when back button pressed
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        // or call onBackPressed()
+        return true
     }
 
     private fun getAlerts() {
