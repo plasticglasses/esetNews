@@ -1,16 +1,15 @@
 package com.plasticglassses.esetnews.adapters
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
-import com.plasticglassses.esetnews.HeadlineContextFragment
+import com.plasticglassses.esetnews.HeadlineActivity
 import com.plasticglassses.esetnews.R
 import com.plasticglassses.esetnews.newsModel
 
@@ -68,9 +67,9 @@ class NewsAdapter(private val headlineArrayList: MutableList<newsModel>): Recycl
             val snackbar= Snackbar.make(v,"$msg are the best!",Snackbar.LENGTH_LONG)
             snackbar.show()
 
-//            val activity=v!!.context as AppCompatActivity
-//            val contentFragment = HeadlineContextFragment()
-//            activity.supportFragmentManager.beginTransaction().replace(R.id.main, contentFragment).addToBackStack(null).commit()
+            //open separate view
+            val intent = Intent(v.context, HeadlineActivity::class.java)
+            v.context.startActivity(intent)
         }
 
     }

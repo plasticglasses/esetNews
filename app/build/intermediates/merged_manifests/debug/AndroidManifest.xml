@@ -29,6 +29,8 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.plasticglassses.esetnews.HeadlineActivity" />
+
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
@@ -36,8 +38,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name="com.plasticglassses.esetnews.ProfileActivity" >
-        </activity>
+        <activity android:name="com.plasticglassses.esetnews.ProfileActivity" />
         <activity android:name="com.plasticglassses.esetnews.SignUpActivity" />
         <activity android:name="com.plasticglassses.esetnews.LoginActivity" >
             <intent-filter>

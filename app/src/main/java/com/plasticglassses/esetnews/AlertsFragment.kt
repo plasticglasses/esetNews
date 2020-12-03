@@ -40,11 +40,9 @@ class AlertsFragment : Fragment() {
         getFirestoreID(uID, db) { fID ->
             Log.d(TAG, ("fID returned " + fID))
             getUsersAlerts(fID) { alertArray ->
-                if (alertArray != null) {
-                    Log.d(TAG, ("success alert array found " + alertArray))
-                    for (alert in alertArray) {
-                        addNewAlertToXML(rootView, alertChipGroup, alert, fID)
-                    }
+                Log.d(TAG, ("success alert array found " + alertArray))
+                for (alert in alertArray) {
+                    addNewAlertToXML(rootView, alertChipGroup, alert, fID)
                 }
             }
         }
@@ -113,8 +111,7 @@ class AlertsFragment : Fragment() {
     add a single alert to firebase
      */
     private fun addSingleAlertToFirebase(rootView: View,inflater: LayoutInflater,
-                                         alertChipGroup: ChipGroup?,newAlertText: String,uID: String,db: FirebaseFirestore
-                                         ) {
+                                         alertChipGroup: ChipGroup?,newAlertText: String,uID: String,db: FirebaseFirestore) {
         //add new alert to firebase
         getFirestoreID(uID, db) { fID ->
             Log.d(TAG, ("fID returned $fID"))

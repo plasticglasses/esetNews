@@ -12,6 +12,10 @@
         "source": "C:\\Users\\lizks\\AndroidStudioProjects\\esetNews2\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
+        "merged": "C:\\Users\\lizks\\AndroidStudioProjects\\esetNews2\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_headline.xml.flat",
+        "source": "C:\\Users\\lizks\\AndroidStudioProjects\\esetNews2\\app\\src\\main\\res\\layout\\activity_headline.xml"
+    },
+    {
         "merged": "C:\\Users\\lizks\\AndroidStudioProjects\\esetNews2\\app\\build\\intermediates\\res\\merged\\debug\\layout_chip_layout.xml.flat",
         "source": "C:\\Users\\lizks\\AndroidStudioProjects\\esetNews2\\app\\src\\main\\res\\layout\\chip_layout.xml"
     },

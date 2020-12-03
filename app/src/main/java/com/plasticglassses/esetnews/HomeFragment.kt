@@ -1,5 +1,6 @@
 package com.plasticglassses.esetnews
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -53,6 +54,7 @@ class HomeFragment : Fragment() {
         return rootView
     }
 
+    @SuppressLint("CheckResult")
     private fun generateGeneralNews(db: FirebaseFirestore) {
         //get general news for homepage
         newsApiRepository.getTopHeadlines(
@@ -67,8 +69,6 @@ class HomeFragment : Fragment() {
             .flatMapIterable { articles -> articles.articles }
             .subscribe({ article ->
 
-
-
                 //read last updated time
                 val docRef = db.collection("last_updated").document("general_last_updated")
                 docRef.get()
@@ -77,7 +77,7 @@ class HomeFragment : Fragment() {
 //                            upload new articles only
                             //get last updated date from firebase, format it into ISO format and compare to the pblished at time
                             getLastUpdated(db) { result ->
-                                var javaDate = result.toDate() as Date
+                                var javaDate = result.toDate()
                                 val formattedDate =
                                     SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").format(javaDate)
 

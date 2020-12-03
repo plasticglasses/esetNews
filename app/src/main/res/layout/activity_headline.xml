@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HeadlineActivity">
+
+    <ImageView
+        android:id="@+id/contentHeadineImage"
+        android:layout_width="340dp"
+        android:layout_height="128dp"
+        android:contentDescription="@string/headline_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:scrollbars="vertical"
+        app:layout_constraintVertical_bias="0.068" />
+
+    <TextView
+        android:id="@+id/contextHeadline"
+        android:layout_width="339dp"
+        android:layout_height="39dp"
+        android:text="@string/headline_here"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.442"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contentHeadineImage"
+        app:layout_constraintVertical_bias="0.032" />
+
+    <TextView
+        android:id="@+id/contextTimestamp"
+        android:layout_width="341dp"
+        android:layout_height="38dp"
+        android:text="@string/timestamp_here"
+        app:layout_constraintBottom_toBottomOf="@+id/contextInfo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contextHeadline"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <TextView
+        android:id="@+id/contextInfo"
+        android:layout_width="360dp"
+        android:layout_height="325dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="120dp"
+        android:text="@string/info_here"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contextTimestamp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="368dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="3dp"
+        android:text="@string/commentscontent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contextInfo"
+        app:layout_constraintVertical_bias="0.214" />
+
+    <EditText
+        android:id="@+id/contetAddComment"
+        android:layout_width="389dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="41dp"
+        android:text="@string/enter_your_comment_here"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contextInfo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

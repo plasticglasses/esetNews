@@ -1715,7 +1715,6 @@ id action_container
 id action_context_bar
 id action_divider
 id action_image
-id action_link
 id action_logout
 id action_menu_divider
 id action_menu_presenter
@@ -2155,6 +2154,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_headline
 layout activity_login
 layout activity_main
 layout activity_profile
@@ -2339,7 +2339,6 @@ string i_find_it_funny_how_sugar_and_alcohol_is_more_essential_than_books
 string icon_content_description
 string info_here
 string item_view_role_description
-string linked
 string log_out
 string material_slider_range_end
 string material_slider_range_start
