@@ -31,7 +31,7 @@ class ProfileActivity : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.toolbar))
 
         //back button
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
         //profile tabs
         val tabLayout = findViewById<TabLayout>(R.id.profile_tab_layout)
@@ -68,43 +68,7 @@ class ProfileActivity : AppCompatActivity() {
                 for (document in result) {
                     Log.d(TAG, "${document.id} => ${document.data}")
                 }
-//        val user = FirebaseAuth.getInstance().currentUser
 
-//        Log.d(TAG, user.toString())
-//
-//        user?.let {
-//
-//            // The user's ID, unique to the Firebase project. Do NOT use this value to
-//            // authenticate with your backend server, if you have one. Use
-//            // FirebaseUser.getToken() instead.
-//            val uid = user.uid
-//            Log.d(TAG, uid)
-//        }
-//        Log.d(TAG, FirebaseAuth.getInstance().currentUser?.uid.toString())
-//        FirebaseAuth.getInstance().currentUser?.uid
-
-
-//.getCurrentUser()!!.getUid()
-//        db.collection("users").document(FirebaseAuth.getInstance().getCurrentUser()!!.getUid())
-//            .get()
-//            .addOnSuccessListener { result ->
-//                Log.d(TAG, "${result.id} => ${result.data}")
-//            }
-//            .addOnFailureListener { exception ->
-//                Log.w(TAG, "Error getting documents.", exception)
-//            }
-
-//        db.collection("users")
-//            .get()
-//            .addOnSuccessListener { result ->
-//                for (document in result) {
-//                    Log.d(TAG, "${document.id} => ${document.data}")
-//                }
-
-//            }
-//            .addOnFailureListener { exception ->
-//                Log.w(TAG, "Error getting documents.", exception)
-//            }
             }
     }
 
