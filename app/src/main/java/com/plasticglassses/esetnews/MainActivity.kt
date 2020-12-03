@@ -76,11 +76,6 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
                 return true
             }
-            R.id.action_link -> {
-                val snackbar = Snackbar.make(myView, getString(R.string.linked), Snackbar.LENGTH_SHORT)
-                snackbar.show()
-                return true
-            }
             R.id.action_logout -> {
                 val snackbar = Snackbar.make(myView, getString(R.string.log_out), Snackbar.LENGTH_SHORT)
                 snackbar.show()
