@@ -13,6 +13,7 @@ import com.dfl.newsapi.enums.Category
 import com.dfl.newsapi.enums.Country
 import com.google.firebase.Timestamp
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -140,8 +141,9 @@ class HomeFragment : Fragment() {
      */
     private fun populateList(db: FirebaseFirestore, callback: (ArrayList<newsModel>) -> Unit) {
         val list = ArrayList<newsModel>()
-        db.collection("general_headlines").get()
-            .addOnSuccessListener { documents ->
+        var headlineRef =
+            db.collection("general_headlines").orderBy("timestamp", Query.Direction.DESCENDING)
+        headlineRef.get().addOnSuccessListener { documents ->
                 for (document in documents) {
                     if (document != null) {
 
