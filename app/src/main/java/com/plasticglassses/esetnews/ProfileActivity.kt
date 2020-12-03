@@ -33,11 +33,6 @@ class ProfileActivity : AppCompatActivity() {
         //back button
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
-
         //profile tabs
         val tabLayout = findViewById<TabLayout>(R.id.profile_tab_layout)
         val viewPager = findViewById<ViewPager2>(R.id.profile_pager)
