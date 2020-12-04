@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".HeadlineActivity">
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/contextHeadineImage"
         android:layout_width="340dp"
         android:layout_height="128dp"
@@ -18,7 +18,7 @@
         android:scrollbars="vertical"
         app:layout_constraintVertical_bias="0.068" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/contextHeadline"
         android:layout_width="339dp"
         android:layout_height="39dp"
@@ -30,7 +30,7 @@
         app:layout_constraintTop_toBottomOf="@+id/contentHeadineImage"
         app:layout_constraintVertical_bias="0.032" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/contextTimestamp"
         android:layout_width="341dp"
         android:layout_height="38dp"
@@ -41,7 +41,7 @@
         app:layout_constraintTop_toBottomOf="@+id/contextHeadline"
         app:layout_constraintVertical_bias="0.023" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/contextInfo"
         android:layout_width="360dp"
         android:layout_height="325dp"
@@ -54,7 +54,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contextTimestamp" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView6"
         android:layout_width="368dp"
         android:layout_height="28dp"
@@ -66,7 +66,7 @@
         app:layout_constraintTop_toBottomOf="@+id/contextInfo"
         app:layout_constraintVertical_bias="0.214" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/contetAddComment"
         android:layout_width="389dp"
         android:layout_height="43dp"

@@ -14,57 +14,57 @@
     android:foreground="?selectableItemBackground"
     android:clickable="true">
 
-    <RelativeLayout
+    <com.google.android.material.circularreveal.CircularRevealRelativeLayout
         android:layout_width="364dp"
         android:layout_height="105dp">
 
-        <LinearLayout
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="93dp"
             android:orientation="horizontal">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/headlineImg"
                 android:layout_width="92dp"
                 android:layout_height="match_parent"
-                android:paddingRight="10dp"/>
+                android:paddingEnd="10dp"/>
 
-            <LinearLayout
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <TextView
+                <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/headline"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="14dp"
-                    android:gravity="left" />
+                    android:gravity="start" />
 
-                <TextView
+                <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/timestamp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="right" />
+                    android:gravity="end" />
 
-                <TextView
+                <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/author"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="end|center_vertical" />
 
-                <TextView
+                <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/docID"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:visibility="invisible"
-                    android:gravity="right"/>
+                    android:gravity="end"/>
 
-            </LinearLayout>
-        </LinearLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-    </RelativeLayout>
+    </com.google.android.material.circularreveal.CircularRevealRelativeLayout>
 
 </androidx.cardview.widget.CardView>

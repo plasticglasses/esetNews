@@ -3,125 +3,124 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".CommentsFragment">
 
-    <LinearLayout
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/text_margin"
             android:text="@string/comments" />
 
-        <LinearLayout
+        <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <LinearLayout
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <LinearLayout
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="263dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <ImageView
+                <com.google.android.material.imageview.ShapeableImageView
                     android:layout_width="77dp"
                     android:layout_height="61dp"
                     android:background="@drawable/profile" />
 
-            </LinearLayout>
-            <LinearLayout
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-                <TextView
+                <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Liz"
-                    android:textSize="18dp"
+                    android:text="@string/liz"
+                    android:textSize="18sp"
                     android:textColor="@color/colorPrimary"/>
 
-                <TextView
+                <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="29/10/2020 15:34"
+                    android:text="@string/exampletime"
                     android:layout_marginTop="5dp"/>
-            </LinearLayout>
-        </LinearLayout>
-        <LinearLayout
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp">
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="commented on Males considered non-essential at Tesco by JustLizSimpson @ 12:09 saying 'I find it funny how sweets and alcohol are more essential than books and pens"
-                android:textSize="20dp"
+                android:text="@string/exampletext"
+                android:textSize="20sp"
                 android:textColor="@color/colorPrimary"/>
-        </LinearLayout>
-    </LinearLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 
 
-        <LinearLayout
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <LinearLayout
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <LinearLayout
+                <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="263dp"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <ImageView
+                    <com.google.android.material.imageview.ShapeableImageView
                         android:layout_width="77dp"
                         android:layout_height="61dp"
                         android:background="@drawable/profile" />
 
-                </LinearLayout>
-                <LinearLayout
+                </androidx.appcompat.widget.LinearLayoutCompat>
+                <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Liz"
-                        android:textSize="18dp"
+                        android:text="@string/liz"
+                        android:textSize="18sp"
                         android:textColor="@color/colorPrimary"/>
 
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="10/10/2020 10:00"
+                        android:text="@string/exampletime2"
                         android:layout_marginTop="5dp"/>
-                </LinearLayout>
-            </LinearLayout>
-            <LinearLayout
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp">
 
-                <TextView
+                <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="commented on jaffa cakes win house cup by JustLizSimpson @ 12:02 saying 'Yeah boi's'"
-                    android:textSize="20dp"
+                    android:text="@string/exampletext2"
+                    android:textSize="20sp"
                     android:textColor="@color/colorPrimary"/>
-            </LinearLayout>
-        </LinearLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
-        </LinearLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.core.widget.NestedScrollView>

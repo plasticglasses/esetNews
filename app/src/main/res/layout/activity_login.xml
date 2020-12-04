@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
-    <EditText
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/emailSignInText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.387" />
 
-    <androidx.appcompat.widget.AppCompatTextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/status_texview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-    </androidx.appcompat.widget.AppCompatTextView>
+    </com.google.android.material.textview.MaterialTextView>
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/signin"
@@ -45,9 +45,9 @@
         app:layout_constraintHorizontal_bias="0.799"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.792"></com.google.android.gms.common.SignInButton>
+        app:layout_constraintVertical_bias="0.792" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/editTextTextPersonName2"
         android:layout_width="wrap_content"
         android:layout_height="56dp"
@@ -55,12 +55,12 @@
         android:layout_marginTop="136dp"
         android:ems="12"
         android:inputType="textPersonName"
-        android:text="Welcome, Log In to get your latest news"
+        android:text="@string/welcome"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/passwordSignInText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -74,11 +74,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.454" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView2"
         android:layout_width="54dp"
         android:layout_height="18dp"
-        android:text="Password"
+        android:text="@string/password"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.103"
@@ -86,12 +86,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.506" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/loginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"
-        android:text="LOG IN"
+        android:text="@string/log_in"
         android:onClick="clickLoginButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -100,12 +100,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.723" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="65dp"
-        android:text="Email"
+        android:text="@string/email"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.106"
@@ -113,11 +113,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.397" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Forgot Password?"
+        android:text="@string/forgot_password"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.808"
@@ -125,12 +125,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.616" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="83dp"
-        android:text="New to ESET News, Register?"
+        android:text="@string/new_to_eset_news_register"
         android:onClick="clickRegisterLink"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

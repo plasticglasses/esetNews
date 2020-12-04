@@ -2,7 +2,6 @@
 <androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AlertsFragment">
@@ -12,12 +11,12 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_margin"
         android:text="@string/alerts" />
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/text_margin"
@@ -31,7 +30,7 @@
 
         </com.google.android.material.chip.ChipGroup>
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
          android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/text_margin"
@@ -44,67 +43,67 @@
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/HCIChip"
-                android:text="HCI"
+                android:text="@string/hci"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 style = "@style/SuggestedChipStyle" />
             <com.google.android.material.chip.Chip
                 android:id="@+id/CERNChip"
-                android:text="CERN"
+                android:text="@string/cern"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 style = "@style/SuggestedChipStyle"/>
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/ClimateChangeChip"
-                android:text="Climate Change"
+                android:text="@string/climate_change"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 style = "@style/SuggestedChipStyle"/>
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/PlasticChip"
-                android:text="Plastic"
+                android:text="@string/plastic"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 style = "@style/SuggestedChipStyle"/>
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/VRChip"
-                android:text="VR"
+                android:text="@string/vr"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 style="@style/SuggestedChipStyle"/>
             <com.google.android.material.chip.Chip
                 android:id="@+id/NASAChip"
-                android:text="NASA"
+                android:text="@string/nasa"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 style="@style/SuggestedChipStyle"/>
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/UnityChip"
-                android:text="Unity"
+                android:text="@string/unity"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 style="@style/SuggestedChipStyle"/>
         </com.google.android.material.chip.ChipGroup>
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/text_margin"
-            android:text="Add Alert" />
+            android:text="@string/add_alert" />
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Enter new Alert" />
+            android:text="@string/enter_new_alert" />
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:id="@+id/newAlertText"/>
@@ -113,7 +112,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/addAlert"
-            android:text="Add"/>
+            android:text="@string/add"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 
