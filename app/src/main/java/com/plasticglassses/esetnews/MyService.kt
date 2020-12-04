@@ -9,6 +9,8 @@ import android.widget.Toast
 
 class MyService: Service() {
 
+    var alarm = Alarm()
+
     private lateinit var ringtone: Ringtone
 
     override fun onBind(p0: Intent?): IBinder? {
@@ -16,6 +18,8 @@ class MyService: Service() {
     }
 
     override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int{
+
+        alarm.setAlarm(this);
 
         Toast.makeText(this, "Vooleyvoo", Toast.LENGTH_LONG).show()
 
@@ -32,7 +36,7 @@ class MyService: Service() {
     }
 
     fun playAlert(){
-        val alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM)
+        val alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
         ringtone = RingtoneManager.getRingtone(this, alarmSound)
 
         if(!ringtone.isPlaying){

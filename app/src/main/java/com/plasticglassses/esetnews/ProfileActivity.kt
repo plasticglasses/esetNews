@@ -1,7 +1,11 @@
 package com.plasticglassses.esetnews
 
+import android.app.AlarmManager
+import android.app.PendingIntent
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.SystemClock
 import android.util.Log
 import android.view.View
 import android.widget.TextView
@@ -55,6 +59,23 @@ class ProfileActivity : AppCompatActivity() {
         //sample service
         val mTextView = findViewById<TextView>(R.id.textView1)
         mTextView.text="Example of service"
+
+//        val alarmManager =
+//            context.getSystemService(Context.ALARM_SERVICE) as? AlarmManager
+//        val pendingIntent =
+//            PendingIntent.getService(context, requestId, intent,
+//                PendingIntent.FLAG_NO_CREATE)
+//        if (pendingIntent != null && alarmManager != null) {
+//            alarmManager.cancel(pendingIntent)
+//        }
+//
+//        // Hopefully your alarm will have a lower frequency than this!
+//        alarmMgr?.setInexactRepeating(
+//            AlarmManager.ELAPSED_REALTIME_WAKEUP,
+//            SystemClock.elapsedRealtime() + AlarmManager.INTERVAL_HALF_HOUR,
+//            AlarmManager.INTERVAL_HALF_HOUR,
+//            alarmIntent
+//        )
 
     }
 
