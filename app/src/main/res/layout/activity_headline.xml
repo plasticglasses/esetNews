@@ -7,7 +7,7 @@
     tools:context=".HeadlineActivity">
 
     <ImageView
-        android:id="@+id/contentHeadineImage"
+        android:id="@+id/contextHeadineImage"
         android:layout_width="340dp"
         android:layout_height="128dp"
         android:contentDescription="@string/headline_image"

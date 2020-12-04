@@ -153,6 +153,9 @@ class HomeFragment : Fragment() {
                         thisModel.setHeadlineImg(document.get("image").toString())
                         thisModel.setTimestamp(document.get("timestamp").toString())
                         thisModel.setPublisher(document.get("author").toString())
+                        thisModel.setFirebaseDocID(document.id)
+
+
 
                         //add to list so that recycler view can take data
                         list.add(thisModel)

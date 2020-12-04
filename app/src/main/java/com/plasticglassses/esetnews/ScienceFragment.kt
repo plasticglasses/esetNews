@@ -90,6 +90,7 @@ class ScienceFragment : Fragment() {
                                         "timestamp" to article.publishedAt,
                                         "article" to article.url,
                                         "comments" to arrayListOf<String>(arrayListOf<String>("user").toString(), arrayListOf<String>("comment").toString(), arrayListOf<String>("timestamp").toString())
+
                                     )
 
                                     //add new documents to firebase

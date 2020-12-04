@@ -13,8 +13,9 @@ import com.plasticglassses.esetnews.HeadlineActivity
 import com.plasticglassses.esetnews.R
 import com.plasticglassses.esetnews.newsModel
 
-
 class NewsAdapter(private val headlineArrayList: MutableList<newsModel>): RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
+
+    var contextArray: Array<String> = emptyArray()
 
     override fun onCreateViewHolder(parent:ViewGroup,viewType:Int):ViewHolder{
         val inflater= LayoutInflater.from(parent.context)
@@ -26,21 +27,22 @@ class NewsAdapter(private val headlineArrayList: MutableList<newsModel>): Recycl
     override fun onBindViewHolder(holder:ViewHolder,position:Int){
         val info=headlineArrayList[position]
 
-        holder.txtMsg.text=info.getHeadline()
+        holder.txtDocID.text = info.getFirebaseDocID()
 
+        holder.txtMsg.text=info.getHeadline()
         val dateString = info.getTimestamp().take(10)
         val timeString = info.getTimestamp().drop(11).take(8)
         holder.headlineTimestamp.text = dateString + " " + timeString
         //holder.author.text = info.getPublisher()
         //holder.headlineImg.setImageDrawable(info.getHeadlineImg())
-        if (info.getHeadlineImg() !== null) {
+        var image = info.getHeadlineImg()
+        if (image !== null) {
             Glide.with(holder.headlineImg.getContext())
-                .load(info.getHeadlineImg())
+                .load(image)
                 .into(holder.headlineImg)
         } else {
             holder.headlineImg.setImageResource(R.drawable.ic_launcher_background)
         }
-
     }
 
 
@@ -56,7 +58,7 @@ class NewsAdapter(private val headlineArrayList: MutableList<newsModel>): Recycl
         var txtMsg=itemView.findViewById<View>(R.id.headline)as TextView
         val author = itemView.findViewById<View>(R.id.author) as TextView
         val headlineImg = itemView.findViewById<View>(R.id.headlineImg) as ImageView
-
+        val txtDocID = itemView.findViewById<View>(R.id.docID) as TextView
 
         init{
             itemView.setOnClickListener(this)
@@ -64,12 +66,15 @@ class NewsAdapter(private val headlineArrayList: MutableList<newsModel>): Recycl
 
         override fun onClick(v:View){
             val msg=txtMsg.text
-            val snackbar= Snackbar.make(v,"$msg are the best!",Snackbar.LENGTH_LONG)
-            snackbar.show()
+            Snackbar.make(v,"$msg are the best!",Snackbar.LENGTH_LONG).show()
 
             //open separate view
             val intent = Intent(v.context, HeadlineActivity::class.java)
+            val id=txtDocID.text
+            intent.putExtra("id", id)
+            //intent.putExtra("contextArray", contextArray)
             v.context.startActivity(intent)
+
         }
 
     }

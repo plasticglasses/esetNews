@@ -1777,6 +1777,7 @@ id content
 id contentHeadineImage
 id contentPanel
 id contetAddComment
+id contextHeadineImage
 id contextHeadline
 id contextInfo
 id contextTimestamp
@@ -1805,6 +1806,7 @@ id direct
 id disableHome
 id disablePostScroll
 id disableScroll
+id docID
 id dragDown
 id dragEnd
 id dragLeft

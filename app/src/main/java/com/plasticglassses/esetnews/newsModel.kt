@@ -6,6 +6,7 @@ class newsModel() {
     private var headlineImg: String = ""
     private var timestamp: String = ""
     private var publisher: String = ""
+    private var firebaseDocID: String = ""
 
     fun getHeadline(): String{
         return headline.toString()
@@ -23,6 +24,10 @@ class newsModel() {
         return timestamp.toString()
     }
 
+    fun getFirebaseDocID(): String{
+        return firebaseDocID.toString()
+    }
+
     fun setHeadline(headline: String){
         this.headline = headline
     }
@@ -37,6 +42,10 @@ class newsModel() {
 
     fun setPublisher(publisher: String){
         this.publisher = publisher
+    }
+
+    fun setFirebaseDocID(id: String){
+        this.firebaseDocID = id
     }
 
     override fun toString(): String{
