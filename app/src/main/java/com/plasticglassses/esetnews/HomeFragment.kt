@@ -82,12 +82,7 @@ class HomeFragment : Fragment() {
                                     SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").format(javaDate)
 
                                 if (article.publishedAt > formattedDate){
-//                                    Log.d(
-//                                        "SUCCCCCCCCCCCCCCCEEEEEEEEEEEEEEEEEEESSSSSSSSSSSSSSSSSSSSSSSS",
-//                                        "whoop de doop")
-
-                                //only add new articles to firebase
-                                //if (article.publishedAt > formattedDate) {
+//
                                     //print out new articles
                                     Log.d(
                                         "getTopHead General article",
@@ -119,9 +114,7 @@ class HomeFragment : Fragment() {
                                             )
                                         }
                                 }else{
-//                                    Log.d(
-//                                        "FAAAAAAAAAAAAAAAAAAAAAAAIIIIIIIIIIIIIIIIIIIIIIILLLLLLLLLLL",
-//                                        "loober" + article.publishedAt + formattedDate)
+
                                 }//else document is too old so don't add
                             }
                             updateLastUpdated(db){}
@@ -154,8 +147,6 @@ class HomeFragment : Fragment() {
                         thisModel.setTimestamp(document.get("timestamp").toString())
                         thisModel.setPublisher(document.get("author").toString())
                         thisModel.setFirebaseDocID(document.id)
-
-
 
                         //add to list so that recycler view can take data
                         list.add(thisModel)
