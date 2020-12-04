@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:2:1-36:12
-INJECTED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:2:1-36:12
-INJECTED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:2:1-36:12
-INJECTED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:2:1-36:12
+ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:2:1-42:12
 MERGED from [androidx.core:core-ktx:1.3.2] C:\Users\lizks\.gradle\caches\transforms-2\files-2.1\f2bd8bc28f9e2af9854e157eb70dab49\jetified-core-ktx-1.3.2\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-storage-ktx:19.2.0] C:\Users\lizks\.gradle\caches\transforms-2\files-2.1\224b43ec2cd0f6a788f82f49c8476a60\jetified-firebase-storage-ktx-19.2.0\AndroidManifest.xml:2:1-21:12
 MERGED from [com.google.firebase:firebase-analytics-ktx:18.0.0] C:\Users\lizks\.gradle\caches\transforms-2\files-2.1\de0eb293c62b1aff5907c9bcd2a60fad\jetified-firebase-analytics-ktx-18.0.0\AndroidManifest.xml:2:1-17:12
@@ -78,25 +78,27 @@ MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\lizks\.gradle\cache
 MERGED from [com.google.firebase:protolite-well-known-types:17.1.0] C:\Users\lizks\.gradle\caches\transforms-2\files-2.1\435c5c5c801c3d2a8c1a56508e8300a2\jetified-protolite-well-known-types-17.1.0\AndroidManifest.xml:2:1-11:12
 MERGED from [io.grpc:grpc-android:1.28.0] C:\Users\lizks\.gradle\caches\transforms-2\files-2.1\7b3d5921e5436d5d2b47a32dde8365b2\jetified-grpc-android-1.28.0\AndroidManifest.xml:2:1-13:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\lizks\.gradle\caches\transforms-2\files-2.1\e32be5e1d58189a4c14b75e510d8d239\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:2:1-36:12
-INJECTED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:2:1-36:12
-INJECTED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:2:1-36:12
+INJECTED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:2:1-42:12
 	package
-		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:3:5-43
+		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:4:5-43
 		INJECTED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:2:1-36:12
+		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:2:1-42:12
 		INJECTED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:2:1-36:12
+		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:2:1-42:12
 		INJECTED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:5:5-79
+ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:6:5-79
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\lizks\.gradle\caches\transforms-2\files-2.1\ff233eb1a2b39fb22279e5b15c94179b\jetified-play-services-maps-17.0.0\AndroidManifest.xml:23:5-79
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\lizks\.gradle\caches\transforms-2\files-2.1\ff233eb1a2b39fb22279e5b15c94179b\jetified-play-services-maps-17.0.0\AndroidManifest.xml:23:5-79
 MERGED from [com.google.firebase:firebase-auth:20.0.1] C:\Users\lizks\.gradle\caches\transforms-2\files-2.1\4209846277971408f8547bb3a6940e28\jetified-firebase-auth-20.0.1\AndroidManifest.xml:24:5-79
@@ -118,9 +120,9 @@ MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.0] C:
 MERGED from [io.grpc:grpc-android:1.28.0] C:\Users\lizks\.gradle\caches\transforms-2\files-2.1\7b3d5921e5436d5d2b47a32dde8365b2\jetified-grpc-android-1.28.0\AndroidManifest.xml:11:5-79
 MERGED from [io.grpc:grpc-android:1.28.0] C:\Users\lizks\.gradle\caches\transforms-2\files-2.1\7b3d5921e5436d5d2b47a32dde8365b2\jetified-grpc-android-1.28.0\AndroidManifest.xml:11:5-79
 	android:name
-		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:5:22-76
+		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:6:22-76
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:6:5-67
+ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:7:5-67
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\lizks\.gradle\caches\transforms-2\files-2.1\ff233eb1a2b39fb22279e5b15c94179b\jetified-play-services-maps-17.0.0\AndroidManifest.xml:24:5-67
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\lizks\.gradle\caches\transforms-2\files-2.1\ff233eb1a2b39fb22279e5b15c94179b\jetified-play-services-maps-17.0.0\AndroidManifest.xml:24:5-67
 MERGED from [com.google.firebase:firebase-auth:20.0.1] C:\Users\lizks\.gradle\caches\transforms-2\files-2.1\4209846277971408f8547bb3a6940e28\jetified-firebase-auth-20.0.1\AndroidManifest.xml:23:5-67
@@ -140,9 +142,9 @@ MERGED from [com.google.android.gms:play-services-measurement-impl:18.0.0] C:\Us
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.0] C:\Users\lizks\.gradle\caches\transforms-2\files-2.1\3f564750b6e6ca026bab9c0624065d32\jetified-play-services-measurement-sdk-api-18.0.0\AndroidManifest.xml:23:5-67
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.0] C:\Users\lizks\.gradle\caches\transforms-2\files-2.1\3f564750b6e6ca026bab9c0624065d32\jetified-play-services-measurement-sdk-api-18.0.0\AndroidManifest.xml:23:5-67
 	android:name
-		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:6:22-64
+		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:7:22-64
 application
-ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:8:5-34:19
+ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:9:5-40:19
 MERGED from [com.google.firebase:firebase-storage-ktx:19.2.0] C:\Users\lizks\.gradle\caches\transforms-2\files-2.1\224b43ec2cd0f6a788f82f49c8476a60\jetified-firebase-storage-ktx-19.2.0\AndroidManifest.xml:11:5-19:19
 MERGED from [com.google.firebase:firebase-storage-ktx:19.2.0] C:\Users\lizks\.gradle\caches\transforms-2\files-2.1\224b43ec2cd0f6a788f82f49c8476a60\jetified-firebase-storage-ktx-19.2.0\AndroidManifest.xml:11:5-19:19
 MERGED from [com.google.firebase:firebase-analytics-ktx:18.0.0] C:\Users\lizks\.gradle\caches\transforms-2\files-2.1\de0eb293c62b1aff5907c9bcd2a60fad\jetified-firebase-analytics-ktx-18.0.0\AndroidManifest.xml:7:5-15:19
@@ -208,61 +210,69 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\li
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.3.2] C:\Users\lizks\.gradle\caches\transforms-2\files-2.1\44f6cec82867bef90b322ae578d0f4e0\core-1.3.2\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:13:9-35
+		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:14:9-35
 	android:label
-		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:11:9-41
+		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:12:9-41
 	android:roundIcon
-		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:12:9-54
+		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:13:9-54
 	android:icon
-		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:10:9-43
+		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:11:9-43
 	android:allowBackup
-		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:9:9-35
+		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:10:9-35
 	android:theme
-		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:14:9-40
+		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:15:9-40
 activity#com.plasticglassses.esetnews.HeadlineActivity
-ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:15:9-63
+ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:16:9-63
 	android:name
-		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:15:19-51
+		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:16:19-51
 meta-data#com.google.android.gms.version
-ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:17:9-19:69
+ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:18:9-20:69
 MERGED from [com.google.android.gms:play-services-basement:17.1.0] C:\Users\lizks\.gradle\caches\transforms-2\files-2.1\1a884463917ddae3380b991df3a31de4\jetified-play-services-basement-17.1.0\AndroidManifest.xml:23:9-25:69
 MERGED from [com.google.android.gms:play-services-basement:17.1.0] C:\Users\lizks\.gradle\caches\transforms-2\files-2.1\1a884463917ddae3380b991df3a31de4\jetified-play-services-basement-17.1.0\AndroidManifest.xml:23:9-25:69
 	android:value
-		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:19:13-66
+		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:20:13-66
 	android:name
-		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:18:13-58
+		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:19:13-58
 meta-data#com.google.android.geo.API_KEY
-ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:20:9-22:55
+ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:21:9-23:55
 	android:value
-		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:22:13-52
+		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:23:13-52
 	android:name
-		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:21:13-58
+		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:22:13-58
 activity#com.plasticglassses.esetnews.ProfileActivity
-ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:24:9-62
+ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:25:9-62
 	android:name
-		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:24:19-50
+		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:25:19-50
 activity#com.plasticglassses.esetnews.SignUpActivity
-ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:25:9-52
+ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:26:9-52
 	android:name
-		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:25:19-49
+		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:26:19-49
 activity#com.plasticglassses.esetnews.LoginActivity
-ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:26:9-32:20
+ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:27:9-33:20
 	android:name
-		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:26:19-48
+		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:27:19-48
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:27:13-31:29
+ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:28:13-32:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:28:17-69
+ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:29:17-69
 	android:name
-		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:28:25-66
+		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:29:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:30:17-77
+ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:31:17-77
 	android:name
-		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:30:27-74
+		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:31:27-74
 activity#com.plasticglassses.esetnews.MainActivity
-ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:33:9-50
+ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:34:9-50
 	android:name
-		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:33:19-47
+		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:34:19-47
+service#com.plasticglassses.esetnews.MyService
+ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:35:9-39:15
+	android:enabled
+		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:38:13-37
+	android:name
+		ADDED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml:36:13-38
 uses-sdk
 INJECTED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\lizks\AndroidStudioProjects\esetNews2\app\src\main\AndroidManifest.xml

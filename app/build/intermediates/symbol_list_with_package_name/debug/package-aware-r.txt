@@ -2048,6 +2048,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textView
+id textView1
 id textView2
 id textView3
 id textView4
@@ -2252,6 +2253,7 @@ menu news_toolbar_layout
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
+raw alert_sound
 string Enter_Pwd
 string abc_action_bar_home_description
 string abc_action_bar_up_description

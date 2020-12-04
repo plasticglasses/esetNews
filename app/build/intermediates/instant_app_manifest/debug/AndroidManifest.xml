@@ -51,6 +51,10 @@
         <activity android:name="com.plasticglassses.esetnews.MainActivity" />
 
         <service
+            android:name="com.plasticglassses.esetnews.MyService"
+            android:enabled="true"
+            android:exported="false" />
+        <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"
             android:directBootAware="true"
             android:exported="false" >

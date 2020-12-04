@@ -1,7 +1,10 @@
 package com.plasticglassses.esetnews
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
@@ -41,13 +44,31 @@ class ProfileActivity : AppCompatActivity() {
                 }
             }).attach()
 
+        //setup to use firebase
         auth = Firebase.auth
         val user = auth.currentUser
         val db = Firebase.firestore
 
+        //get the users specific alerts from firesore and populate the view
         getAlerts()
 
+        //sample service
+        val mTextView = findViewById<TextView>(R.id.textView1)
+        mTextView.text="Example of service"
 
+    }
+
+    //alert service
+    fun startService(view: View){
+        val serviceIntent = Intent(this, MyService::class.java)
+        serviceIntent.putExtra("firstString", "Hello")
+        serviceIntent.putExtra("secondWord", "world")
+        startService(serviceIntent)
+    }
+
+    fun stopService(view:View){
+        val serviceIntent = Intent(this, MyService::class.java)
+        stopService(serviceIntent)
     }
 
     //return up the navigation tree when back button pressed
