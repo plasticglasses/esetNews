@@ -28,6 +28,11 @@ class ProfileActivity : AppCompatActivity() {
         setContentView(R.layout.activity_profile)
         setSupportActionBar(findViewById(R.id.toolbar))
 
+        //setup to use firebase
+        auth = Firebase.auth
+        val user = auth.currentUser
+        val db = Firebase.firestore
+
         //back button
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
@@ -47,11 +52,6 @@ class ProfileActivity : AppCompatActivity() {
                     1 -> tab.text = tabProfileTitles[1] //comments
                 }
             }).attach()
-
-        //setup to use firebase
-        auth = Firebase.auth
-        val user = auth.currentUser
-        val db = Firebase.firestore
 
         //get the users specific alerts from firesore and populate the view
         getAlerts()

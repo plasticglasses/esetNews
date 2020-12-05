@@ -3,6 +3,7 @@ package com.plasticglassses.esetnews
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.webkit.WebView
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -17,11 +18,9 @@ class HeadlineActivity : AppCompatActivity() {
         setContentView(R.layout.activity_headline)
         var fireDocID = intent.getStringExtra("id")
 
-        val headlineText = findViewById<TextView>(R.id.contextHeadline)
-        val timestampText = findViewById<TextView>(R.id.contextTimestamp)
-        val headlineImage = findViewById<ImageView>(R.id.contextHeadineImage)
-
-
+//        val headlineText = findViewById<TextView>(R.id.contextHeadline)
+//        val timestampText = findViewById<TextView>(R.id.contextTimestamp)
+//        val headlineImage = findViewById<ImageView>(R.id.contextHeadineImage)
 
         val db = Firebase.firestore
 
@@ -31,16 +30,18 @@ class HeadlineActivity : AppCompatActivity() {
             .addOnSuccessListener { document ->
                 if (document != null) {
 
-                    headlineText.text= fireDocID.toString()
-
+//                    headlineText.text= fireDocID.toString()
 //if document is a general headline, populate activity with information
-                    val headlineText = findViewById<TextView>(R.id.contextHeadline)
-                    val timestampText = findViewById<TextView>(R.id.contextTimestamp)
-                    val headlineImage = findViewById<ImageView>(R.id.contextHeadineImage)
+//                    val headlineText = findViewById<TextView>(R.id.contextHeadline)
+//                    val timestampText = findViewById<TextView>(R.id.contextTimestamp)
+//                    val headlineImage = findViewById<ImageView>(R.id.contextHeadineImage)
 
-                    headlineText.text = document.get("headline").toString()
-                    timestampText.text = document.get("timestamp").toString()
+//                    headlineText.text = document.get("headline").toString()
+//                    timestampText.text = document.get("timestamp").toString()
 
+                    val url = document.getString("article")
+                    val myWebView =  findViewById<WebView>(R.id.contentWebview);
+                    myWebView.loadUrl(url!!);
 
                     Log.d("Full screen article", "DocumentSnapshot data: ${document.data}")
                 } else {
@@ -50,11 +51,5 @@ class HeadlineActivity : AppCompatActivity() {
             .addOnFailureListener { exception ->
                 Log.d("Full screen article", "get failed with ", exception)
             }
-
-
-
-
-
-
     }
 }
