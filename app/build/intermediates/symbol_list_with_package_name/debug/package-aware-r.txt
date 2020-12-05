@@ -1726,6 +1726,7 @@ id actions
 id activity_chooser_view_content
 id add
 id addAlert
+id addCommentText
 id adjust_height
 id adjust_width
 id alertChipGroup
@@ -1957,6 +1958,7 @@ id popup_window_title
 id popup_window_view
 id popup_window_view_with_border
 id position
+id postButton
 id postLayout
 id profile
 id profile_pager
@@ -1966,6 +1968,7 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id recyclerView
 id register
 id reverseSawtooth
 id right

@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.webkit.WebView
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -18,7 +20,7 @@ class HeadlineActivity : AppCompatActivity() {
         setContentView(R.layout.activity_headline)
         var fireDocID = intent.getStringExtra("id")
 
-//        val headlineText = findViewById<TextView>(R.id.contextHeadline)
+        val postButton = findViewById<Button>(R.id.postButton)
 //        val timestampText = findViewById<TextView>(R.id.contextTimestamp)
 //        val headlineImage = findViewById<ImageView>(R.id.contextHeadineImage)
 
@@ -33,15 +35,6 @@ class HeadlineActivity : AppCompatActivity() {
             .addOnSuccessListener { document ->
                 if (document != null) {
 
-//                    headlineText.text= fireDocID.toString()
-//if document is a general headline, populate activity with information
-//                    val headlineText = findViewById<TextView>(R.id.contextHeadline)
-//                    val timestampText = findViewById<TextView>(R.id.contextTimestamp)
-//                    val headlineImage = findViewById<ImageView>(R.id.contextHeadineImage)
-
-//                    headlineText.text = document.get("headline").toString()
-//                    timestampText.text = document.get("timestamp").toString()
-
                     val url = document.getString("article")
                     val myWebView =  findViewById<WebView>(R.id.contentWebview);
                     myWebView.loadUrl(url!!);
@@ -54,5 +47,19 @@ class HeadlineActivity : AppCompatActivity() {
             .addOnFailureListener { exception ->
                 Log.d("Full screen article", "get failed with ", exception)
             }
+
+
+        postButton.setOnClickListener(){
+
+            val commentText = findViewById<TextView>(R.id.addCommentText).text.toString()
+
+
+            // Update one field, creating the document if it does not already exist.
+            val data = hashMapOf("comments[1][0]" to commentText)
+
+            db.collection("general_headlines").document(fireDocID.toString())
+                .set(data, SetOptions.merge())
+        }
+
     }
 }

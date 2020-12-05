@@ -97,19 +97,20 @@
         app:layout_constraintVertical_bias="0.214" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/contetAddComment"
-        android:layout_width="362dp"
-        android:layout_height="54dp"
+        android:id="@+id/addCommentText"
+        android:layout_width="293dp"
+        android:layout_height="58dp"
         android:layout_marginTop="41dp"
-        android:layout_marginBottom="92dp"
+        android:layout_marginBottom="96dp"
         android:text="@string/enter_your_comment_here"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintHorizontal_bias="0.208"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contextInfo" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="363dp"
         android:layout_height="68dp"
         android:layout_marginStart="28dp"
@@ -120,5 +121,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contetAddComment" />
+
+    <Button
+        android:id="@+id/postButton"
+        android:layout_width="59dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="11dp"
+        android:text="Post"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/addCommentText"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
