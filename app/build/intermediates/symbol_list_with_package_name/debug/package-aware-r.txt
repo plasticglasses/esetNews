@@ -1949,6 +1949,13 @@ id pathRelative
 id peekHeight
 id percent
 id pin
+id popup_window_background
+id popup_window_background_container
+id popup_window_button
+id popup_window_text
+id popup_window_title
+id popup_window_view
+id popup_window_view_with_border
 id position
 id postLayout
 id profile
@@ -2158,6 +2165,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_headline
+layout activity_local_pop_up_window
 layout activity_login
 layout activity_main
 layout activity_profile

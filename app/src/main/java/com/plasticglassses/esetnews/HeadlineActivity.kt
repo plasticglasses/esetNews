@@ -22,6 +22,9 @@ class HeadlineActivity : AppCompatActivity() {
 //        val timestampText = findViewById<TextView>(R.id.contextTimestamp)
 //        val headlineImage = findViewById<ImageView>(R.id.contextHeadineImage)
 
+        //back button
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         val db = Firebase.firestore
 
 //        timestampText.text= info.get(1).toString()

@@ -96,6 +96,10 @@
         "source": "C:\\Users\\lizks\\AndroidStudioProjects\\esetNews2\\app\\src\\main\\res\\drawable\\profile.png"
     },
     {
+        "merged": "C:\\Users\\lizks\\AndroidStudioProjects\\esetNews2\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_local_pop_up_window.xml.flat",
+        "source": "C:\\Users\\lizks\\AndroidStudioProjects\\esetNews2\\app\\src\\main\\res\\layout\\activity_local_pop_up_window.xml"
+    },
+    {
         "merged": "C:\\Users\\lizks\\AndroidStudioProjects\\esetNews2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\lizks\\AndroidStudioProjects\\esetNews2\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
