@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HeadlineActivity">
+    tools:context=".HeadlineActivity"
+    android:scrollbars="horizontal">
 
     <!--for menu items, see Menu res/menu/layout-->
     <com.google.android.material.appbar.MaterialToolbar
@@ -23,57 +24,9 @@
 
     </com.google.android.material.appbar.MaterialToolbar>
 
-<!--    <com.google.android.material.imageview.ShapeableImageView-->
-<!--        android:id="@+id/contextHeadineImage"-->
-<!--        android:layout_width="340dp"-->
-<!--        android:layout_height="128dp"-->
-<!--        android:contentDescription="@string/headline_image"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        android:scrollbars="vertical"-->
-<!--        app:layout_constraintVertical_bias="0.068" />-->
-
-<!--    <com.google.android.material.textview.MaterialTextView-->
-<!--        android:id="@+id/contextHeadline"-->
-<!--        android:layout_width="339dp"-->
-<!--        android:layout_height="39dp"-->
-<!--        android:text="@string/headline_here"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.442"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/contentHeadineImage"-->
-<!--        app:layout_constraintVertical_bias="0.032" />-->
-
-<!--    <com.google.android.material.textview.MaterialTextView-->
-<!--        android:id="@+id/contextTimestamp"-->
-<!--        android:layout_width="341dp"-->
-<!--        android:layout_height="38dp"-->
-<!--        android:text="@string/timestamp_here"-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/contextInfo"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/contextHeadline"-->
-<!--        app:layout_constraintVertical_bias="0.023" />-->
-
-    <!--    <com.google.android.material.textview.MaterialTextView-->
-<!--        android:id="@+id/contextInfo"-->
-<!--        android:layout_width="360dp"-->
-<!--        android:layout_height="325dp"-->
-<!--        android:layout_marginTop="15dp"-->
-<!--        android:layout_marginBottom="120dp"-->
-<!--        android:text="@string/info_here"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.49"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/contextTimestamp" />-->
-
     <WebView
         android:id="@+id/contentWebview"
-        android:layout_width="398dp"
+        android:layout_width="match_parent"
         android:layout_height="476dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -82,50 +35,51 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.308" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/textView6"
-        android:layout_width="361dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="3dp"
-        android:layout_marginBottom="156dp"
-        android:text="@string/commentscontent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contextInfo"
-        app:layout_constraintVertical_bias="0.214" />
-
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/addCommentText"
         android:layout_width="293dp"
         android:layout_height="58dp"
         android:layout_marginTop="41dp"
-        android:layout_marginBottom="96dp"
+        android:layout_marginBottom="76dp"
         android:text="@string/enter_your_comment_here"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.208"
+        app:layout_constraintHorizontal_bias="0.177"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contextInfo" />
 
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textView6"
+        android:layout_width="361dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="136dp"
+        android:text="@string/commentscontent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.361"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contextInfo"
+        app:layout_constraintVertical_bias="0.214" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="363dp"
-        android:layout_height="68dp"
+        android:layout_width="345dp"
+        android:layout_height="58dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="36dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.687"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contetAddComment" />
 
     <Button
         android:id="@+id/postButton"
-        android:layout_width="59dp"
-        android:layout_height="53dp"
+        android:layout_width="75dp"
+        android:layout_height="47dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="36dp"
@@ -133,7 +87,9 @@
         android:text="Post"
         app:layout_constraintBottom_toTopOf="@+id/recyclerView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toEndOf="@+id/addCommentText"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

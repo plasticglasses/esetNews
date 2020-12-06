@@ -2,19 +2,23 @@ package com.plasticglassses.esetnews
 
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.webkit.WebView
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.snackbar.Snackbar
-import com.google.firebase.firestore.SetOptions
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class HeadlineActivity : AppCompatActivity() {
+    private lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_headline)
@@ -29,7 +33,7 @@ class HeadlineActivity : AppCompatActivity() {
 
         val db = Firebase.firestore
 
-//        timestampText.text= info.get(1).toString()
+        //setup full article view
         val generalHeadlineDocRef = db.collection("general_headlines").document(fireDocID.toString())
         generalHeadlineDocRef.get()
             .addOnSuccessListener { document ->
@@ -49,16 +53,25 @@ class HeadlineActivity : AppCompatActivity() {
             }
 
 
+        //add comments to firebase
         postButton.setOnClickListener(){
 
+            auth = Firebase.auth
+            val user = auth.currentUser?.uid
             val commentText = findViewById<TextView>(R.id.addCommentText).text.toString()
 
+            val df: DateFormat =
+                SimpleDateFormat("yyyy-MM-dd'T'HH:mm'Z'") // Quoted "Z" to indicate UTC, no timezone offset
+            val timestamp = df.format(Date()).toString()
 
-            // Update one field, creating the document if it does not already exist.
-            val data = hashMapOf("comments[1][0]" to commentText)
+             // var myArray = arrayListOf(user, commentText, timestamp)
+            var list = (user.toString() + "!" + commentText.toString() + "!" +  timestamp.toString())
 
-            db.collection("general_headlines").document(fireDocID.toString())
-                .set(data, SetOptions.merge())
+            //add to article
+            db.collection("general_headlines").document(fireDocID.toString()).update("comments", FieldValue.arrayUnion(list))
+
+            //add reference to comments
+            db.collection("users").document(user!!).update("comments", FieldValue.arrayUnion(fireDocID))
         }
 
     }
