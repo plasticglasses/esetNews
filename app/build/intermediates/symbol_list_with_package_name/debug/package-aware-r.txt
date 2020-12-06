@@ -1111,6 +1111,12 @@ color mtrl_textinput_hovered_box_stroke_color
 color notification_action_color_filter
 color notification_icon_bg_color
 color notification_material_background_media_default_color
+color place_autocomplete_prediction_primary_text
+color place_autocomplete_prediction_primary_text_highlight
+color place_autocomplete_prediction_secondary_text
+color place_autocomplete_search_hint
+color place_autocomplete_search_text
+color place_autocomplete_separator
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -1472,6 +1478,16 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+dimen place_autocomplete_button_padding
+dimen place_autocomplete_powered_by_google_height
+dimen place_autocomplete_powered_by_google_start
+dimen place_autocomplete_prediction_height
+dimen place_autocomplete_prediction_horizontal_margin
+dimen place_autocomplete_prediction_primary_text
+dimen place_autocomplete_prediction_secondary_text
+dimen place_autocomplete_progress_horizontal_margin
+dimen place_autocomplete_progress_size
+dimen place_autocomplete_separator_start
 dimen subtitle_corner_radius
 dimen subtitle_outline_width
 dimen subtitle_shadow_offset
@@ -1644,6 +1660,10 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable places_ic_clear
+drawable places_ic_search
+drawable powered_by_google_dark
+drawable powered_by_google_light
 drawable profile
 drawable test_custom_background
 drawable tooltip_frame_dark
@@ -1754,6 +1774,7 @@ id buttonPanel
 id cache_measures
 id cancel_action
 id cancel_button
+id card_comments
 id card_headline
 id center
 id center_horizontal
@@ -1772,6 +1793,8 @@ id clear_text
 id clip_horizontal
 id clip_vertical
 id collapseActionView
+id commentRecyclerView
+id commentText
 id confirm_button
 id container
 id content
@@ -1950,6 +1973,14 @@ id pathRelative
 id peekHeight
 id percent
 id pin
+id place_autocomplete_clear_button
+id place_autocomplete_powered_by_google
+id place_autocomplete_prediction_primary_text
+id place_autocomplete_prediction_secondary_text
+id place_autocomplete_progress
+id place_autocomplete_search_button
+id place_autocomplete_search_input
+id place_autocomplete_separator
 id popup_window_background
 id popup_window_background_container
 id popup_window_button
@@ -1961,6 +1992,7 @@ id position
 id postButton
 id postLayout
 id profile
+id profileImg
 id profile_pager
 id profile_tab_layout
 id progress_circular
@@ -2097,6 +2129,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id username
 id usernameText
 id view_offset_helper
 id visible
@@ -2173,6 +2206,7 @@ layout activity_login
 layout activity_main
 layout activity_profile
 layout activity_sign_up
+layout card_comments
 layout card_headline
 layout chip_layout
 layout custom_dialog
@@ -2241,6 +2275,10 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout place_autocomplete_fragment
+layout place_autocomplete_item_powered_by_google
+layout place_autocomplete_item_prediction
+layout place_autocomplete_progress
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
@@ -2415,6 +2453,8 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string place_autocomplete_clear_button
+string place_autocomplete_search_hint
 string plastic
 string previous
 string profile

@@ -1,11 +1,11 @@
 package com.plasticglassses.esetnews
 
-import android.content.Intent
-import androidx.fragment.app.Fragment
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -13,7 +13,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
+
 
 class LocalFragment : Fragment() {
     private lateinit var mMap: GoogleMap
@@ -47,6 +47,21 @@ class LocalFragment : Fragment() {
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sm4))
 
         mMap.setMinZoomPreference(15.0f)
+
+        mMap.setOnMapClickListener { point ->
+
+            val myPoint = LatLng(point.latitude, point.longitude)
+
+            Toast.makeText(
+                context,
+                point.latitude.toString() + ", " + point.longitude,
+                Toast.LENGTH_SHORT
+            ).show()
+            mMap.addMarker(MarkerOptions().position(myPoint).title("Rat Sport reported on 09/10/2020"))
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(myPoint))
+
+        }
+
     }
 
     override fun onCreateView(
@@ -58,17 +73,24 @@ class LocalFragment : Fragment() {
 
         var addPoint = rootView.findViewById<FloatingActionButton>(R.id.fab)
 
-        addPoint.setOnClickListener(){
-            Snackbar.make(rootView!!, "Point Added", Snackbar.LENGTH_SHORT).show()
-            val intent = Intent(activity, LocalPopUpWindow::class.java)
-            intent.putExtra("popuptitle", "Error")
-            intent.putExtra("popuptext", "Sorry, that email address is already used!")
-            intent.putExtra("popupbtn", "OK")
-            intent.putExtra("darkstatusbar", false)
-            startActivity(intent)
+        addPoint.setOnClickListener() {
+            loadPlacePicker()
         }
 
+//            Snackbar.make(rootView!!, "Point Added", Snackbar.LENGTH_SHORT).show()
+//            val intent = Intent(activity, LocalPopUpWindow::class.java)
+//            intent.putExtra("popuptitle", "Error")
+//            intent.putExtra("popuptext", "Sorry, that email address is already used!")
+//            intent.putExtra("popupbtn", "OK")
+//            intent.putExtra("darkstatusbar", false)
+//            startActivity(intent)
+//        }
+
         return rootView
+    }
+
+    private fun loadPlacePicker() {
+        TODO("Not yet implemented")
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

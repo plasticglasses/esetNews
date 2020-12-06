@@ -7,6 +7,7 @@ class newsModel() {
     private var timestamp: String = ""
     private var publisher: String = ""
     private var firebaseDocID: String = ""
+    private var firebasePath: String = ""
 
     fun getHeadline(): String{
         return headline.toString()
@@ -28,6 +29,10 @@ class newsModel() {
         return firebaseDocID.toString()
     }
 
+    fun getFirebasePath(): String{
+        return firebasePath.toString()
+    }
+
     fun setHeadline(headline: String){
         this.headline = headline
     }
@@ -46,6 +51,10 @@ class newsModel() {
 
     fun setFirebaseDocID(id: String){
         this.firebaseDocID = id
+    }
+
+    fun setFirebasePath(url: String){
+        this.firebasePath = url
     }
 
     override fun toString(): String{

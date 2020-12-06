@@ -72,7 +72,12 @@
         <receiver
             android:name="com.plasticglassses.esetnews.Alarm"
             android:process=":remote" />
-
+        <!-- <receiver android:name=".Alarm" android:exported="true"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="package.START_ALARM" > -->
+        <!-- </action> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"
             android:directBootAware="true"

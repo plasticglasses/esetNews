@@ -35,6 +35,8 @@ class NewsAdapter(private val headlineArrayList: MutableList<newsModel>): Recycl
         holder.headlineTimestamp.text = dateString + " " + timeString
         //holder.author.text = info.getPublisher()
         //holder.headlineImg.setImageDrawable(info.getHeadlineImg())
+
+        //images
         var image = info.getHeadlineImg()
         if (image !== null) {
             Glide.with(holder.headlineImg.getContext())
@@ -43,6 +45,8 @@ class NewsAdapter(private val headlineArrayList: MutableList<newsModel>): Recycl
         } else {
             holder.headlineImg.setImageResource(R.drawable.ic_launcher_background)
         }
+
+
     }
 
 
@@ -67,6 +71,9 @@ class NewsAdapter(private val headlineArrayList: MutableList<newsModel>): Recycl
         override fun onClick(v:View){
             val msg=txtMsg.text
             Snackbar.make(v,"$msg are the best!",Snackbar.LENGTH_LONG).show()
+
+            //i need to check which type of newds article this is, tech, science or gerneal so that we cna find the articel more easily
+
 
             //open separate view
             val intent = Intent(v.context, HeadlineActivity::class.java)

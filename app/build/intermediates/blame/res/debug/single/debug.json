@@ -4,6 +4,10 @@
         "source": "C:\\Users\\lizks\\AndroidStudioProjects\\esetNews2\\app\\src\\main\\res\\layout\\activity_profile.xml"
     },
     {
+        "merged": "C:\\Users\\lizks\\AndroidStudioProjects\\esetNews2\\app\\build\\intermediates\\res\\merged\\debug\\layout_card_comments.xml.flat",
+        "source": "C:\\Users\\lizks\\AndroidStudioProjects\\esetNews2\\app\\src\\main\\res\\layout\\card_comments.xml"
+    },
+    {
         "merged": "C:\\Users\\lizks\\AndroidStudioProjects\\esetNews2\\app\\build\\intermediates\\res\\merged\\debug\\layout_suggested_chip_layout.xml.flat",
         "source": "C:\\Users\\lizks\\AndroidStudioProjects\\esetNews2\\app\\src\\main\\res\\layout\\suggested_chip_layout.xml"
     },
