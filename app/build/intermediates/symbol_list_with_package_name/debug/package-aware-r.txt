@@ -1908,6 +1908,7 @@ id list_item
 id loginButton
 id main
 id map
+id markerText
 id masked
 id media_actions
 id message
@@ -1981,9 +1982,10 @@ id place_autocomplete_progress
 id place_autocomplete_search_button
 id place_autocomplete_search_input
 id place_autocomplete_separator
+id popup_add_button
+id popup_delete_button
 id popup_window_background
 id popup_window_background_container
-id popup_window_button
 id popup_window_text
 id popup_window_title
 id popup_window_view
@@ -2000,7 +2002,6 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
-id recyclerView
 id register
 id reverseSawtooth
 id right

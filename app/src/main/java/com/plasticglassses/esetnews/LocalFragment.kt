@@ -1,6 +1,8 @@
 package com.plasticglassses.esetnews
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,10 +15,21 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 
 class LocalFragment : Fragment() {
+
     private lateinit var mMap: GoogleMap
+    private lateinit var auth: FirebaseAuth
+
+    val RESULT_CHECK_MARKER_REQUEST = 0
+    val RESULT_DELETE_MARKER_REQUEST = 1
+    val RESULT_ADD_MARKER_REQUEST = 2
+    private val TAG = "Local Fragment"
+
     private val callback = OnMapReadyCallback { googleMap ->
         /**
          * Manipulates the map once available.
@@ -28,41 +41,67 @@ class LocalFragment : Fragment() {
          * user has installed Google Play services and returned to the app.
          */
         mMap = googleMap
+        val db = Firebase.firestore
+
+
+        val docRef = db.collection("markers")
+        docRef.get()
+            .addOnSuccessListener { documents ->
+                if (documents != null) {
+
+                    for (document in documents) {
+
+                        var latitude = document.get("lat").toString()
+                        var longitude = document.get("lng").toString()
+                        var markerText = document.get("text").toString()
+
+                        val newMarker = LatLng(latitude.toDouble(), longitude.toDouble())
+                        mMap.addMarker(MarkerOptions().position(newMarker).title(markerText))
+                        mMap.moveCamera(CameraUpdateFactory.newLatLng(newMarker))
+
+                        Log.d(TAG, "${document.id} => ${document.data}")
+                    }
+
+                } else {
+                    Log.d(TAG, "No such document")
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.d(TAG, "get failed with ", exception)
+            }
+
 
         // Add a marker in Sydney and move the camera
-        val swanseamarker1 = LatLng(51.620378, -3.941528)
-        mMap.addMarker(MarkerOptions().position(swanseamarker1).title("Rat spot reported on 23/10/2020 at 7pm by Liz"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(swanseamarker1))
-
-        val swanseamarker2 = LatLng(51.616083, -3.946367)
-        mMap.addMarker(MarkerOptions().position(swanseamarker2).title("Rat spot reported on 10/09/2020 at 5pm by Liz"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(swanseamarker2))
-
-        val swanseamarker3 = LatLng(51.620486, -3.941152)
-        mMap.addMarker(MarkerOptions().position(swanseamarker3).title("Swansea Castle, a spot of interest from 1107AD by Liz"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(swanseamarker3))
-
-        val sm4 = LatLng(51.6205, -3.9413)
-        mMap.addMarker(MarkerOptions().position(sm4).title("Rat Sport reported on 09/10/2020"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sm4))
 
         mMap.setMinZoomPreference(15.0f)
 
         mMap.setOnMapClickListener { point ->
 
             val myPoint = LatLng(point.latitude, point.longitude)
-
             Toast.makeText(
                 context,
-                point.latitude.toString() + ", " + point.longitude,
+                (point.latitude.toString() + ", " + point.longitude.toString()),
                 Toast.LENGTH_SHORT
             ).show()
-            mMap.addMarker(MarkerOptions().position(myPoint).title("Rat Sport reported on 09/10/2020"))
-            mMap.moveCamera(CameraUpdateFactory.newLatLng(myPoint))
+
+            val lng = point.longitude.toString()
+            val lat = point.latitude.toString()
+
+            val intent = Intent(activity, LocalPopUpWindow::class.java)
+            intent.putExtra("data", "windy window")
+            intent.putExtra("lat", lat)
+            intent.putExtra("lng", lng)
+            startActivity(intent)
+
+        }
+
+        mMap.setOnMapLongClickListener {
+            //delete marker
 
         }
 
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
