@@ -21,9 +21,9 @@ class MyService: Service() {
 
         alarm.setAlarm(this);
 
-        Toast.makeText(this, "Vooleyvoo", Toast.LENGTH_LONG).show()
-
         val firstString = intent.getStringExtra("firstString")
+
+        Toast.makeText(this, firstString, Toast.LENGTH_LONG).show()
         playAlert()
 
         return START_STICKY

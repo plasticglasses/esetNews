@@ -32,7 +32,7 @@ class Alarm : BroadcastReceiver() {
         am.setRepeating(
             AlarmManager.RTC_WAKEUP,
             System.currentTimeMillis(),
-            1000 * 60 * 10.toLong(),
+            100 * 60 * 10.toLong(),
             pi
         ) // Millisec * Second * Minute
     }

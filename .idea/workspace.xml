@@ -31,8 +31,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3857434-5c84-43ca-87ad-7440645502d4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plasticglassses/esetnews/adapters/MarkersAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plasticglassses/esetnews/adapters/MarkersAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plasticglassses/esetnews/Alarm.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plasticglassses/esetnews/Alarm.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/plasticglassses/esetnews/MyService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/plasticglassses/esetnews/MyService.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,13 +265,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1604485176332</updated>
-    </task>
-    <task id="LOCAL-00034" summary="create a new suggested alert chip with style">
-      <created>1605628929200</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1605628929201</updated>
     </task>
     <task id="LOCAL-00035" summary="found uid and matching corresponding user info">
       <created>1605633624498</created>
@@ -599,7 +602,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607303279614</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="completed marker functionality">
+      <created>1607333193689</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1607333193692</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -619,7 +629,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="updated tech and sceince last update placement" />
     <MESSAGE value="ordered recycler view headlines from latest to last" />
     <MESSAGE value="ordered general headlines" />
     <MESSAGE value="ordered science headlines" />
@@ -644,7 +653,8 @@
     <MESSAGE value="added markers fragment so markers can be deleted" />
     <MESSAGE value="added marker recycler view" />
     <MESSAGE value="added delete marker function" />
-    <option name="LAST_COMMIT_MESSAGE" value="added delete marker function" />
+    <MESSAGE value="completed marker functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="completed marker functionality" />
   </component>
   <component name="WindowStateProjectService">
     <state x="586" y="198" key="#Inspections" timestamp="1605181762562">
@@ -708,7 +718,7 @@
     </state>
     <state x="758" y="266" key="AndroidProcessChooserDialog/-1920.0.1536.832/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1605526810765" />
     <state x="2678" y="266" key="AndroidProcessChooserDialog/-1920.0.1536.832/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1605265443319" />
-    <state x="2866" y="170" key="CommitChangelistDialog2" timestamp="1607303273101">
+    <state x="2866" y="170" key="CommitChangelistDialog2" timestamp="1607333191121">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="946" y="170" key="CommitChangelistDialog2/-1920.0.1536.832/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607190649715" />
@@ -716,7 +726,7 @@
     <state x="-1358" y="7" key="CommitChangelistDialog2/-1920.0.1536.832/1920.0.1920.1040/0.0.1920.1040@-1920.0.1536.832" timestamp="1605817274170" />
     <state x="702" y="170" key="CommitChangelistDialog2/-1920.0.1536.832/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1607109272058" />
     <state x="4431" y="46" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040/3840.0.1920.1040@3840.0.1920.1040" timestamp="1605029637036" />
-    <state x="2866" y="170" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607303273101" />
+    <state x="2866" y="170" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607333191121" />
     <state x="740" y="246" key="FileChooserDialogImpl" timestamp="1605788080509">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -781,7 +791,7 @@
     </state>
     <state x="2379" y="313" key="SettingsEditor/-1920.0.1536.832/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604663983494" />
     <state x="4299" y="313" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040/3840.0.1920.1040@3840.0.1920.1040" timestamp="1605025195259" />
-    <state x="2488" y="201" key="Vcs.Push.Dialog.v2" timestamp="1607299317921">
+    <state x="2488" y="201" key="Vcs.Push.Dialog.v2" timestamp="1607333200232">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="568" y="201" key="Vcs.Push.Dialog.v2/-1920.0.1536.832/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605736819192" />
@@ -789,7 +799,7 @@
     <state x="-1466" y="161" key="Vcs.Push.Dialog.v2/-1920.0.1536.832/1920.0.1920.1040/0.0.1920.1040@-1920.0.1536.832" timestamp="1605817287493" />
     <state x="568" y="201" key="Vcs.Push.Dialog.v2/-1920.0.1536.832/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1607108297102" />
     <state x="4408" y="201" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040/3840.0.1920.1040@3840.0.1920.1040" timestamp="1605019607509" />
-    <state x="2488" y="201" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607299317921" />
+    <state x="2488" y="201" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607333200232" />
     <state x="776" y="297" key="chooseDestDirectoryDialog" timestamp="1607103923226">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
