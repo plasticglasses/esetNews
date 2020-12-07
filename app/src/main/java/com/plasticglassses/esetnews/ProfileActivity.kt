@@ -15,6 +15,7 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.plasticglassses.esetnews.adapters.ProfileTabAdaper
@@ -31,7 +32,6 @@ class ProfileActivity : AppCompatActivity() {
         //setup to use firebase
         auth = Firebase.auth
         val user = auth.currentUser
-        val db = Firebase.firestore
 
         //back button
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -54,38 +54,19 @@ class ProfileActivity : AppCompatActivity() {
                 }
             }).attach()
 
-        //get the users specific alerts from firesore and populate the view
-        getAlerts()
 
-        //sample service
-        val mTextView = findViewById<TextView>(R.id.textView1)
-        mTextView.text="Example of service"
-
-//        val alarmManager =
-//            context.getSystemService(Context.ALARM_SERVICE) as? AlarmManager
-//        val pendingIntent =
-//            PendingIntent.getService(context, requestId, intent,
-//                PendingIntent.FLAG_NO_CREATE)
-//        if (pendingIntent != null && alarmManager != null) {
-//            alarmManager.cancel(pendingIntent)
-//        }
-//
-//        // Hopefully your alarm will have a lower frequency than this!
-//        alarmMgr?.setInexactRepeating(
-//            AlarmManager.ELAPSED_REALTIME_WAKEUP,
-//            SystemClock.elapsedRealtime() + AlarmManager.INTERVAL_HALF_HOUR,
-//            AlarmManager.INTERVAL_HALF_HOUR,
-//            alarmIntent
-//        )
 
     }
 
+
     //alert service
     fun startService(view: View){
+
         val serviceIntent = Intent(this, MyService::class.java)
-        serviceIntent.putExtra("firstString", "Hello")
+        serviceIntent.putExtra("firstString", "hello")
         serviceIntent.putExtra("secondWord", "world")
         startService(serviceIntent)
+
     }
 
     fun stopService(view:View){
@@ -100,18 +81,6 @@ class ProfileActivity : AppCompatActivity() {
         return true
     }
 
-    private fun getAlerts() {
-
-        val db = Firebase.firestore
-        db.collection("users")
-            .get()
-            .addOnSuccessListener { result ->
-                for (document in result) {
-                    Log.d(TAG, "${document.id} => ${document.data}")
-                }
-
-            }
-    }
 
 }
 

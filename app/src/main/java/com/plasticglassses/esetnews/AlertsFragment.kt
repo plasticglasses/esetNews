@@ -261,7 +261,6 @@ class AlertsFragment : Fragment() {
             }
     }
 
-
     private fun removeAlertChipXML(alertChipGroup: ChipGroup, chip: Chip) {
         alertChipGroup.removeView(chip)
     }

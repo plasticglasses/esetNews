@@ -23,7 +23,7 @@ class MyService: Service() {
 
         val firstString = intent.getStringExtra("firstString")
 
-        Toast.makeText(this, firstString, Toast.LENGTH_LONG).show()
+        Toast.makeText(this, firstString.toString(), Toast.LENGTH_LONG).show()
         playAlert()
 
         return START_STICKY
