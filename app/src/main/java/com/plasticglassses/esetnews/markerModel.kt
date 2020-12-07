@@ -6,6 +6,7 @@ class markerModel() {
     private var longitude: String = ""
     private var userID: String = ""
     private var markerText: String = ""
+    private var firebaseID: String = ""
 
     fun getLatitude(): String{
         return latitude.toString()
@@ -23,6 +24,10 @@ class markerModel() {
         return markerText.toString()
     }
 
+    fun getFirebaseID(): String{
+        return firebaseID
+    }
+
     fun setLatitude(latitude: String){
         this.latitude = latitude
     }
@@ -37,6 +42,10 @@ class markerModel() {
 
     fun setMarkerText(markerText: String){
         this.markerText = markerText
+    }
+
+    fun setFirebaseID(firebaseID: String){
+        this.firebaseID = firebaseID
     }
 
     override fun toString(): String{

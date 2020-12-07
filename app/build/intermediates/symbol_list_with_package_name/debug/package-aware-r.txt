@@ -1818,6 +1818,7 @@ id decelerate
 id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
+id deleteButton
 id deltaRelative
 id dependency_ordering
 id design_bottom_sheet
@@ -1859,6 +1860,7 @@ id fill
 id fill_horizontal
 id fill_vertical
 id filled
+id firebaseIDMarker
 id fitToContents
 id fixed
 id flip

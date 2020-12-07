@@ -1,21 +1,20 @@
 package com.plasticglassses.esetnews.adapters
 
-import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
-import com.plasticglassses.esetnews.HeadlineActivity
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.plasticglassses.esetnews.R
 import com.plasticglassses.esetnews.markerModel
-import com.plasticglassses.esetnews.newsModel
 
 class MarkersAdapter(private val markerArrayList: MutableList<markerModel>): RecyclerView.Adapter<MarkersAdapter.ViewHolder>() {
-
+    val db = Firebase.firestore
 //    var contextArray: Array<String> = emptyArray()
 
     override fun onCreateViewHolder(parent:ViewGroup,viewType:Int):ViewHolder{
@@ -32,6 +31,17 @@ class MarkersAdapter(private val markerArrayList: MutableList<markerModel>): Rec
         holder.txtMsg.text=info.getMarkerText()
         holder.lng.text = info.getLongitude()
         holder.lat.text = info.getLatitude()
+        holder.docID.text = info.getFirebaseID()
+
+        holder.deleteButton.setOnClickListener(View.OnClickListener {
+
+            db.collection("markers").document(info.getFirebaseID())
+                .delete()
+                .addOnSuccessListener { Log.d("Markers", "DocumentSnapshot successfully deleted!")}
+                .addOnFailureListener { e -> Log.w("Markers", "Error deleting document", e) }
+
+
+        })
 
     }
 
@@ -48,7 +58,8 @@ class MarkersAdapter(private val markerArrayList: MutableList<markerModel>): Rec
         var txtMsg=itemView.findViewById<View>(R.id.markerTextView)as TextView
         val lat = itemView.findViewById<View>(R.id.latitudeText) as TextView
         val uID = itemView.findViewById<View>(R.id.userText) as TextView
-
+        val deleteButton = itemView.findViewById<View>(R.id.deleteButton) as Button
+        val docID = itemView.findViewById<View>(R.id.firebaseIDMarker) as TextView
         init{
             itemView.setOnClickListener(this)
         }
@@ -56,21 +67,8 @@ class MarkersAdapter(private val markerArrayList: MutableList<markerModel>): Rec
         override fun onClick(v:View){
             val msg=txtMsg.text
             Snackbar.make(v,"$msg are the best!",Snackbar.LENGTH_LONG).show()
-
-            //i need to check which type of newds article this is, tech, science or gerneal so that we cna find the articel more easily
-
-
-//            //open separate view
-//            val intent = Intent(v.context, HeadlineActivity::class.java)
-//            val id=txtDocID.text
-//            intent.putExtra("id", id)
-//            //intent.putExtra("contextArray", contextArray)
-//            v.context.startActivity(intent)
-
         }
-
     }
-
 }
 
 

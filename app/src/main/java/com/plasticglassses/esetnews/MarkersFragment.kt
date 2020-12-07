@@ -5,15 +5,15 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.plasticglassses.esetnews.adapters.MarkersAdapter
-import com.plasticglassses.esetnews.adapters.NewsAdapter
 
 class MarkersFragment : Fragment() {
 
@@ -37,6 +37,7 @@ class MarkersFragment : Fragment() {
             val headlineAdapter = MarkersAdapter(markersArrayList)
             recyclerMarkersView.adapter = headlineAdapter
         }
+
         return rootView
     }
 
@@ -46,7 +47,7 @@ class MarkersFragment : Fragment() {
             db.collection("markers")
         markerRef.get().addOnSuccessListener { documents ->
             for (document in documents) {
-                if (document != null) {
+                val any = if (document != null) {
 
                     //make model with data from firestore
                     val thisModel = markerModel()
@@ -54,6 +55,7 @@ class MarkersFragment : Fragment() {
                     thisModel.setLongitude(document.get("lng").toString())
                     thisModel.setMarkerText(document.get("text").toString())
                     thisModel.setUserID(document.get("user").toString())
+                    thisModel.setFirebaseID(document.id)
 
                     //add to list so that recycler view can take data
                     list.add(thisModel)
