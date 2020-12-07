@@ -1776,6 +1776,7 @@ id cancel_action
 id cancel_button
 id card_comments
 id card_headline
+id card_marker
 id center
 id center_horizontal
 id center_vertical
@@ -1897,6 +1898,7 @@ id jumpToEnd
 id jumpToStart
 id labeled
 id largeLabel
+id latitudeText
 id layout
 id left
 id light
@@ -1906,9 +1908,12 @@ id linear
 id listMode
 id list_item
 id loginButton
+id longitudeText
 id main
 id map
 id markerText
+id markerTextView
+id markers_recycler_view
 id masked
 id media_actions
 id message
@@ -2130,6 +2135,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id userText
 id username
 id usernameText
 id view_offset_helper
@@ -2209,6 +2215,7 @@ layout activity_profile
 layout activity_sign_up
 layout card_comments
 layout card_headline
+layout card_marker
 layout chip_layout
 layout custom_dialog
 layout design_bottom_navigation_item
