@@ -10,8 +10,10 @@ import android.os.PowerManager
 import android.util.Log
 import android.widget.Toast
 import com.dfl.newsapi.NewsApiRepository
+import com.google.firebase.FirebaseApp
 import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.ktx.firestore
@@ -25,23 +27,24 @@ import kotlin.collections.ArrayList
 class Alarm : BroadcastReceiver() {
 
     val newsApiRepository = NewsApiRepository("8abf9b3bbc4c4e86b186100f1c3f4e6d")
+    private lateinit var auth: FirebaseAuth
 
     @SuppressLint("InvalidWakeLockTag", "CheckResult")
     override fun onReceive(context: Context, intent: Intent) {
+        FirebaseApp.initializeApp(context)
+        val db = Firebase.firestore
         val pm =
             context.getSystemService(Context.POWER_SERVICE) as PowerManager
 
         val wl = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "Alert")
         wl.acquire()
 
-        val db = Firebase.firestore
-
         val uID = getUserID()
 
-        getFirestoreID(uID) { fID ->
+        getFirestoreID(uID, db) { fID ->
             //get last updated
             Log.d("Alarm", ("fID returned " + fID))
-            getUsersAlerts(fID) { alertArray ->
+            getUsersAlerts(fID, db) { alertArray ->
                 for(alert in alertArray){
                     newsApiRepository.getEverything(q = alert, domains = null, from =  "2020-11-01", to = "2020-12-01",  pageSize = 20, page = 1)
                         .subscribeOn(Schedulers.io())
@@ -49,7 +52,7 @@ class Alarm : BroadcastReceiver() {
                         .flatMapIterable { articles -> articles.articles }
                         .subscribe({ article -> Log.d("getEverything article", article.title) },
                             { t -> Log.d("getEverything error", t.message.toString()) })
-                    Toast.makeText(context, alert.toString(), Toast.LENGTH_LONG).show() // For example
+//                    Toast.makeText(context, alert.toString(), Toast.LENGTH_LONG).show() // For example
                 }
             }
         }
@@ -65,10 +68,11 @@ class Alarm : BroadcastReceiver() {
 
         //add to general collection
 
-
+        Toast.makeText(context, "Alarm !!!!!!!!!!", Toast.LENGTH_LONG).show() // For example
         //update general, science and tech news
         wl.release()
     }
+
 
     fun setAlarm(context: Context) {
         val am =
@@ -97,9 +101,10 @@ class Alarm : BroadcastReceiver() {
     */
     private fun getFirestoreID(
         uID: String,
+        db: FirebaseFirestore,
         callback: (String) -> Unit
     ): String {
-        val db = Firebase.firestore
+//        val db = Firebase.firestore
         var fID = ""
 
         db.collection("users")
@@ -124,9 +129,12 @@ class Alarm : BroadcastReceiver() {
     get the current logged in user id
      */
     private fun getUserID(): String {
+        auth = Firebase.auth
+        var user = auth.currentUser
+
         var thisUid = ""
 
-        val user = FirebaseAuth.getInstance().currentUser
+//        val user = FirebaseAuth.getInstance().currentUser
         if (user != null) {
             thisUid = user.uid
             Log.d("Alarm", ("success we got the UID" + thisUid))
@@ -140,10 +148,12 @@ class Alarm : BroadcastReceiver() {
    get the current users alert array from firetore
     */
     private fun getUsersAlerts(
-        docID: String?, callback: (ArrayList<String>) -> Unit
+        docID: String?,
+        db: FirebaseFirestore,
+        callback: (ArrayList<String>) -> Unit
     ): ArrayList<String>? {
         var usersAlerts = arrayListOf<String>()
-        val db = Firebase.firestore
+//        val db = Firebase.firestore
         db.collection("users").document(docID!!)
             .get()
             .addOnSuccessListener { result ->
