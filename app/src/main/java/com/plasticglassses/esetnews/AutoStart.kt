@@ -4,7 +4,6 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 
-
 class AutoStart : BroadcastReceiver() {
     var alarm = Alarm()
     override fun onReceive(context: Context, intent: Intent) {

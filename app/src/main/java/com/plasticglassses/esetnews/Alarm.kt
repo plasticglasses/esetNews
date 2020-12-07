@@ -11,21 +11,25 @@ import android.util.Log
 import android.widget.Toast
 import com.dfl.newsapi.NewsApiRepository
 import com.google.firebase.FirebaseApp
-import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.ktx.firestoreSettings
 import com.google.firebase.ktx.Firebase
-import io.reactivex.schedulers.Schedulers
-import org.intellij.lang.annotations.Language
-import java.util.*
 import kotlin.collections.ArrayList
 
 
 class Alarm : BroadcastReceiver() {
 
+//    private lateinit var myAlertsArray: ArrayList<String?>
+//
+//    fun getAlertArray(): ArrayList<String?> {
+//            return myAlertsArray
+//        }
+//    fun setAlertArray(myArray: ArrayList<String?>) {
+//        this.myAlertsArray = myArray
+//    }
     val newsApiRepository = NewsApiRepository("8abf9b3bbc4c4e86b186100f1c3f4e6d")
     private lateinit var auth: FirebaseAuth
 
@@ -33,34 +37,37 @@ class Alarm : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
         FirebaseApp.initializeApp(context)
         val db = Firebase.firestore
+        val settings = firestoreSettings {
+            isPersistenceEnabled = true
+        }
+
+        //using multiple firestore in application therefore need to enable persistance
+        db.firestoreSettings = settings
+
         val pm =
             context.getSystemService(Context.POWER_SERVICE) as PowerManager
 
         val wl = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "Alert")
         wl.acquire()
 
-        val uID = getUserID()
-
-        getFirestoreID(uID, db) { fID ->
-            //get last updated
-            Log.d("Alarm", ("fID returned " + fID))
-            getUsersAlerts(fID, db) { alertArray ->
-                for(alert in alertArray){
-                    newsApiRepository.getEverything(q = alert, domains = null, from =  "2020-11-01", to = "2020-12-01",  pageSize = 20, page = 1)
-                        .subscribeOn(Schedulers.io())
-                        .toFlowable()
-                        .flatMapIterable { articles -> articles.articles }
-                        .subscribe({ article -> Log.d("getEverything article", article.title) },
-                            { t -> Log.d("getEverything error", t.message.toString()) })
-//                    Toast.makeText(context, alert.toString(), Toast.LENGTH_LONG).show() // For example
-                }
-            }
-        }
-
+//        val docRef = db.collection("users")
+//        docRef.get()
+//            .addOnSuccessListener { documents ->
+//                for(doc in documents){
+//                    if (doc != null) {
+//                        Log.d("Alarm", "DocumentSnapshot data: ${doc.data}")
+//                    } else {
+//                        Log.d("Alarm", "No such document")
+//                    }
+//                }
+//
+//            }
+//            .addOnFailureListener { exception ->
+//                Log.d("Alarm", "get failed with ", exception)
+//            }
 
         //find user and get alerts
         //look for alerted documets
-
 
         //get user alerts from firebase
 
@@ -68,13 +75,16 @@ class Alarm : BroadcastReceiver() {
 
         //add to general collection
 
-        Toast.makeText(context, "Alarm !!!!!!!!!!", Toast.LENGTH_LONG).show() // For example
+        Toast.makeText(context, "Alarm!!!!!!!!!!!", Toast.LENGTH_LONG).show() // For example
         //update general, science and tech news
         wl.release()
     }
 
 
     fun setAlarm(context: Context) {
+//        var myArray = arrayListOf(firstString)
+//        setAlertArray(myArray)
+
         val am =
             context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val i = Intent(context, Alarm::class.java)

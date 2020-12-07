@@ -54,10 +54,7 @@ class ProfileActivity : AppCompatActivity() {
                 }
             }).attach()
 
-
-
     }
-
 
     //alert service
     fun startService(view: View){

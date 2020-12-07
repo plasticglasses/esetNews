@@ -19,9 +19,11 @@ class MyService: Service() {
 
     override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int{
 
+        val firstString = intent.getStringExtra("firstString")
+
         alarm.setAlarm(this);
 
-        val firstString = intent.getStringExtra("firstString")
+
 
         Toast.makeText(this, firstString.toString(), Toast.LENGTH_LONG).show()
         playAlert()

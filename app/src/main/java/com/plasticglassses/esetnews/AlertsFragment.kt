@@ -45,8 +45,8 @@ class AlertsFragment : Fragment() {
                     addNewAlertToXML(rootView, alertChipGroup, alert, fID)
                 }
             }
-        }
 
+        }
         val addAlertButton = rootView.findViewById<Button>(R.id.addAlert)
         addAlertButton.setOnClickListener {
             val newAlertText = rootView?.findViewById<EditText>(R.id.newAlertText)
@@ -122,6 +122,7 @@ class AlertsFragment : Fragment() {
             }
             addNewAlertToXML(rootView, alertChipGroup, newAlertText, fID)
         }
+
     }
 
     /*
