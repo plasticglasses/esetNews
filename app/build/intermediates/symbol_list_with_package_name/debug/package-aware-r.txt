@@ -1856,6 +1856,7 @@ id expand_activities_button
 id expanded_menu
 id fab
 id fade
+id filePathText
 id fill
 id fill_horizontal
 id fill_vertical
@@ -1989,6 +1990,7 @@ id place_autocomplete_progress
 id place_autocomplete_search_button
 id place_autocomplete_search_input
 id place_autocomplete_separator
+id popupNotification
 id popup_add_button
 id popup_delete_button
 id popup_window_background
@@ -2039,6 +2041,7 @@ id search_src_text
 id search_voice_btn
 id select_dialog_listview
 id selected
+id serviceButton
 id shortcut
 id showCustom
 id showHome

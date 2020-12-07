@@ -33,6 +33,9 @@ class NewsAdapter(private val headlineArrayList: MutableList<newsModel>): Recycl
         val dateString = info.getTimestamp().take(10)
         val timeString = info.getTimestamp().drop(11).take(8)
         holder.headlineTimestamp.text = dateString + " " + timeString
+
+        holder.txtFilePath.text = info.getFirebasePath()
+
         //holder.author.text = info.getPublisher()
         //holder.headlineImg.setImageDrawable(info.getHeadlineImg())
 
@@ -63,6 +66,7 @@ class NewsAdapter(private val headlineArrayList: MutableList<newsModel>): Recycl
         val author = itemView.findViewById<View>(R.id.author) as TextView
         val headlineImg = itemView.findViewById<View>(R.id.headlineImg) as ImageView
         val txtDocID = itemView.findViewById<View>(R.id.docID) as TextView
+        val txtFilePath = itemView.findViewById<View>(R.id.filePathText) as TextView
 
         init{
             itemView.setOnClickListener(this)
@@ -78,7 +82,9 @@ class NewsAdapter(private val headlineArrayList: MutableList<newsModel>): Recycl
             //open separate view
             val intent = Intent(v.context, HeadlineActivity::class.java)
             val id=txtDocID.text
+            val filepath=txtFilePath.text
             intent.putExtra("id", id)
+            intent.putExtra("filePath", filepath)
             //intent.putExtra("contextArray", contextArray)
             v.context.startActivity(intent)
 

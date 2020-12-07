@@ -89,8 +89,8 @@ class ScienceFragment : Fragment() {
                                         "author" to article.author,
                                         "timestamp" to article.publishedAt,
                                         "article" to article.url,
-                                        "comments" to arrayListOf<String>(arrayListOf<String>("user").toString(), arrayListOf<String>("comment").toString(), arrayListOf<String>("timestamp").toString())
-
+                                        "comments" to arrayListOf<String>(arrayListOf<String>("user").toString(), arrayListOf<String>("comment").toString(), arrayListOf<String>("timestamp").toString()),
+                                        "filePath" to "science_headlines"
                                     )
 
                                     //add new documents to firebase

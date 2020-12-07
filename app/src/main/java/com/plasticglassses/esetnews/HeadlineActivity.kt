@@ -28,6 +28,10 @@ class HeadlineActivity : AppCompatActivity() {
         //intent from news adapter. once articel selected from the adapter...
         var fireDocID = intent.getStringExtra("id")
 
+        var fireDocPath = intent.getStringExtra("filePath")
+
+        Log.d("YOU LOVE HIM", fireDocPath.toString())
+
         val postButton = findViewById<Button>(R.id.postButton)
 //        val timestampText = findViewById<TextView>(R.id.contextTimestamp)
 //        val headlineImage = findViewById<ImageView>(R.id.contextHeadineImage)
@@ -93,7 +97,6 @@ class HeadlineActivity : AppCompatActivity() {
 //                Log.d("Full screen article", "get failed with ", exception)
 //            }
 
-
         //add comments to firebase
         postButton.setOnClickListener(){
 
@@ -132,7 +135,5 @@ class HeadlineActivity : AppCompatActivity() {
 //
 //        return list
 //    }
-
-
 
 }

@@ -94,7 +94,8 @@ class HomeFragment : Fragment() {
                                         "author" to article.author,
                                         "timestamp" to article.publishedAt,
                                         "article" to article.url,
-                                        "comments" to arrayListOf<String>(arrayListOf<String>("user").toString(), arrayListOf<String>("comment").toString(), arrayListOf<String>("timestamp").toString())
+                                        "comments" to arrayListOf<String>(arrayListOf<String>("user").toString(), arrayListOf<String>("comment").toString(), arrayListOf<String>("timestamp").toString()),
+                                        "filePath" to "general_headlines"
                                     )
 
                                     //add new documents to firebase
@@ -147,6 +148,7 @@ class HomeFragment : Fragment() {
                         thisModel.setTimestamp(document.get("timestamp").toString())
                         thisModel.setPublisher(document.get("author").toString())
                         thisModel.setFirebaseDocID(document.id)
+                        thisModel.setFirebasePath(document.get("filePath").toString())
 
                         //add to list so that recycler view can take data
                         list.add(thisModel)

@@ -6,10 +6,14 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.SystemClock
+import android.provider.Settings
+import android.provider.Settings.ACTION_CHANNEL_NOTIFICATION_SETTINGS
+import android.provider.Settings.EXTRA_APP_PACKAGE
 import android.util.Log
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.NotificationCompat
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -23,6 +27,7 @@ import com.plasticglassses.esetnews.adapters.ProfileTabAdaper
 class ProfileActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private val TAG = "Profile Activity"
+    private var notificationHelper: NotificationHelper? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,6 +59,21 @@ class ProfileActivity : AppCompatActivity() {
                 }
             }).attach()
 
+        //pop up notification
+
+
+
+        notificationHelper = NotificationHelper(this)
+
+
+    }
+
+    fun notificationClick(view: View){
+        postNotification(notificationPopup, "yoopie doopie")
+    }
+
+    fun notificationClickSettings(view: View){
+        goToNotificationSettings(NotificationHelper.CHANNEL_ID)
     }
 
     //alert service
@@ -66,6 +86,13 @@ class ProfileActivity : AppCompatActivity() {
 
     }
 
+    fun goToNotificationSettings(channel: String){
+        val i = Intent(ACTION_CHANNEL_NOTIFICATION_SETTINGS)
+        i.putExtra(EXTRA_APP_PACKAGE, packageName)
+        i.putExtra(Settings.EXTRA_CHANNEL_ID, channel)
+        startActivity(i)
+    }
+
     fun stopService(view:View){
         val serviceIntent = Intent(this, MyService::class.java)
         stopService(serviceIntent)
@@ -76,6 +103,21 @@ class ProfileActivity : AppCompatActivity() {
         finish()
         // or call onBackPressed()
         return true
+    }
+
+fun postNotification(id: Int, title: String){
+    var notificationBuilder: NotificationCompat.Builder? = null
+    when (id) {
+        notificationPopup -> notificationBuilder = notificationHelper!!.getNotification(title, "Notification Body Text")
+    }
+
+
+
+}
+
+    companion object{
+        private val TAG = MainActivity::class.java.simpleName
+        private const val notificationPopup = 101
     }
 
 

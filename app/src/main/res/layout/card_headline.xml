@@ -61,6 +61,13 @@
                     android:visibility="invisible"
                     android:gravity="end"/>
 
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/filePathText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    android:gravity="end"/>
+
             </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.appcompat.widget.LinearLayoutCompat>
 
