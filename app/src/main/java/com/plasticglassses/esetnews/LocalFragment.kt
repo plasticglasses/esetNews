@@ -2,19 +2,19 @@ package com.plasticglassses.esetnews
 
 import android.content.Intent
 import android.os.Bundle
+import android.system.Os.remove
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -25,9 +25,6 @@ class LocalFragment : Fragment() {
     private lateinit var mMap: GoogleMap
     private lateinit var auth: FirebaseAuth
 
-    val RESULT_CHECK_MARKER_REQUEST = 0
-    val RESULT_DELETE_MARKER_REQUEST = 1
-    val RESULT_ADD_MARKER_REQUEST = 2
     private val TAG = "Local Fragment"
 
     private val callback = OnMapReadyCallback { googleMap ->
@@ -61,7 +58,6 @@ class LocalFragment : Fragment() {
 
                         Log.d(TAG, "${document.id} => ${document.data}")
                     }
-
                 } else {
                     Log.d(TAG, "No such document")
                 }
@@ -70,34 +66,22 @@ class LocalFragment : Fragment() {
                 Log.d(TAG, "get failed with ", exception)
             }
 
-
         // Add a marker in Sydney and move the camera
 
         mMap.setMinZoomPreference(15.0f)
 
         mMap.setOnMapClickListener { point ->
 
-            val myPoint = LatLng(point.latitude, point.longitude)
-            Toast.makeText(
-                context,
-                (point.latitude.toString() + ", " + point.longitude.toString()),
-                Toast.LENGTH_SHORT
-            ).show()
-
+            //get points from map
             val lng = point.longitude.toString()
             val lat = point.latitude.toString()
 
+            //start pop up to decide what to do
             val intent = Intent(activity, LocalPopUpWindow::class.java)
             intent.putExtra("data", "windy window")
             intent.putExtra("lat", lat)
             intent.putExtra("lng", lng)
             startActivity(intent)
-
-        }
-
-        mMap.setOnMapLongClickListener {
-            //delete marker
-
         }
 
     }
@@ -110,27 +94,11 @@ class LocalFragment : Fragment() {
     ): View? {
         var rootView = inflater.inflate(R.layout.fragment_local, container, false)
 
-        var addPoint = rootView.findViewById<FloatingActionButton>(R.id.fab)
-
-        addPoint.setOnClickListener() {
-            loadPlacePicker()
-        }
-
-//            Snackbar.make(rootView!!, "Point Added", Snackbar.LENGTH_SHORT).show()
-//            val intent = Intent(activity, LocalPopUpWindow::class.java)
-//            intent.putExtra("popuptitle", "Error")
-//            intent.putExtra("popuptext", "Sorry, that email address is already used!")
-//            intent.putExtra("popupbtn", "OK")
-//            intent.putExtra("darkstatusbar", false)
-//            startActivity(intent)
-//        }
 
         return rootView
     }
 
-    private fun loadPlacePicker() {
-        TODO("Not yet implemented")
-    }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

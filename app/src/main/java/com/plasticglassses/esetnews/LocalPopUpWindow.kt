@@ -27,28 +27,21 @@ class LocalPopUpWindow : AppCompatActivity() {
         var user = Firebase.auth.currentUser
 
         val editText = findViewById<View>(R.id.markerText) as EditText
-//        editText.text = intent.getStringExtra("lat")
+
 
         popup_add_button.setOnClickListener {
 
-//            val bundle: Bundle? = intent.extras
-
-            var receivingString = ""
             var latitude = ""
             var longitude = ""
 
             val extras = intent.extras
             if (extras != null) {
-                receivingString = extras.getString("data").toString()
                 latitude = extras.getString("lat").toString()
                 longitude = extras.getString("lng").toString()
             } else {
-                // handle case
+
             }
 
-//            val profileName=intent.getStringExtra("Username")
-
-//            Log.d("MOPAPA", "Marker successfully written!" + receivingString + " " +  longitude + " " + latitude)
 
             val db = Firebase.firestore
             val user = auth.currentUser
@@ -67,36 +60,9 @@ class LocalPopUpWindow : AppCompatActivity() {
 
             finish()
 
-            //
-//
-
-//
-
-
-
-//
-
-
-//            // Get the text from the EditText
-//
-//            // Get the text from the EditText
-//            val editText = findViewById<View>(R.id.markerText) as EditText
-//            val stringToPassBack = editText.text.toString()
-//
-//            // Put the String to pass back into an Intent and close this activity
-//
-//            // Put the String to pass back into an Intent and close this activity
-//            val intent = Intent()
-//            intent.putExtra("buttonPress", "add")
-//            intent.putExtra("markerText", stringToPassBack)
-//            setResult(Activity.RESULT_OK, intent)
-//            finish()
-
         }
 
         popup_delete_button.setOnClickListener {
-            val intent = Intent()
-            setResult(Activity.RESULT_CANCELED, intent)
             finish()
         }
 
