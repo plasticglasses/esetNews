@@ -26,7 +26,7 @@ class Alarm : BroadcastReceiver() {
 
     val newsApiRepository = NewsApiRepository("8abf9b3bbc4c4e86b186100f1c3f4e6d")
 
-    @SuppressLint("InvalidWakeLockTag")
+    @SuppressLint("InvalidWakeLockTag", "CheckResult")
     override fun onReceive(context: Context, intent: Intent) {
         val pm =
             context.getSystemService(Context.POWER_SERVICE) as PowerManager
