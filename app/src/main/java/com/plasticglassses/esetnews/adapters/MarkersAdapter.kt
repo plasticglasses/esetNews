@@ -39,12 +39,8 @@ class MarkersAdapter(private val markerArrayList: MutableList<markerModel>): Rec
                 .delete()
                 .addOnSuccessListener { Log.d("Markers", "DocumentSnapshot successfully deleted!")}
                 .addOnFailureListener { e -> Log.w("Markers", "Error deleting document", e) }
-
-
         })
-
     }
-
 
     override fun getItemCount():Int{
         return markerArrayList.size
