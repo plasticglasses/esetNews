@@ -50,6 +50,7 @@ class ProfileActivity : AppCompatActivity() {
                 when (position) {
                     0 -> tab.text = tabProfileTitles[0] //alerts
                     1 -> tab.text = tabProfileTitles[1] //comments
+                    2 -> tab.text = tabProfileTitles[2] //markers
                 }
             }).attach()
 

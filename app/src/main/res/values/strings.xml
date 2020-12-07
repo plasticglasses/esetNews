@@ -24,6 +24,7 @@
     <string-array name="tabProfileTitles">
         <item>Alerts</item>
         <item>Comments</item>
+        <item>Markers</item>
     </string-array>
 
     <string name="title_activity_profile">Profile</string>

@@ -72,6 +72,10 @@
         "source": "C:\\Users\\lizks\\AndroidStudioProjects\\esetNews2\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
+        "merged": "C:\\Users\\lizks\\AndroidStudioProjects\\esetNews2\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_markers.xml.flat",
+        "source": "C:\\Users\\lizks\\AndroidStudioProjects\\esetNews2\\app\\src\\main\\res\\layout\\fragment_markers.xml"
+    },
+    {
         "merged": "C:\\Users\\lizks\\AndroidStudioProjects\\esetNews2\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\lizks\\AndroidStudioProjects\\esetNews2\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
     },

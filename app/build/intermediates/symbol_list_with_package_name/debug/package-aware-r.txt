@@ -2231,6 +2231,7 @@ layout fragment_comments
 layout fragment_headline_context
 layout fragment_home
 layout fragment_local
+layout fragment_markers
 layout fragment_science
 layout fragment_tech
 layout mtrl_alert_dialog
