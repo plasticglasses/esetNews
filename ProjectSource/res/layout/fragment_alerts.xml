@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AlertsFragment">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+        android:text="@string/alerts" />
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:text="@string/current_alerts" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/alertChipGroup">
+
+
+        </com.google.android.material.chip.ChipGroup>
+
+    <com.google.android.material.textview.MaterialTextView
+         android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:text="@string/suggested_alerts" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/suggestedAlertsChipGroup">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/HCIChip"
+                android:text="@string/hci"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                style = "@style/SuggestedChipStyle" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/CERNChip"
+                android:text="@string/cern"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                style = "@style/SuggestedChipStyle"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/ClimateChangeChip"
+                android:text="@string/climate_change"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                style = "@style/SuggestedChipStyle"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/PlasticChip"
+                android:text="@string/plastic"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                style = "@style/SuggestedChipStyle"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/VRChip"
+                android:text="@string/vr"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                style="@style/SuggestedChipStyle"/>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/NASAChip"
+                android:text="@string/nasa"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                style="@style/SuggestedChipStyle"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/UnityChip"
+                android:text="@string/unity"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                style="@style/SuggestedChipStyle"/>
+        </com.google.android.material.chip.ChipGroup>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:text="@string/add_alert" />
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_new_alert" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/newAlertText"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/addAlert"
+            android:text="@string/add"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/notifications_banner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/banner_notifications" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/notifications_badge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/badge_notifications" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/notifications_sound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sound_notifications" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/popupNotification"
+            android:text="Notification"
+            android:onClick="postNotificationClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+ />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/notificationSettings"
+            android:text="Notification"
+            android:onClick="notificationClickSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.core.widget.NestedScrollView>

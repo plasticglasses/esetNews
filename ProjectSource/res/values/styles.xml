@@ -1,0 +1,30 @@
+<resources xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="ChipStyle">
+        <item name="chipBackgroundColor">@color/colorAccent</item>
+        <item name="closeIconVisible">true</item>
+<!--        <item name="android:onClick">removeChip</item>-->
+    </style>
+
+    <style name="SuggestedChipStyle">
+        <item name="chipBackgroundColor">@color/colorAccent</item>
+        <item name="android:checkable">true</item>
+<!--        <item name="android:onClick">removeChip</item>-->
+    </style>
+</resources>
